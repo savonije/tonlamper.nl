@@ -3,6 +3,27 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Ton Lamper - Biografie">
+	<div class="mb-6 flex justify-between gap-3 border-b pb-3">
+		<div class="flex flex-grow items-center justify-center">
+			<div>
+				<img src="/images/profiel.png" alt="Ton Lamper profielfoto" />
+			</div>
+		</div>
+		<div>
+			<h2 class="mb-6 text-3xl font-bold text-black">Ton Lamper</h2>
+			<p>Woonplaats: ‘s-Heer Arendskerke</p>
+			<p>Geboortejaar: 1956</p>
+
+			<p>Opleiding: 1977 — 1981 Nieuwe Lerarenopleiding Zuidwest-Nederland, Delft.</p>
+
+			<p>Tekenen en handvaardigheid.</p>
+
+			<p>1981-1983 Academie voor beeldende vorming, Tilburg.</p>
+
+			<p>Schilderen en grafiek.</p>
+		</div>
+	</div>
+
 	<p>
 		Tot 2022 werkzaam in het voortgezet onderwijs als docent beeldende vorming aan het Ostrea Lyceum
 		(vwo) te Goes.
@@ -53,3 +74,9 @@ import Layout from '../layouts/Layout.astro'
 		met verzamelde voorwerpen en materialen.
 	</p>
 </Layout>
+
+<style>
+	p {
+		@apply mb-3;
+	}
+</style>

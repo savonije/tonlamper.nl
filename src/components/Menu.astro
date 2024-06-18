@@ -1,18 +1,24 @@
 ---
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
 ---
 
 <nav class="main-menu flex gap-9 text-black">
-    <a class={currentPath === "" ? "active" : ""} href="/">Home</a>
-    <a class={currentPath === "de-kunstenaar" ? "active" : ""} href="/de-kunstenaar">De Kustenaar</a>
-    <a class={currentPath === "biografie" ? "active" : ""} href="/biografie">Biografie</a>
-    <a class={currentPath === "portfolio" ? "active" : ""} href="/portfolio">Portfolio</a>
-    <a class={currentPath === "cursussen" ? "active" : ""} href="/cursussen">Cursussen</a>
-    <a class={currentPath === "exposities" ? "active" : ""} href="/exposities">Exposities</a>
-    <a class={currentPath === "contact" ? "active" : ""} href="/contact">Contact</a>
+	<a class={currentPath === '' ? 'active' : ''} href="/">Home</a>
+	<a class={currentPath === 'de-kunstenaar' ? 'active' : ''} href="/de-kunstenaar">De Kustenaar</a>
+	<a class={currentPath === 'biografie' ? 'active' : ''} href="/biografie">Biografie</a>
+	<a class={currentPath === 'portfolio' ? 'active' : ''} href="/portfolio">Portfolio</a>
+	<a class={currentPath === 'cursussen' ? 'active' : ''} href="/cursussen">Cursussen</a>
+	<a class={currentPath === 'exposities' ? 'active' : ''} href="/exposities">Exposities</a>
+	<a class={currentPath === 'contact' ? 'active' : ''} href="/contact">Contact</a>
 </nav>
 
 <style>
+	.main-menu .active {
+		@apply underline underline-offset-8;
+	}
 
+	.main-menu a:hover {
+		@apply underline underline-offset-8;
+	}
 </style>

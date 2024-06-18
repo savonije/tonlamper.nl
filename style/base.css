@@ -1,11 +1,17 @@
+:root {
+	--accent: 136, 58, 234;
+	--accent-light: 224, 204, 250;
+	--accent-dark: 49, 10, 101;
+}
+html {
+	font-family: system-ui, sans-serif;
+	@apply h-full;
+}
+
+body {
+	@apply h-full leading-7 text-gray-500;
+}
+
 .container {
-    @apply mx-auto px-6;
-}
-
-.main-menu .active {
-    @apply underline underline-offset-8;
-}
-
-.main-menu a:hover {
-    @apply underline underline-offset-8;
+	@apply mx-auto px-6;
 }
