@@ -14,18 +14,19 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" href="style/base.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body class="flex flex-col h-full">
-        <header class="container mx-auto py-12">
+        <header class="container py-12 mb-9">
             <div class="flex justify-between gap-6 items-center">
                 <h1 class="text-3xl font-bold text-black">Ton Lamper</h1>
 
                 <Menu />
             </div>
         </header>
-        <main class="container mx-auto flex-grow">
+        <main class="container flex-grow">
 		    <slot />
         </main>
         <footer class="py-6 mt-3 border-t border-t-gray-300">
@@ -43,12 +44,10 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-        height: 100%;
+        @apply h-full;
 	}
 
     body {
-        height: 100%;
-        color: rgb(122, 122, 122);
-        line-height: 1.75;
+        @apply h-full text-gray-500 leading-7;
     }
 </style>
