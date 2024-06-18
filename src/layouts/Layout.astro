@@ -1,4 +1,5 @@
 ---
+import Menu from '../components/Menu.astro';
 interface Props {
 	title: string;
 }
@@ -16,11 +17,22 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-        <header>
-            <h1>Ton Lamper</h1>
+	<body class="flex flex-col h-full">
+        <header class="container mx-auto py-12">
+            <div class="flex justify-between gap-6 items-center">
+                <h1 class="text-3xl font-bold text-black">Ton Lamper</h1>
+
+                <Menu />
+            </div>
         </header>
-		<slot />
+        <main class="container mx-auto flex-grow">
+		    <slot />
+        </main>
+        <footer class="py-3 mt-3 border-t border-t-gray-300">
+            <div class="container mx-auto">
+                &copy; {new Date().getFullYear()} Ton Lamper. All rights reserved.
+            </div>
+        </footer>
 	</body>
 </html>
 <style is:global>
@@ -28,27 +40,14 @@ const { title } = Astro.props;
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+        height: 100%;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+    body {
+        height: 100%;
+        color: rgb(122, 122, 122);
+    }
 </style>
