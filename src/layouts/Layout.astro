@@ -1,5 +1,6 @@
 ---
 import Menu from '../components/Menu.astro'
+import Header from '../components/Header.astro'
 import '../../style/base.css'
 interface Props {
 	title: string
@@ -19,13 +20,7 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body class="flex h-full flex-col">
-		<header class="container mb-9 py-12">
-			<div class="flex items-center justify-between gap-6">
-				<h1 class="text-3xl font-bold text-black">Ton Lamper</h1>
-
-				<Menu />
-			</div>
-		</header>
+		<Header />
 		<main class="container flex-grow">
 			<slot />
 		</main>
