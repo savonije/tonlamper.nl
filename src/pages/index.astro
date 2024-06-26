@@ -1,7 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Ton Lamper">
-    Ton Lamper is kunstenaar en docent. Zijn grafisch werk is een combinatie van diverse technieken zoals: de lijnets, kleurenets, kartondruk, linoleumsnede en houtsnede. Figuratieve elementen, verwijzingen naar de kunst- en cultuurhistorie, worden samengebracht met abstracte vormen. Een reservoir van beelden met grote contrasten. Filmisch aandoende afbeeldingen tonen o.a. de fascinatie voor de menselijke anatomie. De opeenstapeling van beelden is vergelijkbaar met de snelle afwisseling van beelden uit de moderne media.
+	Ton Lamper is kunstenaar en docent. Zijn grafisch werk is een combinatie van diverse technieken
+	zoals: de lijnets, kleurenets, kartondruk, linoleumsnede en houtsnede. Figuratieve elementen,
+	verwijzingen naar de kunst- en cultuurhistorie, worden samengebracht met abstracte vormen. Een
+	reservoir van beelden met grote contrasten. Filmisch aandoende afbeeldingen tonen o.a. de
+	fascinatie voor de menselijke anatomie. De opeenstapeling van beelden is vergelijkbaar met de
+	snelle afwisseling van beelden uit de moderne media.
+
+	<div class="mt-9 grid sm:grid-cols-2 md:grid-cols-3">
+		<div class="flex justify-center">
+			<img src="/images/venus-en-mars.jpg" width="275" height="275" alt="" />
+		</div>
+		<div class="hidden justify-center md:flex">
+			<img src="/images/sater-600x652.jpg" width="275" height="275" alt="" />
+		</div>
+		<div class="flex hidden justify-center sm:flex">
+			<img src="/images/flora-600x640.jpg" width="275" height="275" alt="" />
+		</div>
+	</div>
 </Layout>
