@@ -1,7 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Ton Lamper - Cursussen">
-    Dit zijn cursussen
+	<p>
+		Cursus Etsen volgen? Etsen maken en afdrukken. Gedoe met etszuur en etspers. Een gigantische
+		klus? Welnee! Tijdens de cursus maakt u kennis met de geheimen van de droge naald, lijnets,
+		aquatint en kleurenets en u zult ervaren dat het etsprocédé lang niet zo geheimzinnig en
+		ingewikkeld is als veel mensen wel denken. De etstechniek nodigt uit tot eindeloos experiment op
+		het gebied van materiaal, gereedschap, zwart/wit en kleur. De weg van het ontwerp tot afdruk van
+		de ets lijkt lang en onvoorspelbaar, maar juist die toevalligheden onderweg – al doende leren om
+		die experimenten te gebruiken tot een eigen verbeelding – dát maakt etsen zo interessant.
+	</p>
+
+	<hr class="my-9" />
+
+	<div class="grid gap-3 sm:grid-cols-2">
+		<div class="course">
+			<h2>Cursus Etsen (Goes)</h2>
+			<p><strong>Datum:</strong> Wekelijks van september tot april</p>
+			<p><strong>Aantal lessen:</strong> 25 lessen van elk 2,5 uur.</p>
+			<p><strong>Tijd:</strong> Woensdag van 15:45 tot 18:15</p>
+			<p><strong>Periode:</strong> september 2024 tot april 2025. Uitgezonderd schoolvakanties.</p>
+			<p><strong>Locatie:</strong> Ostrea Lyceum, Fruitlaan 3 te Goes</p>
+		</div>
+
+		<div class="course">
+			<h2>Cursus Etsen (Middelburg)</h2>
+			<p><strong>Datum:</strong> Wekelijks van september tot april</p>
+			<p><strong>Aantal lessen:</strong> 25 lessen van elk 3 uur.</p>
+			<p><strong>Tijd:</strong> Maandag van 13:00 tot 16:00</p>
+			<p><strong>Periode:</strong> september 2024 tot april 2025. Uitgezonderd schoolvakanties.</p>
+			<p><strong>Locatie:</strong> Cultuurhuis Kuiperspoort 18 te Middelburg</p>
+		</div>
+
+		<div class="course">
+			<h2>Workshop hoogdruk of diepdruk</h2>
+			<p>Voor kleine groepen van jong tot oud.</p>
+			<p><strong>Aantal personen:</strong> Maximaal 15.</p>
+			<p><strong>Duur van de workshop:</strong> 2 uur</p>
+			<p><strong>Locatie:</strong> In overleg</p>
+		</div>
+	</div>
 </Layout>
+
+<style>
+	.course {
+		@apply rounded border p-3 shadow-md;
+	}
+</style>
