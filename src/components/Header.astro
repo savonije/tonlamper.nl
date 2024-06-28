@@ -1,11 +1,11 @@
 ---
-import Menu from '../components/Menu.astro'
+import Menu from './Menu.vue'
 ---
 
 <header class="container mb-9 py-12">
 	<div class="flex items-center justify-between gap-6">
-		<a href="/" class="text-3xl font-bold text-black">Ton Lamper</a>
+		<a href="/" class="shrink-0 text-3xl font-bold text-black">Ton Lamper</a>
 
-		<Menu />
+		<Menu client:idle />
 	</div>
 </header>
