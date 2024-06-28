@@ -20,9 +20,7 @@ const closeOnEscape = (event: KeyboardEvent) => {
 
 onMounted(() => document.addEventListener('keydown', closeOnEscape))
 
-onUnmounted(() => {
-	document.removeEventListener('keydown', closeOnEscape)
-})
+onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 </script>
 
 <template>
