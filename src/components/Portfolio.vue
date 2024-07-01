@@ -11,7 +11,21 @@ import artworks from './kunstwerken.json'
 				class="mb-3 h-auto w-full max-w-full rounded-lg"
 				loading="lazy"
 			/>
-			<figcation>{{ artwork.name }}</figcation>
+			<figcaption>{{ artwork.name }}</figcaption>
 		</figure>
 	</div>
 </template>
+
+<style>
+figure {
+	@apply relative;
+
+	&:hover figcaption {
+		@apply opacity-100;
+	}
+}
+
+figcaption {
+	@apply absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-white/90 text-2xl font-bold text-black opacity-0 transition-opacity;
+}
+</style>
