@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import artworks from '../../components/kunstwerken.json'
+
+export async function getStaticPaths() {
+	const pages = Object.keys(artworks).map((key) => {
+		return {
+			id: key,
+			...artworks[key]
+		}
+	})
+
+	return pages.map(({ slug, name, image }) => {
+		return {
+			params: { slug },
+			props: { name, image }
+		}
+	})
+}
+
+const { name, image } = Astro.props
+---
+
+<Layout title="Ton Lamper - {name}">
+	<div class="mb-9 flex items-center justify-between gap-9">
+		<h1>{name}</h1>
+		<a href="/portfolio" class="inline-block rounded border p-3">Terug naar portfolio</a>
+	</div>
+
+	<div class="flex justify-center">
+		<img src={image} alt={name} />
+	</div>
+</Layout>
