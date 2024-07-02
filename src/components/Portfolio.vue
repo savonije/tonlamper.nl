@@ -5,13 +5,15 @@ import artworks from './kunstwerken.json'
 <template>
 	<div class="columns-3 gap-3">
 		<figure v-for="artwork in artworks">
-			<img
-				:src="artwork.image"
-				:alt="artwork.name"
-				class="mb-3 h-auto w-full max-w-full rounded-lg"
-				loading="lazy"
-			/>
-			<figcaption>{{ artwork.name }}</figcaption>
+			<a :href="'/portfolio/' + artwork.slug">
+				<img
+					:src="artwork.image"
+					:alt="artwork.name"
+					class="mb-3 h-auto w-full max-w-full rounded-lg"
+					loading="lazy"
+				/>
+				<figcaption>{{ artwork.name }}</figcaption>
+			</a>
 		</figure>
 	</div>
 </template>
