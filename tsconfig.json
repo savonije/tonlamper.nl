@@ -6,6 +6,11 @@
 			"@components/*": ["src/components/*"],
 			"@layouts/*": ["src/layouts/*"]
 		},
-		"jsx": "preserve"
+		"jsx": "preserve",
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		]
 	}
 }
