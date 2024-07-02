@@ -9,7 +9,7 @@ import artworks from './kunstwerken.json'
 				<img
 					:src="artwork.image"
 					:alt="artwork.name"
-					class="mb-3 h-auto w-full max-w-full rounded-lg"
+					class="mb-3 h-auto w-full max-w-full"
 					loading="lazy"
 				/>
 				<figcaption>{{ artwork.name }}</figcaption>
