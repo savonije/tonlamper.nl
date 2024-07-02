@@ -1,10 +1,28 @@
 <script lang="ts" setup>
-import artworks from './kunstwerken.json'
+import artworks from '@components/kunstwerken.json'
+
+function shuffleObject(obj) {
+	const entries = Object.entries(obj)
+
+	for (let i = entries.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1))
+		;[entries[i], entries[j]] = [entries[j], entries[i]]
+	}
+
+	const shuffledObj = {}
+	entries.forEach(([key, value], index) => {
+		shuffledObj[index + 1] = value
+	})
+
+	return shuffledObj
+}
+
+const shuffledArtworks = shuffleObject(artworks)
 </script>
 
 <template>
 	<div class="columns-3 gap-3">
-		<figure v-for="artwork in artworks">
+		<figure v-for="artwork in shuffledArtworks">
 			<a :href="'/portfolio/' + artwork.slug">
 				<img
 					:src="artwork.image"
