@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import artworks from '../../components/kunstwerken.json'
+import Layout from '@layouts/Layout.astro'
+import artworks from '@components/kunstwerken.json'
 
 export async function getStaticPaths() {
 	const pages = Object.keys(artworks).map((key) => {
@@ -19,9 +19,10 @@ export async function getStaticPaths() {
 }
 
 const { name, image } = Astro.props
+const title = `Ton Lamper - ${name}`
 ---
 
-<Layout title="Ton Lamper - {name}">
+<Layout title={title}>
 	<div class="mb-9 flex items-center justify-between gap-9">
 		<h1>{name}</h1>
 		<a href="/portfolio" class="inline-block rounded border p-3">Terug naar portfolio</a>
