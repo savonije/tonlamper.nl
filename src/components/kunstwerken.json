@@ -1,0 +1,446 @@
+{
+	"1": {
+		"name": "Animalia Centaur",
+		"image": "/images/portfolio/animalia-centaur.jpg",
+		"category": "ets",
+		"slug": "animalia-centaur"
+	},
+	"2": {
+		"name": "Animalia Hercules",
+		"image": "/images/portfolio/animalia-hercules.jpg",
+		"category": "ets",
+		"slug": "animalia-hercules"
+	},
+	"3": {
+		"name": "Animalia Taurus",
+		"image": "/images/portfolio/animalia-taurus.jpg",
+		"category": "ets",
+		"slug": "animalia-taurus"
+	},
+	"4": {
+		"name": "Atlas",
+		"image": "/images/portfolio/atlas.jpg",
+		"category": "ets",
+		"slug": "atlas"
+	},
+	"5": {
+		"name": "Bacchanaal",
+		"image": "/images/portfolio/bacchanaal.jpg",
+		"category": "ets",
+		"slug": "bacchanaal"
+	},
+	"6": {
+		"name": "Baders",
+		"image": "/images/portfolio/baders.jpg",
+		"category": "ets",
+		"slug": "baders"
+	},
+	"7": {
+		"name": "Beest",
+		"image": "/images/portfolio/beest.jpg",
+		"category": "ets",
+		"slug": "beest"
+	},
+	"8": {
+		"name": "Bestiarium",
+		"image": "/images/portfolio/bestiarium.jpg",
+		"category": "ets",
+		"slug": "bestiarium"
+	},
+	"9": {
+		"name": "Chine De Commande",
+		"image": "/images/portfolio/chine-de-commande.jpg",
+		"category": "ets",
+		"slug": "chine-de-commande"
+	},
+	"10": {
+		"name": "Constructie",
+		"image": "/images/portfolio/constructie.jpg",
+		"category": "ets",
+		"slug": "constructie"
+	},
+	"11": {
+		"name": "Dansers",
+		"image": "/images/portfolio/dansers.jpg",
+		"category": "ets",
+		"slug": "dansers"
+	},
+	"12": {
+		"name": "Daphne",
+		"image": "/images/portfolio/daphne.jpg",
+		"category": "ets",
+		"slug": "daphne"
+	},
+	"13": {
+		"name": "Diana",
+		"image": "/images/portfolio/diana.jpg",
+		"category": "ets",
+		"slug": "diana"
+	},
+	"14": {
+		"name": "Dood Van Adonis",
+		"image": "/images/portfolio/dood-van-adonis.jpg",
+		"category": "ets",
+		"slug": "dood-van-adonis"
+	},
+	"15": {
+		"name": "Dossier",
+		"image": "/images/portfolio/dossier.jpg",
+		"category": "ets",
+		"slug": "dossier"
+	},
+	"16": {
+		"name": "Duik",
+		"image": "/images/portfolio/duik.jpg",
+		"category": "ets",
+		"slug": "duik"
+	},
+	"17": {
+		"name": "Europa",
+		"image": "/images/portfolio/europa.jpg",
+		"category": "ets",
+		"slug": "europa"
+	},
+	"18": {
+		"name": "Eurydice",
+		"image": "/images/portfolio/eurydice.jpg",
+		"category": "ets",
+		"slug": "eurydice"
+	},
+	"19": {
+		"name": "Figuren",
+		"image": "/images/portfolio/figuren.jpg",
+		"category": "ets",
+		"slug": "figuren"
+	},
+	"20": {
+		"name": "Figures Du Corps",
+		"image": "/images/portfolio/figures-du-corps.jpg",
+		"category": "ets",
+		"slug": "figures-du-corps"
+	},
+	"21": {
+		"name": "Flora",
+		"image": "/images/portfolio/flora.jpg",
+		"category": "ets",
+		"slug": "flora"
+	},
+	"22": {
+		"name": "Ganymedes Ets",
+		"image": "/images/portfolio/ganymedes-ets.jpg",
+		"category": "ets",
+		"slug": "ganymedes-ets"
+	},
+	"23": {
+		"name": "Ganymedes Lino",
+		"image": "/images/portfolio/ganymedes-lino.jpg",
+		"category": "ets",
+		"slug": "ganymedes-lino"
+	},
+	"24": {
+		"name": "Geboorte Van Adonis",
+		"image": "/images/portfolio/geboorte-van-adonis.jpg",
+		"category": "ets",
+		"slug": "geboorte-van-adonis"
+	},
+	"25": {
+		"name": "Gladius",
+		"image": "/images/portfolio/gladius.jpg",
+		"category": "ets",
+		"slug": "gladius"
+	},
+	"26": {
+		"name": "Groot Hoefblad",
+		"image": "/images/portfolio/Groot-hoefblad.jpg",
+		"category": "ets",
+		"slug": "groot-hoefblad"
+	},
+	"27": {
+		"name": "Hera",
+		"image": "/images/portfolio/hera.jpg",
+		"category": "ets",
+		"slug": "hera"
+	},
+	"28": {
+		"name": "Hyacinthus",
+		"image": "/images/portfolio/hyacinthus.jpg",
+		"category": "ets",
+		"slug": "hyacinthus"
+	},
+	"29": {
+		"name": "Io",
+		"image": "/images/portfolio/io.jpg",
+		"category": "ets",
+		"slug": "io"
+	},
+	"30": {
+		"name": "Kinderen Van Apollo",
+		"image": "/images/portfolio/kinderen-van-apollo.jpg",
+		"category": "ets",
+		"slug": "kinderen-van-apollo"
+	},
+	"31": {
+		"name": "Kleine Ridder 2019",
+		"image": "/images/portfolio/Kleine-Ridder-2019-IMG_1943.jpg",
+		"category": "ets",
+		"slug": "kleine-ridder-2019"
+	},
+	"32": {
+		"name": "Kleurenets 1 In Paradisum",
+		"image": "/images/portfolio/kleurenets-1-In-Paradisum-85-x-85-cm-23-2042x2048.jpg",
+		"category": "ets",
+		"slug": "kleurenets-1-in-paradisum"
+	},
+	"33": {
+		"name": "Kleurenets 2 Man",
+		"image": "/images/portfolio/kleurenets-2-Man-30-x-30-cm-23-IMG_3955-1985x2048.jpg",
+		"category": "ets",
+		"slug": "kleurenets-2-man"
+	},
+	"34": {
+		"name": "Kleurenets 3 Vrouw",
+		"image": "/images/portfolio/kleurenets-3-Vrouw-30-x30-cm-23-IMG_3954-2048x1988.jpg",
+		"category": "ets",
+		"slug": "kleurenets-3-vrouw"
+	},
+	"35": {
+		"name": "Kleurenets 4 Dier",
+		"image": "/images/portfolio/kleurenets-4-Dier-30-x-30-cm-23-IMG_3956-2048x1915.jpg",
+		"category": "ets",
+		"slug": "kleurenets-4-dier"
+	},
+	"36": {
+		"name": "Kleurenets 5 Plant",
+		"image": "/images/portfolio/kleurenets-5-Plant-30-x30-cm-23-IMG_3953-2048x2023.jpg",
+		"category": "ets",
+		"slug": "kleurenets-5-plant"
+	},
+	"37": {
+		"name": "Linosnede Poelbos I",
+		"image": "/images/portfolio/Linosnede-Poelbos-I-2021Ton-Lamper-www.tonlamper.nl_-2032x2048.jpg",
+		"category": "ets",
+		"slug": "linosnede-poelbos-i"
+	},
+	"38": {
+		"name": "Linosnede Poelbos II",
+		"image": "/images/portfolio/Linosnede-Poelbos-II-2021-Ton-Lamper-www.tonlamper.nl_-2048x2023.jpg",
+		"category": "ets",
+		"slug": "linosnede-poelbos-ii"
+	},
+	"39": {
+		"name": "Man En Paard",
+		"image": "/images/portfolio/man-en-paard.jpg",
+		"category": "ets",
+		"slug": "man-en-paard"
+	},
+	"40": {
+		"name": "Mantel Der Liefde Boetekleed",
+		"image": "/images/portfolio/Mantel-der-liefde-boetekleed-2018-IMG_1945.jpg",
+		"category": "ets",
+		"slug": "mantel-der-liefde-boetekleed"
+	},
+	"41": {
+		"name": "Medusa",
+		"image": "/images/portfolio/medusa.jpg",
+		"category": "ets",
+		"slug": "medusa"
+	},
+	"42": {
+		"name": "Minotaurus",
+		"image": "/images/portfolio/minotaurus.jpg",
+		"category": "ets",
+		"slug": "minotaurus"
+	},
+	"43": {
+		"name": "Model",
+		"image": "/images/portfolio/model.jpg",
+		"category": "ets",
+		"slug": "model"
+	},
+	"44": {
+		"name": "Narcissus 1",
+		"image": "/images/portfolio/narcissus-1.jpg",
+		"category": "ets",
+		"slug": "narcissus-1"
+	},
+	"45": {
+		"name": "Narcissus 2",
+		"image": "/images/portfolio/narcissus-2.jpg",
+		"category": "ets",
+		"slug": "narcissus-2"
+	},
+	"46": {
+		"name": "Narcissus",
+		"image": "/images/portfolio/narcissus.jpg",
+		"category": "ets",
+		"slug": "narcissus"
+	},
+	"47": {
+		"name": "Ornithologie",
+		"image": "/images/portfolio/ornithologie.jpg",
+		"category": "ets",
+		"slug": "ornithologie"
+	},
+	"48": {
+		"name": "Orpheus",
+		"image": "/images/portfolio/orpheus.jpg",
+		"category": "ets",
+		"slug": "orpheus"
+	},
+	"49": {
+		"name": "Paard",
+		"image": "/images/portfolio/paard.jpg",
+		"category": "ets",
+		"slug": "paard"
+	},
+	"50": {
+		"name": "Pasiphae",
+		"image": "/images/portfolio/pasiphae.jpg",
+		"category": "ets",
+		"slug": "pasiphae"
+	},
+	"51": {
+		"name": "Patroon",
+		"image": "/images/portfolio/patroon.jpg",
+		"category": "ets",
+		"slug": "patroon"
+	},
+	"52": {
+		"name": "Perspectief 1",
+		"image": "/images/portfolio/perspectief-1.jpg",
+		"category": "ets",
+		"slug": "perspectief-1"
+	},
+	"53": {
+		"name": "Perspectief 2",
+		"image": "/images/portfolio/perspectief-2.jpg",
+		"category": "ets",
+		"slug": "perspectief-2"
+	},
+	"54": {
+		"name": "Piramus En Thisbe",
+		"image": "/images/portfolio/piramus-en-thisbe.jpg",
+		"category": "ets",
+		"slug": "piramus-en-thisbe"
+	},
+	"55": {
+		"name": "Plons",
+		"image": "/images/portfolio/plons.jpg",
+		"category": "ets",
+		"slug": "plons"
+	},
+	"56": {
+		"name": "Pomona",
+		"image": "/images/portfolio/pomona.jpg",
+		"category": "ets",
+		"slug": "pomona"
+	},
+	"57": {
+		"name": "Porta 2",
+		"image": "/images/portfolio/porta-2.jpg",
+		"category": "ets",
+		"slug": "porta-2"
+	},
+	"58": {
+		"name": "Rie Maer Op De Torens",
+		"image": "/images/portfolio/rie-maer-op-de-torens.jpg",
+		"category": "ets",
+		"slug": "rie-maer-op-de-torens"
+	},
+	"59": {
+		"name": "Ritthemse Kreek",
+		"image": "/images/portfolio/Ritthemse-kreek.jpg",
+		"category": "ets",
+		"slug": "ritthemse-kreek"
+	},
+	"60": {
+		"name": "Roeiers",
+		"image": "/images/portfolio/roeiers.jpg",
+		"category": "ets",
+		"slug": "roeiers"
+	},
+	"61": {
+		"name": "Route",
+		"image": "/images/portfolio/route.jpg",
+		"category": "ets",
+		"slug": "route"
+	},
+	"62": {
+		"name": "Salto",
+		"image": "/images/portfolio/salto.jpg",
+		"category": "ets",
+		"slug": "salto"
+	},
+	"63": {
+		"name": "Sater",
+		"image": "/images/portfolio/sater.jpg",
+		"category": "ets",
+		"slug": "sater"
+	},
+	"64": {
+		"name": "Schetsboek Man",
+		"image": "/images/portfolio/schetsboek-man.jpg",
+		"category": "ets",
+		"slug": "schetsboek-man"
+	},
+	"65": {
+		"name": "Schetsboek Paard",
+		"image": "/images/portfolio/schetsboek-paard.jpg",
+		"category": "ets",
+		"slug": "schetsboek-paard"
+	},
+	"66": {
+		"name": "Schetsboek Vrouw",
+		"image": "/images/portfolio/schetsboek-vrouw.jpg",
+		"category": "ets",
+		"slug": "schetsboek-vrouw"
+	},
+	"67": {
+		"name": "Standpunt 1",
+		"image": "/images/portfolio/standpunt-1.jpg",
+		"category": "ets",
+		"slug": "standpunt-1"
+	},
+	"68": {
+		"name": "Standpunt 2",
+		"image": "/images/portfolio/standpunt-2.jpg",
+		"category": "ets",
+		"slug": "standpunt-2"
+	},
+	"69": {
+		"name": "Tulpenvaas",
+		"image": "/images/portfolio/tulpenvaas.jpg",
+		"category": "ets",
+		"slug": "tulpenvaas"
+	},
+	"70": {
+		"name": "Universum",
+		"image": "/images/portfolio/universum.jpg",
+		"category": "ets",
+		"slug": "universum"
+	},
+	"71": {
+		"name": "Venus En Mars",
+		"image": "/images/portfolio/venus-en-mars.jpg",
+		"category": "ets",
+		"slug": "venus-en-mars"
+	},
+	"72": {
+		"name": "Work No 3 Ritthemse Vijver",
+		"image": "/images/portfolio/Work-no-3-Ritthemse-vijver-2048x1536.jpg",
+		"category": "ets",
+		"slug": "work-no-3-ritthemse-vijver"
+	},
+	"73": {
+		"name": "Woud Van Cybele",
+		"image": "/images/portfolio/woud-van-cybele.jpg",
+		"category": "ets",
+		"slug": "woud-van-cybele"
+	},
+	"74": {
+		"name": "Zinnen",
+		"image": "/images/portfolio/zinnen.jpg",
+		"category": "ets",
+		"slug": "zinnen"
+	}
+}
