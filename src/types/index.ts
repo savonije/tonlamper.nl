@@ -1,6 +1,6 @@
 export interface Artwork {
 	name: string
-	image: string
+	images: string[]
 	category: string
 	slug: string
 	text: string

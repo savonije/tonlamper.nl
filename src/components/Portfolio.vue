@@ -27,7 +27,7 @@ console.log(shuffledArtworks)
 		<figure v-for="artwork in shuffledArtworks">
 			<a :href="'/portfolio/' + artwork.slug">
 				<img
-					:src="artwork.image"
+					:src="artwork.images[0]"
 					:alt="artwork.name"
 					class="mb-3 h-auto w-full max-w-full"
 					width="400"
