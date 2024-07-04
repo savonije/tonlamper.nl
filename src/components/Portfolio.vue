@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import artworks from '@components/kunstwerken.json'
+import artworks from '@components/artworks.json'
 
 function shuffleObject(obj) {
 	const entries = Object.entries(obj)
