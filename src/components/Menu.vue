@@ -24,7 +24,7 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 </script>
 
 <template>
-	<div class="md:hidden">
+	<div class="lg:hidden">
 		<button
 			role="button"
 			@click="openMenu(true)"
@@ -49,19 +49,28 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 		<a href="/cursussen" @click="isMenuOpen = false">Cursussen</a>
 		<a href="/exposities" @click="isMenuOpen = false">Exposities</a>
 		<a href="/contact" @click="isMenuOpen = false">Contact</a>
+
+		<button
+			role="button"
+			@click="openMenu(false)"
+			class="absolute right-5 top-5 text-3xl text-black"
+			aria-label="Sluit menu"
+		>
+			&times;
+		</button>
 	</nav>
 </template>
 
 <style>
 .main-menu {
-	@apply absolute right-0 top-0 z-50 flex h-full w-[60%] translate-x-full flex-col items-center gap-3 bg-white p-9 text-black shadow-lg transition-transform md:relative md:w-full md:translate-x-0 md:flex-row md:justify-end md:gap-9 md:p-0 md:shadow-none;
+	@apply fixed right-0 top-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-white p-20 text-black shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
 
 	&.open {
 		@apply translate-x-0;
 	}
 
 	a {
-		@apply block;
+		@apply block w-full text-lg font-bold lg:w-auto lg:text-sm lg:font-normal;
 
 		.active {
 			@apply underline underline-offset-8;

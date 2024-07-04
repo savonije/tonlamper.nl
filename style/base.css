@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	@apply h-full leading-7 text-gray-500;
+	@apply h-full overflow-x-hidden leading-7 text-gray-500;
 }
 
 .container {

@@ -22,7 +22,7 @@ const shuffledArtworks: Artworks = shuffleObject(artworks)
 </script>
 
 <template>
-	<div class="columns-3 gap-3">
+	<div class="columns-2 gap-3 lg:columns-3">
 		<figure v-for="artwork in shuffledArtworks">
 			<a :href="'/portfolio/' + artwork.slug">
 				<img
@@ -49,6 +49,6 @@ figure {
 }
 
 figcaption {
-	@apply absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-white/90 text-2xl font-bold text-black opacity-0 transition-opacity;
+	@apply absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-white/90 text-center text-2xl font-bold text-black opacity-0 transition-opacity;
 }
 </style>
