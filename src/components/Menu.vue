@@ -53,7 +53,7 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 		<button
 			role="button"
 			@click="openMenu(false)"
-			class="absolute right-5 top-5 text-3xl text-black"
+			class="absolute right-5 top-5 text-3xl text-black lg:hidden"
 			aria-label="Sluit menu"
 		>
 			&times;
