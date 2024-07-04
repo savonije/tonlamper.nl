@@ -19,7 +19,6 @@ function shuffleObject(obj: Artworks) {
 }
 
 const shuffledArtworks: Artworks = shuffleObject(artworks)
-console.log(shuffledArtworks)
 </script>
 
 <template>
