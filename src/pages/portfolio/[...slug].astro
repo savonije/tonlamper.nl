@@ -12,15 +12,15 @@ export async function getStaticPaths() {
 		}
 	})
 
-	return pages.map(({ slug, name, image }) => {
+	return pages.map(({ slug, name, image, text }) => {
 		return {
 			params: { slug },
-			props: { name, image }
+			props: { name, image, text }
 		}
 	})
 }
 
-const { name, image } = Astro.props
+const { name, image, text } = Astro.props
 const title = `Ton Lamper - ${name}`
 ---
 
@@ -29,6 +29,8 @@ const title = `Ton Lamper - ${name}`
 		<h1 class="mb-0">{name}</h1>
 		<a href="/portfolio" class="inline-flex items-center">‹ Terug naar portfolio</a>
 	</div>
+
+	{text && <div class="mb-9" set:html={text} />}
 
 	<div class="flex justify-center">
 		<img src={image} alt={name} class="max-h-[800px]" height="800" />

@@ -3,6 +3,7 @@ export interface Artwork {
 	image: string
 	category: string
 	slug: string
+	text: string
 }
 
 export interface Artworks {
