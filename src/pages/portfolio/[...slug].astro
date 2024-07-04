@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import artworks from '@components/artworks.json'
+import type { Artwork } from '../../types'
 
 export async function getStaticPaths() {
 	const pages = Object.keys(artworks).map((key) => {

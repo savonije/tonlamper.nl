@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import artworks from '@components/artworks.json'
+import type { Artworks } from '../types'
 
-function shuffleObject(obj) {
+function shuffleObject(obj: Artworks) {
 	const entries = Object.entries(obj)
 
 	for (let i = entries.length - 1; i > 0; i--) {
@@ -9,7 +10,7 @@ function shuffleObject(obj) {
 		;[entries[i], entries[j]] = [entries[j], entries[i]]
 	}
 
-	const shuffledObj = {}
+	const shuffledObj: Artworks = {}
 	entries.forEach(([key, value], index) => {
 		shuffledObj[index + 1] = value
 	})
@@ -17,7 +18,8 @@ function shuffleObject(obj) {
 	return shuffledObj
 }
 
-const shuffledArtworks = shuffleObject(artworks)
+const shuffledArtworks: Artworks = shuffleObject(artworks)
+console.log(shuffledArtworks)
 </script>
 
 <template>
