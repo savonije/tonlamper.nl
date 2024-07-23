@@ -315,20 +315,28 @@ import Layout from '@layouts/Layout.astro'
 				<td>&nbsp;</td>
 				<td>Kunstkijk Goeree-Overflakkee. Battenoord 13, Nieuwe-Tonge: 9 t/m 12 mei. </td>
 			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					Project Cultuurcompagnon, initiatief Cultuurkwadraat samenwerking met graficus Burhan
+					Saleh, gevlucht uit Irak.<br />
+					<small>Presentatie op zondag 4 augustus in Cultuurhuis Kuiperspoort 18 Middelburg.</small>
+				</td>
+			</tr>
 		</tbody>
 	</table>
+
+	<style>
+		table {
+			@apply border-0;
+		}
+
+		td {
+			@apply p-2;
+		}
+
+		tr:nth-child(odd) {
+			@apply bg-gray-100;
+		}
+	</style>
 </Layout>
-
-<style>
-	table {
-		@apply border-0;
-	}
-
-	td {
-		@apply p-2;
-	}
-
-	tr:nth-child(odd) {
-		@apply bg-gray-100;
-	}
-</style>
