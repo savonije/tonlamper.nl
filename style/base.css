@@ -56,6 +56,14 @@ h5 {
 	}
 }
 
+nav a {
+	@apply no-underline;
+}
+
+a {
+	@apply underline;
+}
+
 .body-font {
 	font-family: 'Raleway', sans-serif;
 }
