@@ -43,7 +43,7 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 		@keydown.esc="isMenuOpen = false"
 	>
 		<a href="/" @click="isMenuOpen = false">Home</a>
-		<a href="/de-kunstenaar" @click="isMenuOpen = false">De Kunstenaar</a>
+		<a href="/de-kunstenaar" @click="isMenuOpen = false">Kunstenaar</a>
 		<a href="/biografie" @click="isMenuOpen = false">Biografie</a>
 		<a href="/portfolio" @click="isMenuOpen = false">Portfolio</a>
 		<a href="/cursussen" @click="isMenuOpen = false">Cursussen</a>
