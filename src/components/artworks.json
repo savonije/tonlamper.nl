@@ -210,45 +210,45 @@
 		"text": ""
 	},
 	"31": {
-		"name": "Kleine Ridder 2019",
+		"name": "Kleine Ridder",
 		"images": ["/images/portfolio/Kleine-Ridder-2019-IMG_1943.jpg"],
 		"category": "ets",
-		"slug": "kleine-ridder-2019",
+		"slug": "kleine-ridder",
 		"text": ""
 	},
 	"32": {
-		"name": "Kleurenets 1 In Paradisum",
+		"name": "In Paradisum",
 		"images": ["/images/portfolio/kleurenets-1-In-Paradisum-85-x-85-cm-23-2042x2048.jpg"],
 		"category": "ets",
-		"slug": "kleurenets-1-in-paradisum",
+		"slug": "in-paradisum",
 		"text": ""
 	},
 	"33": {
-		"name": "Kleurenets 2 Man",
+		"name": "Man",
 		"images": ["/images/portfolio/kleurenets-2-Man-30-x-30-cm-23-IMG_3955-1985x2048.jpg"],
 		"category": "ets",
-		"slug": "kleurenets-2-man",
+		"slug": "man",
 		"text": ""
 	},
 	"34": {
-		"name": "Kleurenets 3 Vrouw",
+		"name": "Vrouw",
 		"images": ["/images/portfolio/kleurenets-3-Vrouw-30-x30-cm-23-IMG_3954-2048x1988.jpg"],
 		"category": "ets",
-		"slug": "kleurenets-3-vrouw",
+		"slug": "vrouw",
 		"text": ""
 	},
 	"35": {
-		"name": "Kleurenets 4 Dier",
+		"name": "Dier",
 		"images": ["/images/portfolio/kleurenets-4-Dier-30-x-30-cm-23-IMG_3956-2048x1915.jpg"],
 		"category": "ets",
-		"slug": "kleurenets-4-dier",
+		"slug": "dier",
 		"text": ""
 	},
 	"36": {
-		"name": "Kleurenets 5 Plant",
+		"name": "Plant",
 		"images": ["/images/portfolio/kleurenets-5-Plant-30-x30-cm-23-IMG_3953-2048x2023.jpg"],
 		"category": "ets",
-		"slug": "kleurenets-5-plant",
+		"slug": "plant",
 		"text": ""
 	},
 	"37": {
@@ -501,10 +501,10 @@
 		"text": ""
 	},
 	"72": {
-		"name": "Work No 3 Ritthemse Vijver",
+		"name": "Ritthemse Vijver",
 		"images": ["/images/portfolio/Work-no-3-Ritthemse-vijver-2048x1536.jpg"],
 		"category": "ets",
-		"slug": "work-no-3-ritthemse-vijver",
+		"slug": "ritthemse-vijver",
 		"text": ""
 	},
 	"73": {
