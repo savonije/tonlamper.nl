@@ -396,10 +396,10 @@
 		"text": ""
 	},
 	"57": {
-		"name": "Porta 2",
+		"name": "Porta",
 		"images": ["/images/portfolio/porta-2.jpg"],
 		"category": "ets",
-		"slug": "porta-2",
+		"slug": "porta",
 		"text": ""
 	},
 	"58": {
