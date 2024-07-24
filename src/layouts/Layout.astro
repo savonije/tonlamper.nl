@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro'
+import { ViewTransitions } from 'astro:transitions'
 import '../../style/base.css'
 interface Props {
 	title: string
@@ -26,6 +27,7 @@ const { title } = Astro.props
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="flex h-full flex-col">
 		<Header />
