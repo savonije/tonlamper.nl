@@ -3,5 +3,47 @@ import Layout from '@layouts/Layout.astro'
 ---
 
 <Layout title="Ton Lamper - Exposities">
-	<span>Op dit moment zijn er geen exposities...</span>
+	<!-- <span>Op dit moment zijn er geen exposities...</span> -->
+
+	<div>
+		<h1>Exposities</h1>
+	</div>
+
+	<div class="grid grid-cols-1">
+		<div class="flex flex-col rounded border p-3 shadow lg:flex-row">
+			<div>
+				<img src="/images/exposities/uit-het-donker.jpg" alt="Expositie Uit het donker" />
+			</div>
+
+			<div class="flex-grow p-3 lg:w-1/3">
+				<h2>Expositie Uit het donker</h2>
+
+				<div class="mb-3">
+					<p class="font-bold">Locatie</p>
+					<p>Vestiging Goes Kolveniershof 106 4461 DB Goes</p>
+				</div>
+
+				<div class="mb-3">
+					<p class="font-bold">Datum</p>
+					<p>Dinsdag 1 oktober 2024 - donderdag 28 november</p>
+				</div>
+
+				<p class="mb-3">
+					Kunstenaars Burhan Saleh en Ton Lamper zijn in het kader van het project Cultuurcompagnon
+					aan elkaar gekoppeld. Beide kunstenaars hebben een grote voorkeur voor grafische
+					technieken, waarin de verbeelding van de mens een belangrijk onderdeel vormt. De
+					samenwerking inspireert beide kunstenaars en zorgt voor extra energie om elkaars werk te
+					ontdekken en nieuwe beelden te creëren waarin de mens, in het bijzonder het portret
+					centraal staat.
+				</p>
+
+				<a
+					href="https://oosterschelde.op-shop.nl/7483/expositie-uit-het-donker/01-10-2024"
+					target="_blank"
+				>
+					Meer informatie
+				</a>
+			</div>
+		</div>
+	</div>
 </Layout>
