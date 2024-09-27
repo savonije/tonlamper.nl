@@ -37,7 +37,20 @@ const { title } = Astro.props
 		</main>
 		<footer class="mt-12 border-t border-t-gray-300 py-6">
 			<div class="container mx-auto text-xs text-black">
-				&copy; {new Date().getFullYear()} Ton Lamper. All rights reserved.
+				<div class="flex justify-between gap-3">
+					<div>
+						&copy; {new Date().getFullYear()} Ton Lamper. All rights reserved.
+					</div>
+					<div class="flex gap-3">
+						<a href="https://www.instagram.com/tonlamper" target="_blank">
+							<img
+								src="/images/social/instagram.svg"
+								alt="Instagram"
+								class="inline-block h-6 w-6"
+							/>
+						</a>
+					</div>
+				</div>
 			</div>
 		</footer>
 	</body>
