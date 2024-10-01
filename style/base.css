@@ -4,12 +4,13 @@
 	--accent-dark: 49, 10, 101;
 }
 html {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Barlow', sans-serif;
 	@apply h-full;
 }
 
 body {
-	@apply h-full overflow-x-hidden leading-relaxed text-gray-500;
+	@apply h-full overflow-x-hidden leading-loose tracking-wide text-neutral-900;
+	-webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -25,7 +26,7 @@ h2,
 h3,
 h4,
 h5 {
-	@apply mb-[1em];
+	@apply mb-[1em] !font-light uppercase;
 }
 
 h1 {
@@ -48,8 +49,13 @@ h5 {
 	@apply font-bold text-black;
 }
 
+strong,
+b {
+	@apply font-medium;
+}
+
 .btn {
-	@apply inline-flex items-center justify-center rounded border px-5 py-3 font-bold transition-colors;
+	@apply inline-flex items-center justify-center rounded border px-5 py-3 font-medium transition-colors;
 
 	&:hover {
 		@apply bg-slate-100;
@@ -57,7 +63,7 @@ h5 {
 }
 
 nav a {
-	@apply no-underline;
+	@apply uppercase no-underline;
 }
 
 a {
@@ -65,5 +71,5 @@ a {
 }
 
 .body-font {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Barlow', sans-serif;
 }

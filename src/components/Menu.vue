@@ -63,7 +63,7 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 
 <style>
 .main-menu {
-	@apply fixed right-0 top-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-white p-20 text-black shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
+	@apply fixed right-0 top-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-white p-20 text-neutral-700 shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
 
 	&.open {
 		@apply translate-x-0;
