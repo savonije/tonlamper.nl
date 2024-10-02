@@ -6,7 +6,7 @@ const nav = ref(null)
 
 onClickOutside(nav, () => (isMenuOpen.value = false))
 
-const isMenuOpen = ref<boolean>(false)
+const isMenuOpen = ref<boolean>(true)
 
 const openMenu = (action: boolean) => {
 	isMenuOpen.value = action
@@ -18,7 +18,13 @@ const closeOnEscape = (event: KeyboardEvent) => {
 	}
 }
 
-onMounted(() => document.addEventListener('keydown', closeOnEscape))
+onMounted(() => {
+	if (window.innerWidth < 1024) {
+		isMenuOpen.value = false
+	}
+
+	document.addEventListener('keydown', closeOnEscape)
+})
 
 onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 </script>
