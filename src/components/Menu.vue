@@ -6,7 +6,7 @@ const nav = ref(null)
 
 onClickOutside(nav, () => (isMenuOpen.value = false))
 
-const isMenuOpen = ref<boolean>(true)
+const isMenuOpen = ref<boolean>(false)
 
 const openMenu = (action: boolean) => {
 	isMenuOpen.value = action
@@ -45,7 +45,6 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 	<nav
 		:class="['main-menu', isMenuOpen ? 'open' : 'closed']"
 		ref="nav"
-		:aria-hidden="!isMenuOpen"
 		@keydown.esc="isMenuOpen = false"
 	>
 		<a href="/" @click="isMenuOpen = false">Home</a>
