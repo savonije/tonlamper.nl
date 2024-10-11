@@ -614,17 +614,17 @@
 		"text": ""
 	},
 	"82": {
-		"name": "Martyrus",
+		"name": "Martyres",
 		"images": [
-			"/images/portfolio/martyrus/lino-martyrus-1.jpeg",
-			"/images/portfolio/martyrus/lino-martyrus-2.jpeg",
-			"/images/portfolio/martyrus/lino-martyrus-3.jpeg",
-			"/images/portfolio/martyrus/ets-martyrus_30_tronies.jpeg",
-			"/images/portfolio/martyrus/ets-martyrus_geboeid.jpeg",
-			"/images/portfolio/martyrus/lino-martyrus_2_figuren.jpeg"
+			"/images/portfolio/martyres/lino-martyres-1.jpeg",
+			"/images/portfolio/martyres/lino-martyres-2.jpeg",
+			"/images/portfolio/martyres/lino-martyres-3.jpeg",
+			"/images/portfolio/martyres/ets-martyres_30_tronies.jpeg",
+			"/images/portfolio/martyres/ets-martyres_geboeid.jpeg",
+			"/images/portfolio/martyres/lino-martyres_2_figuren.jpeg"
 		],
 		"category": "linosnede",
-		"slug": "martyrus",
+		"slug": "martyres",
 		"text": ""
 	}
 }
