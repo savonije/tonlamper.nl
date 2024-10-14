@@ -2,252 +2,252 @@
 	"1": {
 		"name": "Animalia Centaur",
 		"images": ["/images/portfolio/animalia-centaur.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "animalia-centaur",
 		"text": ""
 	},
 	"2": {
 		"name": "Animalia Hercules",
 		"images": ["/images/portfolio/animalia-hercules.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "animalia-hercules",
 		"text": ""
 	},
 	"3": {
 		"name": "Animalia Taurus",
 		"images": ["/images/portfolio/animalia-taurus.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "animalia-taurus",
 		"text": ""
 	},
 	"4": {
 		"name": "Atlas",
 		"images": ["/images/portfolio/atlas.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "atlas",
 		"text": ""
 	},
 	"5": {
 		"name": "Bacchanaal",
 		"images": ["/images/portfolio/bacchanaal.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "bacchanaal",
 		"text": ""
 	},
 	"6": {
 		"name": "Baders",
 		"images": ["/images/portfolio/baders.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "baders",
 		"text": ""
 	},
 	"7": {
 		"name": "Beest",
 		"images": ["/images/portfolio/beest.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "beest",
 		"text": ""
 	},
 	"8": {
 		"name": "Bestiarium",
 		"images": ["/images/portfolio/bestiarium.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "bestiarium",
 		"text": ""
 	},
 	"9": {
 		"name": "Chine De Commande",
 		"images": ["/images/portfolio/chine-de-commande.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "chine-de-commande",
 		"text": ""
 	},
 	"10": {
 		"name": "Constructie",
 		"images": ["/images/portfolio/constructie.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "constructie",
 		"text": ""
 	},
 	"11": {
 		"name": "Dansers",
 		"images": ["/images/portfolio/dansers.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "dansers",
 		"text": ""
 	},
 	"12": {
 		"name": "Daphne",
 		"images": ["/images/portfolio/daphne.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "daphne",
 		"text": ""
 	},
 	"13": {
 		"name": "Diana",
 		"images": ["/images/portfolio/diana.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "diana",
 		"text": ""
 	},
 	"14": {
 		"name": "Dood Van Adonis",
 		"images": ["/images/portfolio/dood-van-adonis.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "dood-van-adonis",
 		"text": ""
 	},
 	"15": {
 		"name": "Dossier",
 		"images": ["/images/portfolio/dossier.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "dossier",
 		"text": ""
 	},
 	"16": {
 		"name": "Duik",
 		"images": ["/images/portfolio/duik.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "duik",
 		"text": ""
 	},
 	"17": {
 		"name": "Europa",
 		"images": ["/images/portfolio/europa.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "europa",
 		"text": ""
 	},
 	"18": {
 		"name": "Eurydice",
 		"images": ["/images/portfolio/eurydice.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "eurydice",
 		"text": ""
 	},
 	"19": {
 		"name": "Figuren",
 		"images": ["/images/portfolio/figuren.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "figuren",
 		"text": ""
 	},
 	"20": {
 		"name": "Figures Du Corps",
 		"images": ["/images/portfolio/figures-du-corps.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "figures-du-corps",
 		"text": ""
 	},
 	"21": {
 		"name": "Flora",
 		"images": ["/images/portfolio/flora.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "flora",
 		"text": ""
 	},
 	"22": {
 		"name": "Ganymedes Ets",
 		"images": ["/images/portfolio/ganymedes-ets.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "ganymedes-ets",
 		"text": ""
 	},
 	"23": {
 		"name": "Ganymedes Lino",
 		"images": ["/images/portfolio/ganymedes-lino.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "ganymedes-lino",
 		"text": ""
 	},
 	"24": {
 		"name": "Geboorte Van Adonis",
 		"images": ["/images/portfolio/geboorte-van-adonis.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "geboorte-van-adonis",
 		"text": ""
 	},
 	"25": {
 		"name": "Gladius",
 		"images": ["/images/portfolio/gladius.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "gladius",
 		"text": ""
 	},
 	"26": {
 		"name": "Groot Hoefblad",
 		"images": ["/images/portfolio/Groot-hoefblad.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "groot-hoefblad",
 		"text": ""
 	},
 	"27": {
 		"name": "Hera",
 		"images": ["/images/portfolio/hera.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "hera",
 		"text": ""
 	},
 	"28": {
 		"name": "Hyacinthus",
 		"images": ["/images/portfolio/hyacinthus.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "hyacinthus",
 		"text": ""
 	},
 	"29": {
 		"name": "Io",
 		"images": ["/images/portfolio/io.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "io",
 		"text": ""
 	},
 	"30": {
 		"name": "Kinderen Van Apollo",
 		"images": ["/images/portfolio/kinderen-van-apollo.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "kinderen-van-apollo",
 		"text": ""
 	},
 	"31": {
 		"name": "Kleine Ridder",
 		"images": ["/images/portfolio/Kleine-Ridder-2019-IMG_1943.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "kleine-ridder",
 		"text": ""
 	},
 	"32": {
 		"name": "In Paradisum",
 		"images": ["/images/portfolio/kleurenets-1-In-Paradisum-85-x-85-cm-23-2042x2048.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "in-paradisum",
 		"text": ""
 	},
 	"33": {
 		"name": "Man",
 		"images": ["/images/portfolio/kleurenets-2-Man-30-x-30-cm-23-IMG_3955-1985x2048.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "man",
 		"text": ""
 	},
 	"34": {
 		"name": "Vrouw",
 		"images": ["/images/portfolio/kleurenets-3-Vrouw-30-x30-cm-23-IMG_3954-2048x1988.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "vrouw",
 		"text": ""
 	},
 	"35": {
 		"name": "Dier",
 		"images": ["/images/portfolio/kleurenets-4-Dier-30-x-30-cm-23-IMG_3956-2048x1915.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "dier",
 		"text": ""
 	},
 	"36": {
 		"name": "Plant",
 		"images": ["/images/portfolio/kleurenets-5-Plant-30-x30-cm-23-IMG_3953-2048x2023.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "plant",
 		"text": ""
 	},
@@ -256,7 +256,7 @@
 		"images": [
 			"/images/portfolio/Linosnede-Poelbos-I-2021Ton-Lamper-www.tonlamper.nl_-2032x2048.jpg"
 		],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "linosnede-poelbos-i",
 		"text": ""
 	},
@@ -265,259 +265,259 @@
 		"images": [
 			"/images/portfolio/Linosnede-Poelbos-II-2021-Ton-Lamper-www.tonlamper.nl_-2048x2023.jpg"
 		],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "linosnede-poelbos-ii",
 		"text": ""
 	},
 	"39": {
 		"name": "Man En Paard",
 		"images": ["/images/portfolio/man-en-paard.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "man-en-paard",
 		"text": ""
 	},
 	"40": {
 		"name": "Mantel Der Liefde Boetekleed",
 		"images": ["/images/portfolio/Mantel-der-liefde-boetekleed-2018-IMG_1945.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "mantel-der-liefde-boetekleed",
 		"text": ""
 	},
 	"41": {
 		"name": "Medusa",
 		"images": ["/images/portfolio/medusa.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "medusa",
 		"text": ""
 	},
 	"42": {
 		"name": "Minotaurus",
 		"images": ["/images/portfolio/minotaurus.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "minotaurus",
 		"text": ""
 	},
 	"43": {
 		"name": "Model",
 		"images": ["/images/portfolio/model.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "model",
 		"text": ""
 	},
 	"44": {
 		"name": "Narcissus 1",
 		"images": ["/images/portfolio/narcissus-1.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "narcissus-1",
 		"text": ""
 	},
 	"45": {
 		"name": "Narcissus 2",
 		"images": ["/images/portfolio/narcissus-2.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "narcissus-2",
 		"text": ""
 	},
 	"46": {
 		"name": "Narcissus",
 		"images": ["/images/portfolio/narcissus.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "narcissus",
 		"text": ""
 	},
 	"47": {
 		"name": "Ornithologie",
 		"images": ["/images/portfolio/ornithologie.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "ornithologie",
 		"text": ""
 	},
 	"48": {
 		"name": "Orpheus",
 		"images": ["/images/portfolio/orpheus.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "orpheus",
 		"text": ""
 	},
 	"49": {
 		"name": "Paard",
 		"images": ["/images/portfolio/paard.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "paard",
 		"text": ""
 	},
 	"50": {
 		"name": "Pasiphae",
 		"images": ["/images/portfolio/pasiphae.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "pasiphae",
 		"text": ""
 	},
 	"51": {
 		"name": "Patroon",
 		"images": ["/images/portfolio/patroon.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "patroon",
 		"text": ""
 	},
 	"52": {
 		"name": "Perspectief 1",
 		"images": ["/images/portfolio/perspectief-1.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "perspectief-1",
 		"text": ""
 	},
 	"53": {
 		"name": "Perspectief 2",
 		"images": ["/images/portfolio/perspectief-2.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "perspectief-2",
 		"text": ""
 	},
 	"54": {
 		"name": "Piramus En Thisbe",
 		"images": ["/images/portfolio/piramus-en-thisbe.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "piramus-en-thisbe",
 		"text": ""
 	},
 	"55": {
 		"name": "Plons",
 		"images": ["/images/portfolio/plons.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "plons",
 		"text": ""
 	},
 	"56": {
 		"name": "Pomona",
 		"images": ["/images/portfolio/pomona.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "pomona",
 		"text": ""
 	},
 	"57": {
 		"name": "Porta",
 		"images": ["/images/portfolio/porta-2.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "porta",
 		"text": ""
 	},
 	"58": {
 		"name": "Rie Maer Op De Torens",
 		"images": ["/images/portfolio/rie-maer-op-de-torens.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "rie-maer-op-de-torens",
 		"text": ""
 	},
 	"59": {
 		"name": "Ritthemse Kreek",
 		"images": ["/images/portfolio/Ritthemse-kreek.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "ritthemse-kreek",
 		"text": ""
 	},
 	"60": {
 		"name": "Roeiers",
 		"images": ["/images/portfolio/roeiers.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "roeiers",
 		"text": ""
 	},
 	"61": {
 		"name": "Route",
 		"images": ["/images/portfolio/route.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "route",
 		"text": ""
 	},
 	"62": {
 		"name": "Salto",
 		"images": ["/images/portfolio/salto.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "salto",
 		"text": ""
 	},
 	"63": {
 		"name": "Sater",
 		"images": ["/images/portfolio/sater.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "sater",
 		"text": ""
 	},
 	"64": {
 		"name": "Schetsboek Man",
 		"images": ["/images/portfolio/schetsboek-man.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "schetsboek-man",
 		"text": ""
 	},
 	"65": {
 		"name": "Schetsboek Paard",
 		"images": ["/images/portfolio/schetsboek-paard.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "schetsboek-paard",
 		"text": ""
 	},
 	"66": {
 		"name": "Schetsboek Vrouw",
 		"images": ["/images/portfolio/schetsboek-vrouw.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "schetsboek-vrouw",
 		"text": ""
 	},
 	"67": {
 		"name": "Standpunt 1",
 		"images": ["/images/portfolio/standpunt-1.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "standpunt-1",
 		"text": ""
 	},
 	"68": {
 		"name": "Standpunt 2",
 		"images": ["/images/portfolio/standpunt-2.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "standpunt-2",
 		"text": ""
 	},
 	"69": {
 		"name": "Tulpenvaas",
 		"images": ["/images/portfolio/tulpenvaas.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "tulpenvaas",
 		"text": ""
 	},
 	"70": {
 		"name": "Universum",
 		"images": ["/images/portfolio/universum.jpg"],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "universum",
 		"text": ""
 	},
 	"71": {
 		"name": "Venus En Mars",
 		"images": ["/images/portfolio/venus-en-mars.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "venus-en-mars",
 		"text": ""
 	},
 	"72": {
 		"name": "Ritthemse Vijver",
 		"images": ["/images/portfolio/Work-no-3-Ritthemse-vijver-2048x1536.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "ritthemse-vijver",
 		"text": ""
 	},
 	"73": {
 		"name": "Woud Van Cybele",
 		"images": ["/images/portfolio/woud-van-cybele.jpg"],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "woud-van-cybele",
 		"text": ""
 	},
 	"74": {
 		"name": "Zinnen",
 		"images": ["/images/portfolio/zinnen.jpg"],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "zinnen",
 		"text": ""
 	},
@@ -531,7 +531,7 @@
 			"/images/portfolio/de-vloed/De-Vloed-plaat-4-IMG_3656-1576x2048.jpg",
 			"/images/portfolio/de-vloed/De-Vloed-plaat-5-IMG_3645-scaled.jpg"
 		],
-		"category": "ets",
+		"category": ["lino"],
 		"slug": "de-vloed",
 		"text": "<strong>Nooit meer een ramp als ‘53</strong><br/> De Vloed - een werk waarin de impact van de ramp, de strijd tegen het water, menselijk ingrijpen in de natuur en de zorg voor de toekomst ligt besloten èn het moet mensen bewust maken dat grote inzet nodig is. Reden om voor een arbeidsintensief en ambitieus ontwerp te kiezen.<br/><br/> De Vloed bestaat uit vijf grote linoleumsneden, dicht naast elkaar gepresenteerd en wand vullend. Een woeste golf, een muur van water, in zwart gedrukt over een grijsblauw raster. Het raster telt 1836 vierkanten, het aantal slachtoffers van de ramp in 1953. De grijsblauwe kleur en vierkante vorm verwijzen naar de sobere gedenkstenen die je vindt op kerkhoven waar slachtoffers begraven liggen. Een vierkante abstracte vorm die het onbeschrijfelijke leed van de slachtoffers afdekt, alle leed laat zich niet in een realistische voorstelling vatten. De vele vierkanten tekenen de overweldigende omvang van de vernietigende vloed. Door slachtoffers zo te verbeelden, zonder verwijzing naar plaats of individu, ontstaat een universeel beeld voor alle slachtoffers van het water, vroeger en in deze tijd. De vierkanten verwijzen ook naar beton en basalt dat gebruikt wordt om het stijgende water te bedwingen. Maar het zijn ook bouwstenen voor de toekomst die, gebaseerd op het menselijk leed van 1953, ingrijpen op korte termijn noodzakelijk maakt. Men kan niet lijdzaam afwachten, men moet nu bouwen aan het nieuwe, meest omvangrijke deltaplan ooit: ons klimaat, onze planeet, ons bestaan in het universum.<br/><br/> Een tour de force!"
 	},
@@ -544,7 +544,7 @@
 			"/images/portfolio/kabinet-des-menschen/IMG_2014-2048x1536.jpg",
 			"/images/portfolio/kabinet-des-menschen/IMG_2018-1536x2048.jpg"
 		],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "kabinet-des-menschen",
 		"text": ""
 	},
@@ -557,7 +557,7 @@
 			"/images/portfolio/kapstok/IMG_2445-2048x1536.jpg",
 			"/images/portfolio/kapstok/IMG_2446-1536x2048.jpg"
 		],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "kapstok",
 		"text": ""
 	},
@@ -571,7 +571,7 @@
 			"/images/portfolio/macht-en-pracht/macht-en-pracht-6.jpg",
 			"/images/portfolio/macht-en-pracht/macht-en-pracht.jpg"
 		],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "macht-en-pracht",
 		"text": ""
 	},
@@ -584,7 +584,7 @@
 			"/images/portfolio/pandora/IMG_4623.jpg",
 			"/images/portfolio/pandora/IMG_4624.jpg"
 		],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "pandora",
 		"text": ""
 	},
@@ -596,7 +596,7 @@
 			"/images/portfolio/sex-achter-de-dijken/IMG_2248-ingelijst-met-etsplaten-wie-wat-waar-wanneer-waarom-en-hoe-Ton-Lamper-2022-1966x2048.jpg",
 			"/images/portfolio/sex-achter-de-dijken/IMG_2253-1558x2048.jpg"
 		],
-		"category": "ets",
+		"category": ["ets"],
 		"slug": "achter-de-dijken",
 		"text": ""
 	},
@@ -609,7 +609,7 @@
 			"/images/portfolio/tijd/IMG_1703-1536x2048.jpg",
 			"/images/portfolio/tijd/IMG_1706-2048x1536.jpg"
 		],
-		"category": "ets",
+		"category": ["ruimtelijk"],
 		"slug": "tijd",
 		"text": ""
 	},
@@ -623,7 +623,7 @@
 			"/images/portfolio/martyres/ets-martyres_geboeid.jpeg",
 			"/images/portfolio/martyres/lino-martyres_2_figuren.jpeg"
 		],
-		"category": "linosnede",
+		"category": ["lino", "ets"],
 		"slug": "martyres",
 		"text": ""
 	}
