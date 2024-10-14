@@ -48,8 +48,8 @@ const selectCategory = (category: string) => {
 					:src="artwork.images[0]"
 					:alt="artwork.name"
 					class="mb-3 h-auto w-full max-w-full"
-					width="400"
-					height="300"
+					width="300"
+					height="400"
 					loading="lazy"
 				/>
 				<figcaption>{{ artwork.name }}</figcaption>
