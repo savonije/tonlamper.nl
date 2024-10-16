@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import artworks from '@components/artworks.json'
+import artworks from '@data/artworks.json'
 
-const categories = ['ets', 'lino', 'ruimtelijk']
+import { categories } from '@utils/constants'
 
 const reversedArtworks = Object.values(artworks).reverse()
 

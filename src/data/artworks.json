@@ -384,7 +384,7 @@
 	"55": {
 		"name": "Plons",
 		"images": ["/images/portfolio/plons.jpg"],
-		"category": ["ets"],
+		"category": ["schilderij"],
 		"slug": "plons",
 		"text": ""
 	},
@@ -433,7 +433,7 @@
 	"62": {
 		"name": "Salto",
 		"images": ["/images/portfolio/salto.jpg"],
-		"category": ["ets"],
+		"category": ["schilderij"],
 		"slug": "salto",
 		"text": ""
 	},
