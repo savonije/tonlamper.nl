@@ -609,7 +609,7 @@
 		],
 		"category": ["lino"],
 		"slug": "martyres-lino",
-		"text": ""
+		"text": "<strong>Martyres 2024</strong><br/> Ton Lamper en de Iraaks, Turkmeense graficus Burhan Saleh werken samen. Deze samenwerking is onderdeel van het project Cultuurcompagnon, een initiatief van Stichting Cultuurkwadraat Middelburg, waarbij een Zeeuwse kunstenaar is gekoppeld aan een kunstenaar met een migratieachtergrond. Ze maken een serie grafische werken, bestaande uit etsen, linosneden en houtsneden met hetzelfde formaat. De samenwerking inspireert beide kunstenaars en zorgt voor extra energie om elkaars werk te ontdekken en nieuwe beelden te creëren waarin de mens, in het bijzonder het portret centraal staat. Er ontstaat gaandeweg een serie expressieve beelden, vooral uitgevoerd in sterke zwart/wit contrasten met beperkte kleuraccenten. Beelden waarbij het accent vooral ligt op de gekwelde en angstige mens, een thema dat verwijst naar de actualiteit waarin mensen slachtoffer zijn van polarisatie, bedreiging en geweld. Een onderwerp dat helaas zo oud is als de mensheid zelf. Dit onderwerp is mede ontstaan door de turbulente voorgeschiedenis van Burhan. Bij Ton op het atelier lagen een aantal werken met als thema martelaar, alleen die waren ter zijde gelegd. De tijd was kennelijk nog niet rijp voor dit thema. Maar door het project Cultuurcompagnon en daarnaast de huidige politieke spanningen en conflicten in de wereld en het lastige kunst- en cultuurklimaat in Nederland diende het thema zich opnieuw en als vanzelf aan. De mens, de kunstenaar en de kunst als martelaar."
 	},
 	"83": {
 		"name": "Martyres",
@@ -619,6 +619,20 @@
 		],
 		"category": ["ets"],
 		"slug": "martyres-ets",
-		"text": ""
+		"text": "<strong>Martyres 2024</strong><br/> Ton Lamper en de Iraaks, Turkmeense graficus Burhan Saleh werken samen. Deze samenwerking is onderdeel van het project Cultuurcompagnon, een initiatief van Stichting Cultuurkwadraat Middelburg, waarbij een Zeeuwse kunstenaar is gekoppeld aan een kunstenaar met een migratieachtergrond. Ze maken een serie grafische werken, bestaande uit etsen, linosneden en houtsneden met hetzelfde formaat. De samenwerking inspireert beide kunstenaars en zorgt voor extra energie om elkaars werk te ontdekken en nieuwe beelden te creëren waarin de mens, in het bijzonder het portret centraal staat. Er ontstaat gaandeweg een serie expressieve beelden, vooral uitgevoerd in sterke zwart/wit contrasten met beperkte kleuraccenten. Beelden waarbij het accent vooral ligt op de gekwelde en angstige mens, een thema dat verwijst naar de actualiteit waarin mensen slachtoffer zijn van polarisatie, bedreiging en geweld. Een onderwerp dat helaas zo oud is als de mensheid zelf. Dit onderwerp is mede ontstaan door de turbulente voorgeschiedenis van Burhan. Bij Ton op het atelier lagen een aantal werken met als thema martelaar, alleen die waren ter zijde gelegd. De tijd was kennelijk nog niet rijp voor dit thema. Maar door het project Cultuurcompagnon en daarnaast de huidige politieke spanningen en conflicten in de wereld en het lastige kunst- en cultuurklimaat in Nederland diende het thema zich opnieuw en als vanzelf aan. De mens, de kunstenaar en de kunst als martelaar."
+	},
+	"84": {
+		"name": "Martyres",
+		"images": [
+			"/images/portfolio/martyres/lino-martyres-1.jpeg",
+			"/images/portfolio/martyres/lino-martyres-2.jpeg",
+			"/images/portfolio/martyres/lino-martyres-3.jpeg",
+			"/images/portfolio/martyres/lino-martyres_2_figuren.jpeg",
+			"/images/portfolio/martyres/ets-martyres_30_tronies.jpeg",
+			"/images/portfolio/martyres/ets-martyres_geboeid.jpeg"
+		],
+		"category": [],
+		"slug": "martyres",
+		"text": "<strong>Martyres 2024</strong><br/> Ton Lamper en de Iraaks, Turkmeense graficus Burhan Saleh werken samen. Deze samenwerking is onderdeel van het project Cultuurcompagnon, een initiatief van Stichting Cultuurkwadraat Middelburg, waarbij een Zeeuwse kunstenaar is gekoppeld aan een kunstenaar met een migratieachtergrond. Ze maken een serie grafische werken, bestaande uit etsen, linosneden en houtsneden met hetzelfde formaat. De samenwerking inspireert beide kunstenaars en zorgt voor extra energie om elkaars werk te ontdekken en nieuwe beelden te creëren waarin de mens, in het bijzonder het portret centraal staat. Er ontstaat gaandeweg een serie expressieve beelden, vooral uitgevoerd in sterke zwart/wit contrasten met beperkte kleuraccenten. Beelden waarbij het accent vooral ligt op de gekwelde en angstige mens, een thema dat verwijst naar de actualiteit waarin mensen slachtoffer zijn van polarisatie, bedreiging en geweld. Een onderwerp dat helaas zo oud is als de mensheid zelf. Dit onderwerp is mede ontstaan door de turbulente voorgeschiedenis van Burhan. Bij Ton op het atelier lagen een aantal werken met als thema martelaar, alleen die waren ter zijde gelegd. De tijd was kennelijk nog niet rijp voor dit thema. Maar door het project Cultuurcompagnon en daarnaast de huidige politieke spanningen en conflicten in de wereld en het lastige kunst- en cultuurklimaat in Nederland diende het thema zich opnieuw en als vanzelf aan. De mens, de kunstenaar en de kunst als martelaar."
 	}
 }
