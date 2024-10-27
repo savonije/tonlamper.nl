@@ -10,12 +10,14 @@ const selectedCategory = ref<string | null>(null)
 
 const filteredArtworks = computed(() => {
 	if (!selectedCategory.value) {
-		return reversedArtworks
+		return reversedArtworks.filter((artwork) => artwork.category !== null)
 	}
 
 	return reversedArtworks.filter(
 		(artwork) =>
-			selectedCategory.value !== null && artwork.category.includes(selectedCategory.value)
+			selectedCategory.value !== null &&
+			artwork.category !== null &&
+			artwork.category.includes(selectedCategory.value)
 	)
 })
 
