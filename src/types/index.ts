@@ -1,7 +1,7 @@
 export interface Artwork {
 	name: string
 	images: string[]
-	category: string[]
+	category: string[] | null
 	slug: string
 	text: string
 }
