@@ -1,1 +1,1 @@
-export const categories = ['ets', 'lino', 'ruimtelijk', 'schilderij']
+export const categories = ['ets', 'lino', 'ruimtelijk']

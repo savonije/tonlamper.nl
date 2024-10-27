@@ -381,13 +381,6 @@
 		"slug": "piramus-en-thisbe",
 		"text": ""
 	},
-	"55": {
-		"name": "Plons",
-		"images": ["/images/portfolio/plons.jpg"],
-		"category": ["schilderij"],
-		"slug": "plons",
-		"text": ""
-	},
 	"56": {
 		"name": "Pomona",
 		"images": ["/images/portfolio/pomona.jpg"],
@@ -428,13 +421,6 @@
 		"images": ["/images/portfolio/route.jpg"],
 		"category": ["ruimtelijk"],
 		"slug": "route",
-		"text": ""
-	},
-	"62": {
-		"name": "Salto",
-		"images": ["/images/portfolio/salto.jpg"],
-		"category": ["schilderij"],
-		"slug": "salto",
 		"text": ""
 	},
 	"63": {
@@ -619,12 +605,20 @@
 			"/images/portfolio/martyres/lino-martyres-1.jpeg",
 			"/images/portfolio/martyres/lino-martyres-2.jpeg",
 			"/images/portfolio/martyres/lino-martyres-3.jpeg",
-			"/images/portfolio/martyres/ets-martyres_30_tronies.jpeg",
-			"/images/portfolio/martyres/ets-martyres_geboeid.jpeg",
 			"/images/portfolio/martyres/lino-martyres_2_figuren.jpeg"
 		],
-		"category": ["lino", "ets"],
-		"slug": "martyres",
+		"category": ["lino"],
+		"slug": "martyres-lino",
+		"text": ""
+	},
+	"83": {
+		"name": "Martyres",
+		"images": [
+			"/images/portfolio/martyres/ets-martyres_30_tronies.jpeg",
+			"/images/portfolio/martyres/ets-martyres_geboeid.jpeg"
+		],
+		"category": ["ets"],
+		"slug": "martyres-ets",
 		"text": ""
 	}
 }
