@@ -54,7 +54,7 @@ const selectCategory = (category: string) => {
 					height="400"
 					loading="lazy"
 				/>
-				<figcaption>{{ artwork.name }}</figcaption>
+				<span class="figcaption">{{ artwork.name }}</span>
 			</a>
 		</figure>
 	</div>
@@ -72,12 +72,12 @@ button {
 figure {
 	@apply relative;
 
-	&:hover figcaption {
+	&:hover .figcaption {
 		@apply opacity-100;
 	}
 }
 
-figcaption {
+.figcaption {
 	@apply absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-white/90 text-center text-2xl font-bold text-black opacity-0 transition-opacity;
 }
 </style>
