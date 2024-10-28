@@ -25,6 +25,12 @@ const title = `Ton Lamper - ${name}`
 ---
 
 <Layout title={title}>
+	<div class="mb-6 text-sm">
+		/
+		<a href="/portfolio" class="inline-flex items-center no-underline">Portfolio</a>
+		// {name}
+	</div>
+
 	<div class="mb-9 text-center">
 		<h1 class="mb-0">{name}</h1>
 	</div>
@@ -33,9 +39,5 @@ const title = `Ton Lamper - ${name}`
 
 	<div class="flex flex-wrap justify-center gap-6">
 		{images.map((image) => <img src={image} alt={name} class="max-h-[800px]" height="800" />)}
-	</div>
-
-	<div class="mt-9">
-		<a href="/portfolio" class="inline-flex items-center text-gray-500"> ‹ Terug naar portfolio </a>
 	</div>
 </Layout>
