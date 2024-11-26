@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/efcd1e31-d656-4228-9a00-268de62c034c/deploy-status)](https://app.netlify.com/sites/tonlamper/deploys)
+
 # Astro Starter Kit: Basics
 
 ```sh
