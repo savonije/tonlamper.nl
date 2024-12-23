@@ -10,7 +10,9 @@ const selectedCategory = ref<string | null>(null)
 
 const filteredArtworks = computed(() => {
 	if (!selectedCategory.value) {
-		return reversedArtworks.filter((artwork) => artwork.category !== null)
+		return reversedArtworks.filter(
+			(artwork) => artwork.category !== null && !artwork.category.includes('uitgelicht')
+		)
 	}
 
 	return reversedArtworks.filter(
