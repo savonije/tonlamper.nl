@@ -1,0 +1,40 @@
+---
+import Layout from '@layouts/Layout.astro'
+---
+
+<Layout title="Ton Lamper - In de media">
+	<div>
+		<h1>In de media</h1>
+	</div>
+
+	<div class="grid gap-3 sm:grid-cols-2">
+		<article class="article">
+			<a
+				href="https://www.omroepzeeland.nl/nieuws/16968392/kunstenaars-ton-en-burhan-hebben-elkaar-gevonden-in-zeeland"
+				target="_blank"
+				class="no-underline"
+			>
+				<span class="text-sm uppercase text-gray-500"> 6 november 2024 </span>
+
+				<span class="mb-3 block text-xl font-bold">
+					Kunstenaars Ton en Burhan hebben elkaar gevonden in Zeeland
+				</span>
+
+				<img
+					src="/images/in-de-media/1b4cdbb09dd9.jpg"
+					alt="Anouk van Geffen (Cultuurkwadraat en kunstenaars Burhan Saleh en Ton Lamper"
+					width="1104"
+					height="620"
+					class="rounded"
+				/>
+				<div class="text-gray-500">&copy; Omroep Zeeland</div>
+			</a>
+		</article>
+	</div>
+</Layout>
+
+<style>
+	.article {
+		@apply rounded border p-3 shadow-md;
+	}
+</style>
