@@ -11,16 +11,14 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
 }
-
-@reference "tailwindcss";
 
 :root {
 	--accent: 136, 58, 234;
@@ -38,7 +36,7 @@ body {
 }
 
 .container {
-	@apply mx-auto px-6;
+	@apply mx-auto max-w-full px-6 sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px];
 }
 
 ::selection {
