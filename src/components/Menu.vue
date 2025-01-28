@@ -58,7 +58,7 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 		<button
 			role="button"
 			@click="openMenu(false)"
-			class="absolute right-5 top-5 text-3xl text-black lg:hidden"
+			class="absolute top-5 right-5 text-3xl text-black lg:hidden"
 			aria-label="Sluit menu"
 		>
 			&times;
@@ -67,8 +67,10 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 </template>
 
 <style>
+@reference "tailwindcss";
+
 .main-menu {
-	@apply fixed right-0 top-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-white p-20 text-neutral-700 shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
+	@apply fixed top-0 right-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-white p-20 text-neutral-700 shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
 
 	&.open {
 		@apply translate-x-0;

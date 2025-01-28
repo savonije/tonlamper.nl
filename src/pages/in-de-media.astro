@@ -12,16 +12,16 @@ import media from '@data/media.json' // Import media data
 		{
 			media.map((item) => (
 				<article class="article">
-					<a href={item.url} target="_blank" class="no-underline">
-						<span class="text-sm uppercase text-gray-500">{item.date}</span> -
-						<span class="text-sm uppercase text-gray-500">{item.outlet}</span>
+					<a href={item.url} target="_blank" class="no-underline!">
+						<span class="text-sm text-gray-500 uppercase">{item.date}</span> -
+						<span class="text-sm text-gray-500 uppercase">{item.outlet}</span>
 						<div class="mb-3 text-xl font-bold">{item.title}</div>
 						<img
 							src={`/images/in-de-media/${item.image.src}`}
 							alt={item.image.alt}
 							width={item.image.width}
 							height={item.image.height}
-							class="rounded"
+							class="rounded-sm"
 						/>
 						<div class="text-gray-500">&copy; {item.image.credit}</div>
 					</a>
@@ -32,6 +32,7 @@ import media from '@data/media.json' // Import media data
 </Layout>
 
 <style>
+	@reference "tailwindcss";
 	.article {
 		@apply rounded border p-3 shadow-md;
 	}
