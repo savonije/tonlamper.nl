@@ -23,7 +23,7 @@
 		"vue": "^3.4.29"
 	},
 	"devDependencies": {
-		"@tailwindcss/vite": "^4.0.12",
+		"@tailwindcss/vite": "^4.0.14",
 		"tailwindcss": "^4.0.12"
 	}
 }
