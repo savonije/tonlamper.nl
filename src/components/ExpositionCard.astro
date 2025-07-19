@@ -1,0 +1,67 @@
+---
+// ExpositionCard.astro
+
+export interface Props {
+	imageSrc?: string
+	imageAlt?: string
+	imageWidth?: number
+	imageHeight?: number
+	title: string
+	locationLabel?: string
+	location: string
+	dateLabel?: string
+	date: string
+	description?: string
+	linkUrl: string
+	linkText?: string
+}
+
+const {
+	imageSrc,
+	imageAlt,
+	imageWidth = 300,
+	imageHeight = 400,
+	title,
+	locationLabel = 'Locatie',
+	location,
+	dateLabel = 'Datum',
+	date,
+	description,
+	linkUrl,
+	linkText = 'Meer informatie'
+} = Astro.props
+---
+
+<div class="grid grid-cols-1">
+	<div class="mb-12 flex flex-col gap-6 rounded border p-3 shadow lg:flex-row">
+		<div class="lg:w-1/3">
+			{
+				imageSrc && (
+					<img src={imageSrc} width={imageWidth} height={imageHeight} alt={imageAlt || ''} />
+				)
+			}
+		</div>
+
+		<div class="flex-grow p-3 lg:w-2/3">
+			<h2>{title}</h2>
+
+			<div class="mb-3">
+				<p class="font-bold">{locationLabel}</p>
+				<p>{location}</p>
+			</div>
+
+			<div class="mb-3">
+				<p class="font-bold">{dateLabel}</p>
+				<p>{date}</p>
+			</div>
+
+			<p class="mb-3">
+				{description}
+			</p>
+
+			<a href={linkUrl} target="_blank" rel="noopener noreferrer">
+				{linkText}
+			</a>
+		</div>
+	</div>
+</div>

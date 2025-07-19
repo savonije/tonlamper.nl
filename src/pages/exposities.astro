@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import ExpositionCard from '../components/ExpositionCard.astro'
 ---
 
 <Layout title="Ton Lamper - Exposities">
@@ -7,5 +8,24 @@ import Layout from '@layouts/Layout.astro'
 		<h1>Exposities</h1>
 	</div>
 
-	<span>Op dit moment zijn er geen exposities...</span>
+	<ExpositionCard
+		imageSrc="/images/exposities/steen-glas-2025.webp"
+		imageAlt="Steen & Glas Expositie"
+		imageWidth={300}
+		imageHeight={400}
+		title="Expositie Steen & Glas"
+		location="Grote of Maria Magdalenakerk, Goes"
+		date="8 juli t/m 17 augustus 2025"
+		description="Expositie waarbij vragen over de oorsprong en de plek van de oudste van de twee (!) Maria Magdalenakerken in Goes gesteld worden. Door de tijd heen groeide de kerk uit van een klein gebouwtje tot de enorme ruimte van steen en glas van nu. Tijd en ruimte (en de oneindigheid daarvan) komen dus voorbij. Kunst met een twist. Kom kijken, vrij toegang, kinderen welkom, huisdieren graag even buiten laten."
+		linkUrl="https://mariamagdalenagoes.nl/"
+		linkText="Meer informatie"
+	/>
+
+	<ExpositionCard
+		title="Expositie in het Grafisch Atelier Alkmaar"
+		location="Doelenstraat 23, 1811 KX Alkmaar"
+		date="7 december 2025 t/m 27 januari 2026 ma. t/m vr. 10 - 17"
+		linkUrl="https://www.grafischatelieralkmaar.nl"
+		linkText="Meer informatie"
+	/>
 </Layout>
