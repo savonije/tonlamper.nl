@@ -78,7 +78,7 @@ onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
 	}
 
 	a {
-		@apply block w-full text-lg font-bold lg:w-auto lg:text-sm lg:font-normal;
+		@apply block w-full text-lg font-bold lg:w-auto lg:text-xs lg:font-normal xl:text-sm;
 
 		&:after {
 			@apply lg:block lg:h-[1px] lg:w-0 lg:bg-black lg:transition-all lg:content-[''];
