@@ -18,6 +18,10 @@
 	::file-selector-button {
 		border-color: var(--color-gray-200, currentColor);
 	}
+
+	.container-narrow {
+		@apply mx-auto max-w-3xl;
+	}
 }
 
 :root {

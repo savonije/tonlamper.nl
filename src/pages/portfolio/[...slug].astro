@@ -35,7 +35,9 @@ const title = `Ton Lamper - ${name}`
 		<h1 class="mb-0">{name}</h1>
 	</div>
 
-	{text && <div class="mb-9" set:html={text} />}
+	<div class="container-narrow">
+		{text && <div class="mb-9" set:html={text} />}
+	</div>
 
 	<div class="flex flex-wrap justify-center gap-6">
 		{images.map((image) => <img src={image} alt={name} class="max-h-[800px]" height="800" />)}
