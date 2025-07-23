@@ -1,78 +1,37 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import CourseCard from '@components/CourseCard.astro'
 ---
 
 <Layout title="Ton Lamper - Cursussen">
 	<h1>Cursussen</h1>
 
-	<p>
-		Cursus Etsen volgen? Etsen maken en afdrukken. Gedoe met etszuur en etspers. Een gigantische
-		klus? Welnee! Tijdens de cursus maakt u kennis met de geheimen van de droge naald, lijnets,
-		aquatint en kleurenets en u zult ervaren dat het etsprocédé lang niet zo geheimzinnig en
-		ingewikkeld is als veel mensen wel denken. De etstechniek nodigt uit tot eindeloos experiment op
-		het gebied van materiaal, gereedschap, zwart/wit en kleur. De weg van het ontwerp tot afdruk van
-		de ets lijkt lang en onvoorspelbaar, maar juist die toevalligheden onderweg - al doende leren om
-		die experimenten te gebruiken tot een eigen verbeelding - dát maakt etsen zo interessant.
-	</p>
+	<p>Cursus Etsen volgen? Etsen maken en afdrukken...</p>
 
 	<hr class="my-9" />
 
 	<div class="grid gap-3 sm:grid-cols-2">
-		<div class="course">
-			<h2>Cursus Etsen (Goes)</h2>
-			<p><strong>Datum:</strong> Wekelijks van september tot april</p>
-			<p><strong>Aantal lessen:</strong> 25 lessen van elk 2,5 uur.</p>
-			<p><strong>Tijd:</strong> Woensdag van 15:00 tot 17:30</p>
-			<p>
-				<strong>Periode:</strong>
-				18 september 2024 tot april 2025. Uitgezonderd schoolvakanties.
-			</p>
-			<p><strong>Locatie:</strong> Ostrea Lyceum, Fruitlaan 3 te Goes</p>
+		<CourseCard
+			title="Cursus Etsen (Middelburg)"
+			datum="Wekelijks van september tot april"
+			lessen="25 lessen van elk 3 uur"
+			tijd="Maandag van 14:00 tot 17:00"
+			periode="16 september 2025 tot april 2026. Uitgezonderd schoolvakanties."
+			locatie="Cultuurhuis Kuiperspoort 18 te Middelburg"
+			href="https://www.cultuurhuis-kuiperspoort.nl/"
+			hrefText="Aanmelden"
+		/>
 
-			<a
-				class="btn mt-6 no-underline!"
-				href="mailto:tonlamper@zeelandnet.nl?subject=Interesse cursus&body=Graag zou ik meer informatie willen ontvangen over de cursus etsen te Goes."
-				>Neem contact op</a
-			>
-		</div>
-
-		<div class="course">
-			<h2>Cursus Etsen (Middelburg)</h2>
-			<p><strong>Datum:</strong> Wekelijks van september tot april</p>
-			<p><strong>Aantal lessen:</strong> 25 lessen van elk 3 uur.</p>
-			<p><strong>Tijd:</strong> Maandag van 13:00 tot 16:00</p>
-			<p>
-				<strong>Periode:</strong>
-				16 september 2024 tot april 2025. Uitgezonderd schoolvakanties.
-			</p>
-			<p><strong>Locatie:</strong> Cultuurhuis Kuiperspoort 18 te Middelburg</p>
-
-			<a
-				class="btn mt-6 no-underline!"
-				href="mailto:tonlamper@zeelandnet.nl?subject=Interesse cursus&body=Graag zou ik meer informatie willen ontvangen over de cursus etsen te Middelburg."
-				>Neem contact op</a
-			>
-		</div>
-
-		<div class="course">
-			<h2>Workshop hoogdruk of diepdruk</h2>
-			<p>Voor kleine groepen van jong tot oud.</p>
-			<p><strong>Aantal personen:</strong> Maximaal 15.</p>
-			<p><strong>Duur van de workshop:</strong> 2 uur</p>
-			<p><strong>Locatie:</strong> In overleg</p>
-
-			<a
-				class="btn mt-6 no-underline!"
-				href="mailto:tonlamper@zeelandnet.nl?subject=Interesse cursus&body=Graag zou ik meer informatie willen ontvangen over een cursus hoog of diepdruk."
-				>Neem contact op</a
-			>
-		</div>
+		<CourseCard
+			title="Workshop hoogdruk of diepdruk"
+			extraInfo="Voor kleine groepen van jong tot oud."
+			datum=""
+			lessen="Maximaal 15 personen"
+			tijd="2 uur"
+			periode="In overleg"
+			locatie="In overleg"
+			href="mailto:tonlamper@zeelandnet.nl?subject=Interesse cursus&body=Graag zou ik meer informatie willen ontvangen over een cursus hoog of diepdruk."
+			hrefText="Neem contact op"
+		/>
 	</div>
 </Layout>
-
-<style>
-	@reference "tailwindcss";
-	.course {
-		@apply rounded border p-3 shadow-md;
-	}
-</style>

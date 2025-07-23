@@ -1,0 +1,38 @@
+---
+interface Props {
+	title: string
+	datum: string
+	lessen: string
+	tijd: string
+	periode: string
+	locatie: string
+	href: string
+	extraInfo?: string
+	hrefText: string
+}
+
+const { title, datum, lessen, tijd, periode, locatie, href, hrefText, extraInfo } = Astro.props
+---
+
+<div class="course">
+	<h2>{title}</h2>
+
+	{extraInfo && <p>{extraInfo}</p>}
+
+	<p><strong>Datum:</strong> {datum}</p>
+	<p><strong>Aantal lessen:</strong> {lessen}</p>
+	<p><strong>Tijd:</strong> {tijd}</p>
+	<p><strong>Periode:</strong> {periode}</p>
+	<p><strong>Locatie:</strong> {locatie}</p>
+
+	<a class="btn mt-6 no-underline!" href={href}>
+		{hrefText}
+	</a>
+</div>
+
+<style>
+	@reference "tailwindcss";
+	.course {
+		@apply rounded border p-3 shadow-md;
+	}
+</style>
