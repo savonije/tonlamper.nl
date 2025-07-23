@@ -99,3 +99,10 @@ a {
 .body-font {
 	font-family: 'Barlow', sans-serif;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	view-transition-name: fade;
+	animation-duration: 300ms;
+	animation-timing-function: ease-in-out;
+}
