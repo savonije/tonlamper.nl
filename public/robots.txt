@@ -1,0 +1,6 @@
+# robots.txt for Astro project
+User-agent: *
+Disallow:
+
+# Optional sitemap reference (update with your URL)
+Sitemap: https://www.tonlamper.nl/sitemap-index.xml
