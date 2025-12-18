@@ -1,5 +1,18 @@
 [
 	{
+		"url": "https://beatfm.nl/nieuws/artikel/expositie-graficus-ton-lamper-in-grafisch-atelier-alkmaar-video",
+		"date": "17 december 2025",
+		"outlet": "BeatFM",
+		"title": "Expositie graficus Ton Lamper in Grafisch Atelier Alkmaar",
+		"image": {
+			"src": "beatfm.avif",
+			"alt": "Ton Lamper in Grafisch Atelier Alkmaar",
+			"width": 1280,
+			"height": 720,
+			"credit": "BeatFM"
+		}
+	},
+	{
 		"url": "https://npo.nl/start/serie/expeditie-nederland/seizoen-3/expeditie-nederland_110/afspelen",
 		"date": "23 december 2024",
 		"outlet": "Omroep Max",
