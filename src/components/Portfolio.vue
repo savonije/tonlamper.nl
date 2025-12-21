@@ -8,17 +8,25 @@ const reversedArtworks = Object.values(artworks).reverse()
 
 const selectedCategory = ref<string | null>(null)
 
+const uniqueArtworks = computed(() => {
+	const seen = new Set<string>()
+
+	return reversedArtworks.filter((artwork) => {
+		if (seen.has(artwork.slug)) return false
+		seen.add(artwork.slug)
+		return true
+	})
+})
+
 const filteredArtworks = computed(() => {
 	if (!selectedCategory.value) {
-		return reversedArtworks.filter(
-			(artwork) => artwork.category !== null && !artwork.category.includes('uitgelicht')
-		)
+		return uniqueArtworks.value
 	}
 
-	return reversedArtworks.filter(
+	return uniqueArtworks.value.filter(
 		(artwork) =>
+			artwork.category &&
 			selectedCategory.value !== null &&
-			artwork.category !== null &&
 			artwork.category.includes(selectedCategory.value)
 	)
 })
