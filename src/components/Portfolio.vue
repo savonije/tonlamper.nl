@@ -7,6 +7,7 @@ import { categories } from '@utils/constants'
 const reversedArtworks = Object.values(artworks).reverse()
 
 const selectedCategory = ref<string | null>(null)
+const isVisible = ref(true)
 
 const filteredArtworks = computed(() => {
 	if (!selectedCategory.value) {
@@ -21,12 +22,11 @@ const filteredArtworks = computed(() => {
 	)
 })
 
-const selectCategory = (category: string) => {
-	if (selectedCategory.value === category) {
-		return (selectedCategory.value = null)
-	}
-
-	selectedCategory.value = category
+const selectCategory = async (category: string) => {
+	isVisible.value = false
+	await new Promise((r) => setTimeout(r, 150))
+	selectedCategory.value = selectedCategory.value === category ? null : category
+	isVisible.value = true
 }
 </script>
 
@@ -43,8 +43,11 @@ const selectCategory = (category: string) => {
 		</button>
 	</div>
 
-	<div class="columns-1 gap-3 sm:columns-2 lg:columns-3">
-		<figure v-for="artwork in filteredArtworks">
+	<div
+		class="portfolio-grid columns-1 gap-3 sm:columns-2 lg:columns-3"
+		:class="{ 'is-hidden': !isVisible }"
+	>
+		<figure v-for="artwork in filteredArtworks" :key="artwork.slug">
 			<a :href="'/portfolio/' + artwork.slug">
 				<img
 					:src="artwork.images[0]"
@@ -62,6 +65,14 @@ const selectCategory = (category: string) => {
 
 <style scoped>
 @reference "tailwindcss";
+
+.portfolio-grid {
+	transition: opacity 150ms ease;
+
+	&.is-hidden {
+		opacity: 0;
+	}
+}
 
 button {
 	@apply text-black;
