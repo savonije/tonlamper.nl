@@ -46,6 +46,8 @@ The `Artwork` / `Artworks` types are in `src/types/index.ts`. Artwork categories
 
 ### Styling
 
+**Always use Tailwind utility classes for CSS.** Do not write plain CSS, scoped `<style>` blocks, or inline `style` attributes unless Tailwind genuinely cannot express the rule (e.g. complex keyframes). When extending the design system, add tokens/utilities to `tailwind.config.mjs` or `style/base.css` rather than writing one-off CSS in components.
+
 Global base styles are in `style/base.css` (at repo root, not `src/`), imported from `src/layouts/Layout.astro`. Tailwind is configured in `tailwind.config.mjs`. Component-scoped styles use `@reference "tailwindcss"` to access utilities without re-importing the full stylesheet.
 
 Custom utility classes defined in `style/base.css`:
