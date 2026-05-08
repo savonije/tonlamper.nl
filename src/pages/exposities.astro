@@ -1,24 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import ExpositionCard from '@components/ExpositionCard.astro'
+import exposities from '@data/expositions.json'
+import type { Exposition } from '@/types'
 
-const exposities = [
-	{
-		title: 'Grafiek in beeld – Ton Lamper en Burhan Saleh',
-		location: 'Kunstuitleen de Bevelanden, Westwal 45, 4461CM Goes',
-		date: 'za. 9 mei t/m vr. 10 juli — donderdag en vrijdag 14.00–17.00u. en zaterdag 10.00–13.00u.',
-		linkUrl: 'http://www.kunstingoes.nl/opening-tentoonstelling/',
-		linkText: 'Meer informatie',
-		imageSrc: '/images/exposities/kunstuitleen-goes.webp'
-	},
-	{
-		title: 'Kunstschouw 2026',
-		location: 'Hervormde kerk, Burghsering 33, 4328 LK, Burgh-Haamstede',
-		date: 'za. 13 juni t/m zo. 21 juni — 10.00–17.00u.',
-		linkUrl: 'https://kunstschouw.nl/',
-		linkText: 'Meer informatie'
-	}
-]
+const items = exposities as Exposition[]
 ---
 
 <Layout title="Ton Lamper - Exposities">
@@ -37,6 +23,14 @@ const exposities = [
 	</section>
 
 	<div class="mx-auto max-w-5xl">
-		{exposities.map((expo, i) => <ExpositionCard {...expo} index={i} />)}
+		{
+			items.length > 0 ? (
+				items.map((expo, i) => <ExpositionCard {...expo} index={i} />)
+			) : (
+				<p class="px-6 py-16 text-center leading-relaxed text-neutral-600 lg:py-24">
+					Op dit moment zijn er geen exposities...
+				</p>
+			)
+		}
 	</div>
 </Layout>

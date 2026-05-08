@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import artworks from '@data/artworks.json'
-import type { Artworks } from '../../types'
+import type { Artworks } from '@/types'
 
 export async function getStaticPaths() {
 	const art: Artworks = artworks
