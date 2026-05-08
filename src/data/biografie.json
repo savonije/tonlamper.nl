@@ -1,11 +1,20 @@
 [
-	{ "year": "1987/88", "text": "3de Biënnale voor Grafiek, Museum for Fine Arts, Taipei, Taiwan." },
+	{
+		"year": "1987/88",
+		"text": "3de Biënnale voor Grafiek, Museum for Fine Arts, Taipei, Taiwan."
+	},
 	{ "year": "1991", "text": "Project Tijdsbeeld, Gevangentoren, Vlissingen." },
-	{ "year": "1991/92", "text": "Project Metamorfose, Galerie van Aalst, Biest–Houtakker." },
+	{
+		"year": "1991/92",
+		"text": "Project Metamorfose, Galerie van Aalst, Biest–Houtakker."
+	},
 	{ "year": "", "text": "Galerie de Hoekweide, Wolphaartsdijk." },
 	{ "year": "", "text": "Museum Elisabethweeshuis, Culemborg." },
 	{ "year": "", "text": "Galerie Gaudi, Landgraaf." },
-	{ "year": "1992", "text": "Delen = vermenigvuldigen, Bijbels Museum, Amsterdam." },
+	{
+		"year": "1992",
+		"text": "Delen = vermenigvuldigen, Bijbels Museum, Amsterdam."
+	},
 	{
 		"year": "1993",
 		"text": "2de Kochi International Triennial Exhibition of Prints, Ino–cho Paper Museum, Kochi–ken, Japan."
@@ -21,7 +30,10 @@
 	},
 	{ "year": "", "text": "Kostuums: Oidipous in Kolonnos – Hugo Claus." },
 	{ "year": "", "text": "Nominatie Elektra: categorie kostuumontwerp, ZCA." },
-	{ "year": "", "text": "Decor: Caligula – Albert Camus, Minitheater, Middelburg." },
+	{
+		"year": "",
+		"text": "Decor: Caligula – Albert Camus, Minitheater, Middelburg."
+	},
 	{
 		"year": "",
 		"text": "Eervolle vermelding: Noordlimburgse Industrieprijs voor Grafiek, Neerpelt, België."
@@ -33,24 +45,48 @@
 	{ "year": "1998", "text": "Kunstuitwisseling Zeeland – Hongarije:" },
 	{ "year": "", "text": "Museum voor Noord– en Zuid–Beveland, Goes." },
 	{ "year": "", "text": "Debrecen, Hongarije." },
-	{ "year": "1999", "text": "Decor en kostuums: opera Dido & Aeneas – Henry Purcell." },
+	{
+		"year": "1999",
+		"text": "Decor en kostuums: opera Dido & Aeneas – Henry Purcell."
+	},
 	{ "year": "", "text": "Uitgevoerd te Kloetinge, Middelburg en Zierikzee." },
 	{
 		"year": "2000",
 		"text": "5 jaar Kwak & van Daalen & Ronday Grafiekprijs, Kunstcentrum Zaandam."
 	},
 	{ "year": "", "text": "Elektra: kostuumontwerp Dido & Aeneas, ZCA." },
-	{ "year": "2001", "text": "Stichting Int. Heyderadey – Tongerlohuys, Roosendaal." },
-	{ "year": "", "text": "Wandschildering: Raad voor de Kinderbescherming, Middelburg." },
+	{
+		"year": "2001",
+		"text": "Stichting Int. Heyderadey – Tongerlohuys, Roosendaal."
+	},
+	{
+		"year": "",
+		"text": "Wandschildering: Raad voor de Kinderbescherming, Middelburg."
+	},
 	{ "year": "2002", "text": "Grafiekwinkel Inkt, Den Haag." },
-	{ "year": "2003", "text": "WCT kunstroute: Travalje met zinken paard, ‘s–Heer Arendskerke." },
+	{
+		"year": "2003",
+		"text": "WCT kunstroute: Travalje met zinken paard, ‘s–Heer Arendskerke."
+	},
 	{ "year": "", "text": "Galerij van het Fulcotheater, IJsselstein." },
-	{ "year": "2004", "text": "Biënnale Prent.nu, Loods 6, KNSM–eiland, Amsterdam." },
+	{
+		"year": "2004",
+		"text": "Biënnale Prent.nu, Loods 6, KNSM–eiland, Amsterdam."
+	},
 	{ "year": "", "text": "Grafiekwinkel INKT, Den Haag." },
-	{ "year": "", "text": "Zeeuwse grafische kunstenaars, theater Purmaryn, Purmerend." },
+	{
+		"year": "",
+		"text": "Zeeuwse grafische kunstenaars, theater Purmaryn, Purmerend."
+	},
 	{ "year": "2005", "text": "Zomertentoonstelling Goes 600 jaar." },
-	{ "year": "2006", "text": "Les Jardins Artistique de Drulon, Loye–sur–Arnon, Frankrijk." },
-	{ "year": "", "text": "Deelname 1st International Colony of Artists, Debrecen, Hongarije." },
+	{
+		"year": "2006",
+		"text": "Les Jardins Artistique de Drulon, Loye–sur–Arnon, Frankrijk."
+	},
+	{
+		"year": "",
+		"text": "Deelname 1st International Colony of Artists, Debrecen, Hongarije."
+	},
 	{ "year": "2007", "text": "Galerie Sjoch, Beetsterzwaag." },
 	{ "year": "2008", "text": "CBK kunstuitleen De Bevelanden, Goes." },
 	{ "year": "2009", "text": "CBK Dag van de Kunstuitleen, Middelburg/Goes." },
@@ -59,7 +95,10 @@
 		"year": "2010",
 		"text": "Expositie met cursisten grafiek Kunsteducatie Theo van Doesburgcentrum, Vlissingen."
 	},
-	{ "year": "2011", "text": "24. Deutsch–Niederländische Grafikbörse, Borken, Duitsland." },
+	{
+		"year": "2011",
+		"text": "24. Deutsch–Niederländische Grafikbörse, Borken, Duitsland."
+	},
 	{ "year": "", "text": "Kunstschouw, Westerschouwen." },
 	{ "year": "", "text": "Kunst- en natuurroute, Wemeldinge." },
 	{ "year": "2012", "text": "Een Bunder Kunst, ‘s–Heer Arendskerke." },
@@ -68,9 +107,15 @@
 		"year": "2013",
 		"text": "Linolschnitt Heute IX, Städtische Galerie: Grafikpreis der Stadt Bietigheim–Bissingen."
 	},
-	{ "year": "", "text": "Macht en Pracht, een Bunder Kunst, ‘s–Heer Arendskerke." },
+	{
+		"year": "",
+		"text": "Macht en Pracht, een Bunder Kunst, ‘s–Heer Arendskerke."
+	},
 	{ "year": "2014", "text": "Presentatie Kunstruimte W45, Goes." },
-	{ "year": "2015", "text": "Porta, blijvend ruimtelijk object op De Bunder, ‘s-Heer Arendskerke." },
+	{
+		"year": "2015",
+		"text": "Porta, blijvend ruimtelijk object op De Bunder, ‘s-Heer Arendskerke."
+	},
 	{
 		"year": "2016",
 		"text": "Beeld: Rie maer op de torens (locatie Oude Rijksweg/Arendstraat) in opdracht van de Gemeente Goes en de Dorpsraad te ‘s-Heer Arendskerke."
@@ -88,7 +133,10 @@
 		"year": "",
 		"text": "Metamorphosen, serie linoleumsneden. Boekhandel De Drvkkery, Middelburg."
 	},
-	{ "year": "2018", "text": "Beestenboel, dieren in de Zeeuwse Kunst, CBK Middelburg." },
+	{
+		"year": "2018",
+		"text": "Beestenboel, dieren in de Zeeuwse Kunst, CBK Middelburg."
+	},
 	{ "year": "", "text": "Een Bunder Tijd, ‘s-Heer Arendskerke." },
 	{
 		"year": "",
@@ -96,7 +144,10 @@
 	},
 	{ "year": "2019", "text": "Kunstschouw, Ellemeet." },
 	{ "year": "", "text": "Een Bunder Follies, ‘s-Heer Arendskerke." },
-	{ "year": "2020", "text": "Vlaggenproject in Goese Meer: Laat maar waaien #LOODS32." },
+	{
+		"year": "2020",
+		"text": "Vlaggenproject in Goese Meer: Laat maar waaien #LOODS32."
+	},
 	{
 		"year": "2021",
 		"text": "Boulevard van schoonheid en troost, Goes. 9 juli tot 9 september. Initiatief van #LOODS32, decreet, Galerie van den Berge."

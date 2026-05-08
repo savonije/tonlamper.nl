@@ -23,13 +23,13 @@ This is an **Astro 4 static site** for Dutch artist Ton Lamper, deployed on Netl
 
 ### Path aliases (tsconfig.json)
 
-| Alias | Resolves to |
-|---|---|
+| Alias           | Resolves to        |
+| --------------- | ------------------ |
 | `@components/*` | `src/components/*` |
-| `@data/*` | `src/data/*` |
-| `@layouts/*` | `src/layouts/*` |
-| `@types/*` | `src/types/*` |
-| `@utils/*` | `src/utils/*` |
+| `@data/*`       | `src/data/*`       |
+| `@layouts/*`    | `src/layouts/*`    |
+| `@types/*`      | `src/types/*`      |
+| `@utils/*`      | `src/utils/*`      |
 
 ### Data layer
 
@@ -51,6 +51,7 @@ The `Artwork` / `Artworks` types are in `src/types/index.ts`. Artwork categories
 Global base styles are in `style/base.css` (at repo root, not `src/`), imported from `src/layouts/Layout.astro`. Tailwind is configured in `tailwind.config.mjs`. Component-scoped styles use `@reference "tailwindcss"` to access utilities without re-importing the full stylesheet.
 
 Custom utility classes defined in `style/base.css`:
+
 - `.container` — responsive max-width wrapper
 - `.container-narrow` — narrow centred content block (max-w-3xl)
 - `.btn` — outlined button with hover state

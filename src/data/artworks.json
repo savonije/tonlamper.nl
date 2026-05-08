@@ -218,35 +218,45 @@
 	},
 	"32": {
 		"name": "In Paradisum",
-		"images": ["/images/portfolio/kleurenets-1-In-Paradisum-85-x-85-cm-23-2042x2048.jpg"],
+		"images": [
+			"/images/portfolio/kleurenets-1-In-Paradisum-85-x-85-cm-23-2042x2048.jpg"
+		],
 		"category": ["ets"],
 		"slug": "in-paradisum",
 		"text": ""
 	},
 	"33": {
 		"name": "Man",
-		"images": ["/images/portfolio/kleurenets-2-Man-30-x-30-cm-23-IMG_3955-1985x2048.jpg"],
+		"images": [
+			"/images/portfolio/kleurenets-2-Man-30-x-30-cm-23-IMG_3955-1985x2048.jpg"
+		],
 		"category": ["ets"],
 		"slug": "man",
 		"text": ""
 	},
 	"34": {
 		"name": "Vrouw",
-		"images": ["/images/portfolio/kleurenets-3-Vrouw-30-x30-cm-23-IMG_3954-2048x1988.jpg"],
+		"images": [
+			"/images/portfolio/kleurenets-3-Vrouw-30-x30-cm-23-IMG_3954-2048x1988.jpg"
+		],
 		"category": ["ets"],
 		"slug": "vrouw",
 		"text": ""
 	},
 	"35": {
 		"name": "Dier",
-		"images": ["/images/portfolio/kleurenets-4-Dier-30-x-30-cm-23-IMG_3956-2048x1915.jpg"],
+		"images": [
+			"/images/portfolio/kleurenets-4-Dier-30-x-30-cm-23-IMG_3956-2048x1915.jpg"
+		],
 		"category": ["ets"],
 		"slug": "dier",
 		"text": ""
 	},
 	"36": {
 		"name": "Plant",
-		"images": ["/images/portfolio/kleurenets-5-Plant-30-x30-cm-23-IMG_3953-2048x2023.jpg"],
+		"images": [
+			"/images/portfolio/kleurenets-5-Plant-30-x30-cm-23-IMG_3953-2048x2023.jpg"
+		],
 		"category": ["ets"],
 		"slug": "plant",
 		"text": ""
@@ -278,7 +288,9 @@
 	},
 	"40": {
 		"name": "Mantel Der Liefde Boetekleed",
-		"images": ["/images/portfolio/Mantel-der-liefde-boetekleed-2018-IMG_1945.jpg"],
+		"images": [
+			"/images/portfolio/Mantel-der-liefde-boetekleed-2018-IMG_1945.jpg"
+		],
 		"category": ["ets"],
 		"slug": "mantel-der-liefde-boetekleed",
 		"text": ""
