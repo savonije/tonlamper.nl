@@ -1,5 +1,18 @@
 @import 'tailwindcss';
 
+@theme {
+	/* Micro label type scale (smaller than the default text-xs / 12px) */
+	--text-2xs: 0.6875rem; /* 11px — eyebrow labels & CTA links */
+	--text-3xs: 0.625rem; /* 10px — definition-list term labels */
+
+	/* Exposition heading size between text-3xl and text-4xl */
+	--text-display: 2rem; /* 32px */
+
+	/* Wide letter-spacing for uppercase labels */
+	--tracking-label: 0.3em;
+	--tracking-label-wide: 0.4em;
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still

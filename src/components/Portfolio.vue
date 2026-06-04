@@ -52,7 +52,7 @@ const selectCategory = async (category: string) => {
 				<img
 					:src="artwork.images[0]"
 					:alt="artwork.name"
-					class="mb-3 h-auto w-full max-w-full"
+					class="mb-3 h-auto w-full"
 					width="300"
 					height="400"
 					loading="lazy"
