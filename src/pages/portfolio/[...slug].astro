@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { name, images, text } = Astro.props
+const { slug } = Astro.params
 const title = `Ton Lamper - ${name}`
 ---
 
@@ -38,7 +39,7 @@ const title = `Ton Lamper - ${name}`
 
 	<div class="flex flex-wrap justify-center gap-6">
 		{
-			images.map((image) => {
+			images.map((image, i) => {
 				const img = getPortfolioImage(image)
 				return (
 					<Image
@@ -49,6 +50,7 @@ const title = `Ton Lamper - ${name}`
 						format="webp"
 						layout="none"
 						class="h-auto max-h-[800px] w-auto"
+						transition:name={i === 0 ? `art-${slug}` : undefined}
 					/>
 				)
 			})

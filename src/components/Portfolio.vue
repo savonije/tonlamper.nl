@@ -63,6 +63,7 @@ const selectCategory = async (category: string) => {
 					:alt="artwork.name"
 					:width="artwork.thumb.width"
 					:height="artwork.thumb.height"
+					:style="{ viewTransitionName: 'art-' + artwork.slug }"
 					class="mb-3 h-auto w-full"
 					loading="lazy"
 				/>
