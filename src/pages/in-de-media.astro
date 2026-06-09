@@ -26,7 +26,6 @@ const media = (await getCollection('media')).sort(
 						<Image
 							src={getAssetImage(`/images/in-de-media/${item.image.src}`)}
 							alt={item.image.alt}
-							widths={[400, 600, 800]}
 							sizes="(min-width: 640px) 50vw, 100vw"
 							quality={72}
 							class="rounded-sm"
