@@ -82,10 +82,10 @@
 </script>
 
 <style>
-	@reference "tailwindcss";
+	@reference "@styles/base.css";
 
 	.main-menu {
-		@apply bg-gray-nurse fixed top-0 right-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 p-20 font-mono text-neutral-700 shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
+		@apply fixed top-0 right-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-[#fafbfa] p-20 font-mono text-neutral-700 shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
 
 		&.open {
 			@apply translate-x-0;
@@ -95,7 +95,7 @@
 			@apply block w-full text-lg font-bold lg:w-auto lg:text-xs lg:font-normal xl:text-sm;
 
 			&:after {
-				@apply lg:block lg:h-px lg:w-0 lg:bg-black lg:transition-all lg:content-[''];
+				@apply lg:bg-int-blue lg:block lg:h-px lg:w-0 lg:transition-all lg:content-[''];
 			}
 
 			.active {

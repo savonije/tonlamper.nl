@@ -74,7 +74,7 @@ const selectCategory = async (category: string) => {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+@reference "@styles/base.css";
 
 .portfolio-grid {
 	transition: opacity 150ms ease;
