@@ -1,20 +1,13 @@
 ---
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
-import artworks from '@data/artworks.json'
 import { getPortfolioImage } from '@utils/portfolioImages'
-import type { Artworks } from '@/types'
 
 export async function getStaticPaths() {
-	const art: Artworks = artworks
-	const pages = Object.keys(art).map((key) => {
-		return {
-			id: key,
-			...art[key]
-		}
-	})
+	const artworks = await getCollection('artworks')
 
-	return pages.map(({ slug, name, images, text }) => {
+	return artworks.map(({ data: { slug, name, images, text } }) => {
 		return {
 			params: { slug },
 			props: { name, images, text }
@@ -23,6 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { name, images, text } = Astro.props
+const { slug } = Astro.params
 const title = `Ton Lamper - ${name}`
 ---
 
@@ -45,7 +39,7 @@ const title = `Ton Lamper - ${name}`
 
 	<div class="flex flex-wrap justify-center gap-6">
 		{
-			images.map((image) => {
+			images.map((image, i) => {
 				const img = getPortfolioImage(image)
 				return (
 					<Image
@@ -54,7 +48,9 @@ const title = `Ton Lamper - ${name}`
 						height={Math.min(img.height, 1200)}
 						quality={72}
 						format="webp"
+						layout="none"
 						class="h-auto max-h-[800px] w-auto"
+						transition:name={i === 0 ? `art-${slug}` : undefined}
 					/>
 				)
 			})

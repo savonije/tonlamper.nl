@@ -1,0 +1,111 @@
+---
+// Plain-Astro navigation menu. Previously a Vue island (Vue + @vueuse/core) that
+// loaded on every page just to toggle the mobile drawer — now a few lines of
+// vanilla JS so non-portfolio pages ship no framework runtime.
+---
+
+<div class="lg:hidden">
+	<button
+		type="button"
+		data-menu-open
+		class="text-3xl text-black"
+		aria-label="Open menu"
+		aria-expanded="false"
+	>
+		☰
+	</button>
+</div>
+
+<nav data-menu class="main-menu closed" aria-label="Hoofdmenu">
+	<a href="/">Home</a>
+	<a href="/de-kunstenaar">Kunstenaar</a>
+	<a href="/biografie">Biografie</a>
+	<a href="/portfolio">Portfolio</a>
+	<a href="/cursussen">Cursussen</a>
+	<a href="/exposities">Exposities</a>
+	<a href="/in-de-media">In de media</a>
+	<a href="/contact">Contact</a>
+
+	<button
+		type="button"
+		data-menu-close
+		class="absolute top-5 right-5 text-3xl text-black lg:hidden"
+		aria-label="Sluit menu"
+	>
+		&times;
+	</button>
+</nav>
+
+<script>
+	const closeMenu = () => {
+		const nav = document.querySelector('[data-menu]')
+		const openBtn = document.querySelector('[data-menu-open]')
+		nav?.classList.add('closed')
+		nav?.classList.remove('open')
+		openBtn?.classList.remove('hidden')
+		openBtn?.setAttribute('aria-expanded', 'false')
+	}
+
+	// Document-level listeners persist across client-side navigations, so they
+	// are registered once and look up the current menu each time they fire.
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') closeMenu()
+	})
+	document.addEventListener('click', (e) => {
+		const nav = document.querySelector('[data-menu]')
+		const openBtn = document.querySelector('[data-menu-open]')
+		const target = e.target as Node
+		if (nav && openBtn && !nav.contains(target) && !openBtn.contains(target)) {
+			closeMenu()
+		}
+	})
+
+	// Element-level listeners must be re-bound after every page transition,
+	// since ClientRouter swaps in fresh DOM. astro:page-load also fires on the
+	// initial load.
+	const bindMenu = () => {
+		const nav = document.querySelector('[data-menu]')
+		const openBtn = document.querySelector<HTMLElement>('[data-menu-open]')
+		if (!nav || !openBtn) return
+
+		openBtn.addEventListener('click', () => {
+			nav.classList.add('open')
+			nav.classList.remove('closed')
+			openBtn.classList.add('hidden')
+			openBtn.setAttribute('aria-expanded', 'true')
+		})
+		nav.querySelector('[data-menu-close]')?.addEventListener('click', closeMenu)
+		nav
+			.querySelectorAll('a')
+			.forEach((a) => a.addEventListener('click', closeMenu))
+	}
+	document.addEventListener('astro:page-load', bindMenu)
+</script>
+
+<style>
+	@reference "tailwindcss";
+
+	.main-menu {
+		@apply fixed top-0 right-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-white p-20 text-neutral-700 shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
+
+		&.open {
+			@apply translate-x-0;
+		}
+
+		a {
+			@apply block w-full text-lg font-bold lg:w-auto lg:text-xs lg:font-normal xl:text-sm;
+
+			&:after {
+				@apply lg:block lg:h-px lg:w-0 lg:bg-black lg:transition-all lg:content-[''];
+			}
+
+			.active {
+				@apply underline underline-offset-8;
+			}
+		}
+
+		a:hover:after {
+			@apply lg:w-full;
+		}
+	}
+</style>

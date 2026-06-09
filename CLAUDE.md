@@ -14,36 +14,36 @@ There are no tests in this project.
 
 ## Architecture
 
-This is an **Astro 4 static site** for Dutch artist Ton Lamper, deployed on Netlify. It uses:
+This is an **Astro 6 static site** for Dutch artist Ton Lamper, deployed on Netlify. It uses:
 
 - **Astro** for pages and static rendering
-- **Vue 3** for interactive islands (`client:idle`) — navigation menu and portfolio filter
+- **Vue 3** for the portfolio filter island (`client:idle`). The navigation menu is plain Astro + a small vanilla script (`src/components/Menu.astro`) — Vue only loads on the portfolio page
 - **Tailwind CSS v4** via the `@tailwindcss/vite` plugin (not the Astro integration)
-- **Astro's `ClientRouter`** for client-side page transitions with a 300ms fade
+- **Astro's `ClientRouter`** for client-side page transitions with a 300ms fade, plus a `transition:name` morph from the portfolio grid thumbnail to the detail image
+- **Viewport prefetch** and **responsive images** (`image.layout: 'constrained'`) configured in `astro.config.mjs`; fixed-size images opt out with `layout="fixed"`
 
 ### Path aliases (tsconfig.json)
 
-| Alias           | Resolves to          |
-| --------------- | -------------------- |
-| `@assets/*`     | `src/assets/*`       |
-| `@components/*` | `src/components/*`   |
-| `@data/*`       | `src/data/*`         |
-| `@layouts/*`    | `src/layouts/*`      |
-| `@/types`       | `src/types/index.ts` |
-| `@utils/*`      | `src/utils/*`        |
+| Alias           | Resolves to        |
+| --------------- | ------------------ |
+| `@assets/*`     | `src/assets/*`     |
+| `@components/*` | `src/components/*` |
+| `@data/*`       | `src/data/*`       |
+| `@layouts/*`    | `src/layouts/*`    |
+| `@utils/*`      | `src/utils/*`      |
 
 ### Data layer
 
-All content is static — no CMS or API. Data lives in two JSON files:
+All content is static — no CMS or API. The four JSON files in `src/data/` are exposed as **Astro content collections** defined in `src/content.config.ts` (Content Layer `file()` loader + Zod schemas), so consume them with `getCollection('<name>')` rather than importing the JSON directly:
 
-- **`src/data/artworks.json`** — keyed object (`"1"`, `"2"`, …) of `Artwork` records with `name`, `slug`, `images[]`, `category[]`, and `text`. The portfolio page reverses insertion order for display.
-- **`src/data/media.json`** — array of press/media items.
+- **`artworks`** (`src/data/artworks.json`) — a keyed object (`"1"`, `"2"`, …), so the entry `id` is the JSON key. Records have `name`, `slug`, `images[]`, `category[]`, and `text`.
+- **`media`**, **`expositions`**, **`biografie`** — plain arrays; a parser assigns each entry a stable index-based `id`.
 
-The `Artwork` / `Artworks` types are in `src/types/index.ts`. Artwork categories (`uitgelicht`, `ets`, `lino`, `ruimtelijk`) are the single source of truth in `src/utils/constants.ts`.
+`getCollection` does not guarantee order, so pages sort by numeric `id` to reproduce the original JSON order (the portfolio additionally reverses it so newest is first). Artwork categories (`uitgelicht`, `ets`, `lino`, `ruimtelijk`) are the single source of truth in `src/utils/constants.ts`.
 
 ### Portfolio routing
 
-`src/pages/portfolio/[...slug].astro` calls `getStaticPaths()` to generate one page per artwork from `artworks.json`. The slug field on each artwork record determines the URL.
+`src/pages/portfolio/[...slug].astro` calls `getStaticPaths()` over `getCollection('artworks')` to generate one page per artwork. The slug field on each artwork record determines the URL.
 
 ### Styling
 

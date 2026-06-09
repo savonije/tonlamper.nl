@@ -1,11 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import ExpositionCard from '@components/ExpositionCard.astro'
-import exposities from '@data/expositions.json'
+import { getCollection } from 'astro:content'
 import { getAssetImage } from '@utils/assetImages'
-import type { Exposition } from '@/types'
 
-const items = (exposities as Exposition[]).map(({ imageSrc, ...rest }) => ({
+// Sort by numeric id to preserve the original expositions.json array order.
+const exposities = (await getCollection('expositions')).sort(
+	(a, b) => Number(a.id) - Number(b.id)
+)
+
+const items = exposities.map(({ data: { imageSrc, ...rest } }) => ({
 	...rest,
 	image: imageSrc ? getAssetImage(imageSrc) : undefined
 }))

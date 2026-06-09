@@ -1,26 +1,31 @@
 ---
 import { getImage } from 'astro:assets'
+import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import Artwork from '@components/Portfolio.vue'
-import artworks from '@data/artworks.json'
 import { getPortfolioImage } from '@utils/portfolioImages'
 
+// Sort by numeric id to restore artworks.json insertion order, then take newest
+// first (highest id) — matching the previous Object.values(...).reverse().
+const artworks = (await getCollection('artworks')).sort(
+	(a, b) => Number(b.id) - Number(a.id)
+)
+
 // Vue islands can't use Astro's <Image>, so pre-generate optimized webp
-// thumbnails here and hand the Vue grid a { slug: { src, width, height } }
-// map. The dimensions let the grid reserve correct space and avoid layout
-// shift while images load.
-const entries = await Promise.all(
-	Object.values(artworks).map(async (artwork) => {
-		const src = getPortfolioImage(artwork.images[0])
+// thumbnails here and hand the Vue grid only what it needs: slug, name,
+// category, and the thumbnail (src + intrinsic size to avoid layout shift).
+// The long `text` bodies stay out of the client bundle entirely.
+const items = await Promise.all(
+	artworks.map(async ({ data: { slug, name, category, images } }) => {
+		const src = getPortfolioImage(images[0])
 		const width = Math.min(src.width, 500)
 		const height = Math.round((src.height / src.width) * width)
 		const thumb = await getImage({ src, width, quality: 72, format: 'webp' })
-		return [artwork.slug, { src: thumb.src, width, height }]
+		return { slug, name, category, thumb: { src: thumb.src, width, height } }
 	})
 )
-const thumbnails = Object.fromEntries(entries)
 ---
 
 <Layout title="Ton Lamper - Portfolio">
-	<Artwork client:idle thumbnails={thumbnails} />
+	<Artwork client:idle items={items} />
 </Layout>
