@@ -1,10 +1,16 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import entries from '@data/biografie.json'
+import { getCollection } from 'astro:content'
+
+// Sort by numeric id to preserve the original biografie.json array order
+// (the grouping below depends on chronological order).
+const entries = (await getCollection('biografie')).sort(
+	(a, b) => Number(a.id) - Number(b.id)
+)
 
 type Group = { year: string; items: string[] }
 const groups: Group[] = []
-for (const e of entries) {
+for (const { data: e } of entries) {
 	const last = groups[groups.length - 1]
 	if (e.year && (!last || last.year !== e.year)) {
 		groups.push({ year: e.year, items: [e.text] })

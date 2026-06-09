@@ -1,20 +1,13 @@
 ---
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
-import artworks from '@data/artworks.json'
 import { getPortfolioImage } from '@utils/portfolioImages'
-import type { Artworks } from '@/types'
 
 export async function getStaticPaths() {
-	const art: Artworks = artworks
-	const pages = Object.keys(art).map((key) => {
-		return {
-			id: key,
-			...art[key]
-		}
-	})
+	const artworks = await getCollection('artworks')
 
-	return pages.map(({ slug, name, images, text }) => {
+	return artworks.map(({ data: { slug, name, images, text } }) => {
 		return {
 			params: { slug },
 			props: { name, images, text }

@@ -1,8 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
 import { getAssetImage } from '@utils/assetImages'
-import media from '@data/media.json'
+
+// Sort by numeric id to preserve the original media.json array order.
+const media = (await getCollection('media')).sort(
+	(a, b) => Number(a.id) - Number(b.id)
+)
 ---
 
 <Layout title="Ton Lamper - In de media">
@@ -12,7 +17,7 @@ import media from '@data/media.json'
 
 	<div class="grid gap-3 sm:grid-cols-2">
 		{
-			media.map((item) => (
+			media.map(({ data: item }) => (
 				<article class="article">
 					<a href={item.url} target="_blank" class="no-underline!">
 						<span class="text-sm text-gray-500 uppercase">{item.date}</span> -
