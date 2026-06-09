@@ -1,30 +1,33 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import artworks from '@data/artworks.json'
 
 import { categories } from '@utils/constants'
 
-// Map of artwork slug -> optimized webp thumbnail (src + intrinsic size),
-// generated at build time by the parent Astro page (portfolio.astro).
-defineProps<{
-	thumbnails: Record<string, { src: string; width: number; height: number }>
-}>()
+// The parent Astro page (portfolio.astro) prepares everything the grid needs at
+// build time — already ordered newest-first — so the island ships no artwork
+// text bodies and does no data wrangling on the client.
+type Item = {
+	slug: string
+	name: string
+	category: string[] | null
+	thumb: { src: string; width: number; height: number }
+}
 
-const reversedArtworks = Object.values(artworks).reverse()
+const props = defineProps<{ items: Item[] }>()
 
 const selectedCategory = ref<string | null>(null)
 const isVisible = ref(true)
 
 const filteredArtworks = computed(() => {
 	if (!selectedCategory.value) {
-		return reversedArtworks.filter((artwork) => artwork.category !== null)
+		return props.items.filter((item) => item.category !== null)
 	}
 
-	return reversedArtworks.filter(
-		(artwork) =>
+	return props.items.filter(
+		(item) =>
 			selectedCategory.value !== null &&
-			artwork.category !== null &&
-			artwork.category.includes(selectedCategory.value)
+			item.category !== null &&
+			item.category.includes(selectedCategory.value)
 	)
 })
 
@@ -56,10 +59,10 @@ const selectCategory = async (category: string) => {
 		<figure v-for="artwork in filteredArtworks" :key="artwork.slug">
 			<a :href="'/portfolio/' + artwork.slug" class="bg-gray">
 				<img
-					:src="thumbnails[artwork.slug].src"
+					:src="artwork.thumb.src"
 					:alt="artwork.name"
-					:width="thumbnails[artwork.slug].width"
-					:height="thumbnails[artwork.slug].height"
+					:width="artwork.thumb.width"
+					:height="artwork.thumb.height"
 					class="mb-3 h-auto w-full"
 					loading="lazy"
 				/>
