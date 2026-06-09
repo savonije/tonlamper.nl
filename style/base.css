@@ -11,6 +11,12 @@
 	/* Wide letter-spacing for uppercase labels */
 	--tracking-label: 0.3em;
 	--tracking-label-wide: 0.4em;
+
+	--font-mono: 'IBM Plex Mono', monospace;
+
+	--color-gray-nurse: #fafbfa;
+	--color-woodsmoke: #16161a;
+	--color-int-blue: #002fa7;
 }
 
 /*
@@ -41,21 +47,17 @@
 	--accent-dark: 49, 10, 101;
 }
 html {
-	font-family: 'Barlow', sans-serif;
+	font-family: 'Cormorant Garamond', serif;
 	@apply h-full;
 }
 
 body {
-	@apply h-full overflow-x-hidden leading-loose tracking-wide text-neutral-900;
+	@apply bg-gray-nurse text-woodsmoke h-full overflow-x-hidden text-lg leading-loose tracking-wide;
 	-webkit-font-smoothing: antialiased;
 }
 
 .container {
 	@apply mx-auto max-w-full px-6 sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px];
-}
-
-::selection {
-	@apply bg-black text-white;
 }
 
 h1,
@@ -105,10 +107,14 @@ nav a {
 
 a {
 	@apply underline;
+
+	&:hover {
+		@apply text-int-blue;
+	}
 }
 
 .body-font {
-	font-family: 'Barlow', sans-serif;
+	font-family: 'IBM Plex Mono', monospace;
 }
 
 ::view-transition-old(root),
