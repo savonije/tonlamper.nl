@@ -1,5 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import profiel from '@assets/profiel.png'
 ---
 
 <Layout title="Ton Lamper - De Kunstenaar">
@@ -8,11 +10,12 @@ import Layout from '@layouts/Layout.astro'
 	>
 		<div class="flex grow-0 items-center justify-center">
 			<div class="px-12">
-				<img
-					src="/images/profiel.png"
+				<Image
+					src={profiel}
 					alt="Ton Lamper profielfoto"
-					width="200"
-					height="200"
+					width={200}
+					height={200}
+					format="webp"
 				/>
 			</div>
 		</div>

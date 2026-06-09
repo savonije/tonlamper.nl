@@ -2,9 +2,13 @@
 import Layout from '@layouts/Layout.astro'
 import ExpositionCard from '@components/ExpositionCard.astro'
 import exposities from '@data/expositions.json'
+import { getAssetImage } from '@utils/assetImages'
 import type { Exposition } from '@/types'
 
-const items = exposities as Exposition[]
+const items = (exposities as Exposition[]).map(({ imageSrc, ...rest }) => ({
+	...rest,
+	image: imageSrc ? getAssetImage(imageSrc) : undefined
+}))
 ---
 
 <Layout title="Ton Lamper - Exposities">

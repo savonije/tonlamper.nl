@@ -18,8 +18,6 @@ export interface Exposition {
 	linkText?: string
 	imageSrc?: string
 	imageAlt?: string
-	imageWidth?: number
-	imageHeight?: number
 	description?: string
 	locationLabel?: string
 	dateLabel?: string

@@ -1,5 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import { getAssetImage } from '@utils/assetImages'
 import media from '@data/media.json'
 ---
 
@@ -16,11 +18,12 @@ import media from '@data/media.json'
 						<span class="text-sm text-gray-500 uppercase">{item.date}</span> -
 						<span class="text-sm text-gray-500 uppercase">{item.outlet}</span>
 						<div class="mb-3 text-xl font-bold">{item.title}</div>
-						<img
-							src={`/images/in-de-media/${item.image.src}`}
+						<Image
+							src={getAssetImage(`/images/in-de-media/${item.image.src}`)}
 							alt={item.image.alt}
-							width={item.image.width}
-							height={item.image.height}
+							widths={[400, 600, 800]}
+							sizes="(min-width: 640px) 50vw, 100vw"
+							quality={72}
 							class="rounded-sm"
 						/>
 						<div class="text-gray-500">&copy; {item.image.credit}</div>

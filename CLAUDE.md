@@ -23,13 +23,14 @@ This is an **Astro 4 static site** for Dutch artist Ton Lamper, deployed on Netl
 
 ### Path aliases (tsconfig.json)
 
-| Alias           | Resolves to            |
-| --------------- | ---------------------- |
-| `@components/*` | `src/components/*`     |
-| `@data/*`       | `src/data/*`           |
-| `@layouts/*`    | `src/layouts/*`        |
-| `@/types`       | `src/types/index.ts`   |
-| `@utils/*`      | `src/utils/*`          |
+| Alias           | Resolves to          |
+| --------------- | -------------------- |
+| `@assets/*`     | `src/assets/*`       |
+| `@components/*` | `src/components/*`   |
+| `@data/*`       | `src/data/*`         |
+| `@layouts/*`    | `src/layouts/*`      |
+| `@/types`       | `src/types/index.ts` |
+| `@utils/*`      | `src/utils/*`        |
 
 ### Data layer
 

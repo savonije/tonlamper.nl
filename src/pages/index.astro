@@ -1,5 +1,9 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import venusEnMars from '@assets/venus-en-mars.jpg'
+import sater from '@assets/sater-600x652.jpg'
+import flora from '@assets/flora-600x640.jpg'
 ---
 
 <Layout title="Ton Lamper">
@@ -14,13 +18,35 @@ import Layout from '@layouts/Layout.astro'
 
 		<div class="mt-9 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
 			<div class="flex justify-center">
-				<img src="/images/venus-en-mars.jpg" width="275" height="275" alt="" />
+				<Image
+					src={venusEnMars}
+					width={275}
+					height={275}
+					densities={[1, 2]}
+					quality={72}
+					loading="eager"
+					alt=""
+				/>
 			</div>
 			<div class="hidden justify-center md:flex">
-				<img src="/images/sater-600x652.jpg" width="275" height="275" alt="" />
+				<Image
+					src={sater}
+					width={275}
+					height={275}
+					densities={[1, 2]}
+					quality={72}
+					alt=""
+				/>
 			</div>
 			<div class="hidden justify-center sm:flex">
-				<img src="/images/flora-600x640.jpg" width="275" height="275" alt="" />
+				<Image
+					src={flora}
+					width={275}
+					height={275}
+					densities={[1, 2]}
+					quality={72}
+					alt=""
+				/>
 			</div>
 		</div>
 	</div>
