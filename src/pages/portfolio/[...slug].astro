@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '@layouts/Layout.astro'
 import artworks from '@data/artworks.json'
+import { getPortfolioImage } from '@utils/portfolioImages'
 import type { Artworks } from '@/types'
 
 export async function getStaticPaths() {
@@ -43,9 +45,19 @@ const title = `Ton Lamper - ${name}`
 
 	<div class="flex flex-wrap justify-center gap-6">
 		{
-			images.map((image) => (
-				<img src={image} alt={name} class="max-h-[800px]" height="800" />
-			))
+			images.map((image) => {
+				const img = getPortfolioImage(image)
+				return (
+					<Image
+						src={img}
+						alt={name}
+						height={Math.min(img.height, 1200)}
+						quality={72}
+						format="webp"
+						class="h-auto max-h-[800px] w-auto"
+					/>
+				)
+			})
 		}
 	</div>
 </Layout>

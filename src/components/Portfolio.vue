@@ -4,6 +4,12 @@ import artworks from '@data/artworks.json'
 
 import { categories } from '@utils/constants'
 
+// Map of artwork slug -> optimized webp thumbnail (src + intrinsic size),
+// generated at build time by the parent Astro page (portfolio.astro).
+defineProps<{
+	thumbnails: Record<string, { src: string; width: number; height: number }>
+}>()
+
 const reversedArtworks = Object.values(artworks).reverse()
 
 const selectedCategory = ref<string | null>(null)
@@ -48,13 +54,13 @@ const selectCategory = async (category: string) => {
 		:class="{ 'is-hidden': !isVisible }"
 	>
 		<figure v-for="artwork in filteredArtworks" :key="artwork.slug">
-			<a :href="'/portfolio/' + artwork.slug">
+			<a :href="'/portfolio/' + artwork.slug" class="bg-gray">
 				<img
-					:src="artwork.images[0]"
+					:src="thumbnails[artwork.slug].src"
 					:alt="artwork.name"
+					:width="thumbnails[artwork.slug].width"
+					:height="thumbnails[artwork.slug].height"
 					class="mb-3 h-auto w-full"
-					width="300"
-					height="400"
 					loading="lazy"
 				/>
 				<span class="figcaption">{{ artwork.name }}</span>
