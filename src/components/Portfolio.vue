@@ -37,44 +37,96 @@ const selectCategory = async (category: string) => {
 	selectedCategory.value = selectedCategory.value === category ? null : category
 	isVisible.value = true
 }
+
+const clearFilter = async () => {
+	if (!selectedCategory.value) return
+	isVisible.value = false
+	await new Promise((r) => setTimeout(r, 150))
+	selectedCategory.value = null
+	isVisible.value = true
+}
 </script>
 
 <template>
-	<div class="mb-3 flex gap-6">
+	<section class="pt-10 pb-10 lg:pt-16">
+		<p class="eyebrow mb-6">Grafiek &amp; drukwerk</p>
+		<h1 class="mb-8 text-6xl sm:text-7xl">Portfolio</h1>
+	</section>
+
+	<!-- Filter bar -->
+	<div
+		class="filter-bar border-t-ink flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-b py-4"
+	>
+		<button
+			type="button"
+			class="filter-btn"
+			:class="{ 'is-active': !selectedCategory }"
+			@click="clearFilter"
+		>
+			Alles
+		</button>
 		<button
 			type="button"
 			v-for="category in categories"
 			:key="category"
+			class="filter-btn"
+			:class="{ 'is-active': selectedCategory === category }"
 			@click="selectCategory(category)"
-			:class="{ 'font-bold': selectedCategory === category }"
 		>
 			{{ category }}
 		</button>
 	</div>
 
 	<div
-		class="portfolio-grid columns-1 gap-3 sm:columns-2 lg:columns-3"
+		class="portfolio-grid mt-8 columns-1 gap-5 sm:columns-2 lg:columns-3"
 		:class="{ 'is-hidden': !isVisible }"
 	>
-		<figure v-for="artwork in filteredArtworks" :key="artwork.slug">
-			<a :href="'/portfolio/' + artwork.slug" class="bg-gray">
+		<figure
+			v-for="artwork in filteredArtworks"
+			:key="artwork.slug"
+			class="mb-5 break-inside-avoid"
+		>
+			<a
+				:href="'/portfolio/' + artwork.slug"
+				class="art-link group relative block overflow-hidden no-underline"
+			>
 				<img
 					:src="artwork.thumb.src"
 					:alt="artwork.name"
 					:width="artwork.thumb.width"
 					:height="artwork.thumb.height"
 					:style="{ viewTransitionName: 'art-' + artwork.slug }"
-					class="mb-3 h-auto w-full"
+					class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]"
 					loading="lazy"
 				/>
-				<span class="figcaption">{{ artwork.name }}</span>
+				<figcaption class="figcaption">
+					<span class="figcaption__name">{{ artwork.name }}</span>
+				</figcaption>
 			</a>
 		</figure>
 	</div>
 </template>
 
 <style scoped>
-@reference "@styles/base.css";
+@reference '@styles/base.css';
+
+.filter-btn {
+	font-family: var(--font-mono);
+	@apply text-2xs tracking-label text-ink-3 relative cursor-pointer pb-1 uppercase transition-colors;
+}
+.filter-btn::after {
+	content: '';
+	@apply bg-accent absolute right-0 bottom-0 left-0 h-[1.5px] origin-left scale-x-0 transition-transform duration-300;
+}
+.filter-btn:hover {
+	@apply text-ink;
+}
+.filter-btn.is-active {
+	@apply text-ink;
+}
+.filter-btn.is-active::after {
+	@apply scale-x-100;
+}
 
 .portfolio-grid {
 	transition: opacity 150ms ease;
@@ -84,23 +136,27 @@ const selectCategory = async (category: string) => {
 	}
 }
 
-button {
-	@apply text-black;
-
-	&:hover {
-		@apply underline;
-	}
-}
-
-figure {
-	@apply relative;
-
-	&:hover .figcaption {
-		@apply opacity-100;
-	}
+.art-link {
+	@apply border-line-2 border;
 }
 
 .figcaption {
-	@apply absolute top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-white/90 text-center text-2xl font-bold text-black opacity-0 transition-opacity;
+	@apply absolute inset-0 z-10 flex items-end p-4 opacity-0 transition-opacity duration-300;
+	background: linear-gradient(
+		to top,
+		rgb(22 22 26 / 0.78) 0%,
+		rgb(22 22 26 / 0.1) 55%,
+		transparent 100%
+	);
+}
+.art-link:hover .figcaption {
+	@apply opacity-100;
+}
+.figcaption__name {
+	font-family: var(--font-display);
+	@apply text-paper translate-y-1 text-2xl font-medium transition-transform duration-300;
+}
+.art-link:hover .figcaption__name {
+	@apply translate-y-0;
 }
 </style>

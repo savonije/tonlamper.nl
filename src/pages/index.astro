@@ -1,53 +1,95 @@
 ---
+import { getImage } from 'astro:assets'
+import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
-import { Image } from 'astro:assets'
-import venusEnMars from '@assets/venus-en-mars.jpg'
-import sater from '@assets/sater-600x652.jpg'
-import flora from '@assets/flora-600x640.jpg'
+import { getPortfolioImage } from '@utils/portfolioImages'
+
+// Newest-first, matching the portfolio grid ordering.
+const artworks = (await getCollection('artworks')).sort(
+	(a, b) => Number(b.id) - Number(a.id)
+)
+
+const works = await Promise.all(
+	artworks
+		.filter(({ data }) => data.category !== null)
+		.map(async ({ data: { slug, name, category, images } }) => {
+			const src = getPortfolioImage(images[0])
+			const width = Math.min(src.width, 600)
+			const height = Math.round((src.height / src.width) * width)
+			const thumb = await getImage({ src, width, quality: 72, format: 'webp' })
+			return { slug, name, category, thumb: { src: thumb.src, width, height } }
+		})
+)
 ---
 
 <Layout title="Ton Lamper">
-	<div class="container-narrow">
-		Ton Lamper is kunstenaar en docent. Zijn grafisch werk is een combinatie van
-		diverse technieken zoals: de lijnets, kleurenets, kartondruk, linoleumsnede
-		en houtsnede. Figuratieve elementen, verwijzingen naar de kunst- en
-		cultuurhistorie, worden samengebracht met abstracte vormen. Een reservoir
-		van beelden met grote contrasten. Filmisch aandoende afbeeldingen tonen o.a.
-		de fascinatie voor de menselijke anatomie. De opeenstapeling van beelden is
-		vergelijkbaar met de snelle afwisseling van beelden uit de moderne media.
+	<!-- ── Statement hero ───────────────────────────── -->
+	<section
+		class="flex min-h-[64vh] flex-col items-center justify-center py-[clamp(48px,9vw,120px)] text-center"
+	>
+		<p class="eyebrow mb-8">Grafisch kunstenaar — Nederland</p>
+		<h1
+			class="font-display mb-10 text-[clamp(52px,13vw,132px)] leading-[0.94] font-medium tracking-[-0.02em]"
+		>
+			Ton Lamper
+		</h1>
+		<p
+			class="text-ink-2 mx-auto max-w-[40ch] text-[clamp(19px,2vw,25px)] leading-relaxed text-pretty"
+		>
+			Een reservoir van beelden met groot contrast — figuratie, anatomie en
+			kunsthistorie, gemonteerd als een filmische beeldenstroom.
+		</p>
+		<div class="mono-label mt-14" aria-hidden="true">werk &darr;</div>
+	</section>
 
-		<div class="mt-9 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-			<div class="flex justify-center">
-				<Image
-					src={venusEnMars}
-					width={275}
-					height={275}
-					layout="fixed"
-					quality={72}
-					loading="eager"
-					alt=""
-				/>
-			</div>
-			<div class="hidden justify-center md:flex">
-				<Image
-					src={sater}
-					width={275}
-					height={275}
-					layout="fixed"
-					quality={72}
-					alt=""
-				/>
-			</div>
-			<div class="hidden justify-center sm:flex">
-				<Image
-					src={flora}
-					width={275}
-					height={275}
-					layout="fixed"
-					quality={72}
-					alt=""
-				/>
-			</div>
+	<!-- ── Gallery grid ─────────────────────────────── -->
+	<section class="pt-[clamp(40px,6vw,80px)] pb-4">
+		<div
+			class="border-b-ink mb-[clamp(40px,5vw,64px)] flex items-baseline justify-between border-b pb-3.5"
+		>
+			<p class="eyebrow">Werk</p>
+			<span class="mono-label">{works.length} prenten</span>
 		</div>
-	</div>
+
+		<div
+			class="grid grid-cols-1 gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(48px,6vw,84px)] sm:grid-cols-2 lg:grid-cols-3"
+		>
+			{
+				works.map((w, i) => (
+					<a
+						href={`/portfolio/${w.slug}`}
+						class="work group block no-underline"
+						data-reveal
+						style={`transition-delay: ${(i % 3) * 80}ms`}
+					>
+						<div class="work__plate border-line bg-paper overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5">
+							<img
+								src={w.thumb.src}
+								alt={w.name}
+								width={w.thumb.width}
+								height={w.thumb.height}
+								loading={i < 6 ? 'eager' : 'lazy'}
+								class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.055]"
+							/>
+						</div>
+						<div class="mt-4">
+							<h3 class="font-display group-hover:text-accent text-[26px] leading-[1.05] font-medium transition-colors">
+								{w.name}
+							</h3>
+							{w.category && (
+								<div class="mono-label mt-1.5">{w.category.join(' · ')}</div>
+							)}
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</section>
 </Layout>
+
+<style>
+	@reference '@styles/base.css';
+	.work:hover .work__plate {
+		box-shadow: 0 18px 40px -22px rgb(0 0 0 / 0.5);
+	}
+</style>

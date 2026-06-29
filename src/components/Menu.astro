@@ -2,13 +2,27 @@
 // Plain-Astro navigation menu. Previously a Vue island (Vue + @vueuse/core) that
 // loaded on every page just to toggle the mobile drawer — now a few lines of
 // vanilla JS so non-portfolio pages ship no framework runtime.
+const links = [
+	{ href: '/', label: 'Home' },
+	{ href: '/de-kunstenaar', label: 'Kunstenaar' },
+	{ href: '/biografie', label: 'Biografie' },
+	{ href: '/portfolio', label: 'Portfolio' },
+	{ href: '/cursussen', label: 'Cursussen' },
+	{ href: '/exposities', label: 'Exposities' },
+	{ href: '/in-de-media', label: 'In de media' },
+	{ href: '/contact', label: 'Contact' }
+]
+
+const path = Astro.url.pathname
+const isActive = (href: string) =>
+	href === '/' ? path === '/' : path === href || path.startsWith(href + '/')
 ---
 
 <div class="lg:hidden">
 	<button
 		type="button"
 		data-menu-open
-		class="text-3xl text-black"
+		class="text-ink text-3xl"
 		aria-label="Open menu"
 		aria-expanded="false"
 	>
@@ -17,18 +31,25 @@
 </div>
 
 <nav data-menu class="main-menu closed" aria-label="Hoofdmenu">
-	<a href="/de-kunstenaar">Kunstenaar</a>
-	<a href="/biografie">Biografie</a>
-	<a href="/portfolio">Portfolio</a>
-	<a href="/cursussen">Cursussen</a>
-	<a href="/exposities">Exposities</a>
-	<a href="/in-de-media">In de media</a>
-	<a href="/contact">Contact</a>
+	{
+		links.map((link, i) => (
+			<a
+				href={link.href}
+				class:list={[{ 'is-active': isActive(link.href) }]}
+				aria-current={isActive(link.href) ? 'page' : undefined}
+			>
+				<span class="menu-no" aria-hidden="true">
+					{String(i + 1).padStart(2, '0')}
+				</span>
+				<span class="menu-label">{link.label}</span>
+			</a>
+		))
+	}
 
 	<button
 		type="button"
 		data-menu-close
-		class="absolute top-5 right-5 text-3xl text-black lg:hidden"
+		class="text-ink absolute top-5 right-5 text-3xl lg:hidden"
 		aria-label="Sluit menu"
 	>
 		&times;
@@ -82,29 +103,62 @@
 </script>
 
 <style>
-	@reference "@styles/base.css";
+	@reference '@styles/base.css';
 
 	.main-menu {
-		@apply fixed top-0 right-0 z-50 flex h-full w-[90%] translate-x-full flex-col items-center gap-3 bg-[#fafbfa] p-20 font-mono text-neutral-700 shadow-lg transition-transform lg:relative lg:w-full lg:translate-x-0 lg:flex-row lg:justify-end lg:gap-9 lg:p-0 lg:shadow-none;
+		@apply bg-paper fixed top-0 right-0 z-50 flex h-full w-[90%] translate-x-full flex-col justify-center gap-0 p-10 shadow-lg transition-transform lg:relative lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-baseline lg:justify-end lg:gap-8 lg:p-0 lg:shadow-none;
 
 		&.open {
 			@apply translate-x-0;
 		}
 
 		a {
-			@apply block w-full text-lg font-bold lg:w-auto lg:text-xs lg:font-normal xl:text-sm;
+			font-family: var(--font-mono);
+			@apply text-ink-2 relative flex items-baseline gap-4 border-b py-3.5 no-underline transition-colors lg:border-0 lg:py-0 lg:pb-1;
 
-			&:after {
-				@apply lg:bg-int-blue lg:block lg:h-px lg:w-0 lg:transition-all lg:content-[''];
+			&:hover {
+				@apply text-ink;
 			}
 
-			.active {
-				@apply underline underline-offset-8;
+			&::after {
+				content: '';
+				@apply bg-accent absolute right-0 bottom-0 left-0 hidden h-[1.5px] origin-left scale-x-0 transition-transform duration-300 lg:block;
+			}
+
+			&:hover::after,
+			&.is-active::after {
+				@apply scale-x-100;
+			}
+
+			&.is-active {
+				@apply text-ink;
 			}
 		}
 
-		a:hover:after {
-			@apply lg:w-full;
+		.menu-no {
+			@apply text-2xs text-accent tracking-label lg:hidden;
+		}
+
+		.menu-label {
+			font-family: var(--font-display);
+			letter-spacing: -0.01em;
+			@apply text-ink text-3xl font-medium;
+		}
+
+		a.is-active .menu-label {
+			@apply italic;
+		}
+
+		@media (min-width: 1024px) {
+			.menu-label {
+				font-family: var(--font-mono);
+				@apply text-ink-2 text-xs font-normal tracking-[0.1em];
+			}
+
+			a:hover .menu-label,
+			a.is-active .menu-label {
+				@apply text-ink not-italic;
+			}
 		}
 	}
 </style>

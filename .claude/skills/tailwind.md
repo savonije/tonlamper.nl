@@ -91,7 +91,7 @@ effect today. Enabling dark mode would require flipping the PrimeVue
 - **Component-local styling:** utility classes in the template. **Never use `<style>`
   blocks, CSS modules, or CSS-in-JS** (per `CLAUDE.md`).
 - **Element base styles / helpers** (e.g. `h1`–`h6`, `.container`, `body`) live in the
-  CSS partials (`src/styles/base.css`, `typography.css`, `main.css`) and use **`@apply`**
+  CSS partials (`src/style/base.css`, `typography.css`, `main.css`) and use **`@apply`**
   with the same theme tokens.
 - **PrimeVue component theming:** the Aura preset's primary palette is set in `main.ts`
   via `definePreset`, reading the CSS vars through the `theme()` helper in

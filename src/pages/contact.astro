@@ -5,47 +5,61 @@ import flora from '@assets/flora-600x640.jpg'
 ---
 
 <Layout title="Ton Lamper - Contact">
-	<div class="container-narrow">
-		<div class="flex flex-col gap-12 sm:flex-row">
-			<div class="hidden w-1/2 flex-col items-center justify-center sm:flex">
+	<section class="pt-10 pb-12 lg:pt-16">
+		<p class="eyebrow mb-6">Neem contact op</p>
+		<h1 class="mb-0 text-6xl sm:text-7xl">Contact</h1>
+	</section>
+
+	<div
+		class="border-t-ink grid grid-cols-1 items-start gap-10 border-t pt-10 sm:grid-cols-2 sm:gap-16"
+	>
+		<div data-reveal>
+			<p class="text-ink mb-8 text-2xl leading-snug" style="font-family: var(--font-display)">
+				Stelt u mij een vraag en ik zal u zo spoedig mogelijk te woord staan.
+			</p>
+
+			<dl>
+				<div class="flex gap-6 border-b py-3.5">
+					<dt class="mono-label w-24 flex-none pt-1">Adres</dt>
+					<dd>
+						Ton Lamper<br />
+						Vermetstraat 31<br />
+						4458 BA &rsquo;s Heer Arendskerke
+					</dd>
+				</div>
+				<div class="flex gap-6 border-b py-3.5">
+					<dt class="mono-label w-24 flex-none pt-1">Tel</dt>
+					<dd><a href="tel:0113561841">0113-561841</a></dd>
+				</div>
+				<div class="flex gap-6 border-b py-3.5">
+					<dt class="mono-label w-24 flex-none pt-1">Mobiel</dt>
+					<dd><a href="tel:0610521843">06-10521843</a></dd>
+				</div>
+				<div class="flex gap-6 border-b py-3.5">
+					<dt class="mono-label w-24 flex-none pt-1">E-mail</dt>
+					<dd>
+						<a href="mailto:tonlamper@zeelandnet.nl">tonlamper@zeelandnet.nl</a>
+					</dd>
+				</div>
+			</dl>
+		</div>
+
+		<div
+			class="hidden justify-center sm:flex"
+			data-reveal
+			style="transition-delay: 100ms"
+		>
+			<div class="border-line-2 border p-2">
 				<Image
 					src={flora}
 					width={400}
 					height={400}
 					layout="fixed"
 					quality={72}
-					alt=""
+					alt="Flora — ets van Ton Lamper"
+					class="block"
 				/>
-			</div>
-			<div class="w-1/2">
-				<h1>Contact</h1>
-				<p>
-					Stelt u mij een vraag en ik zal u zo spoedig mogelijk te woord staan.
-				</p>
-
-				<p>
-					<strong>Ton Lamper</strong><br />
-					Vermetstraat 31<br />
-					4458 BA ’s Heer Arendskerke
-				</p>
-
-				Tel: <a href="tel:0113561841">0113-561841</a><br />
-				Mobiel: <a href="tel:0610521843">06-10521843</a><br />
-				Email: <a href="mailto:tonlamper@zeelandnet.nl"
-					>tonlamper@zeelandnet.nl</a
-				>
 			</div>
 		</div>
 	</div>
 </Layout>
-
-<style>
-	@reference "@styles/base.css";
-	p {
-		margin-bottom: 1em;
-	}
-
-	a {
-		color: black;
-	}
-</style>

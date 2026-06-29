@@ -1,31 +1,35 @@
 @import 'tailwindcss';
 
 @theme {
+	/* ---- Type: editorial Garamond pairing + mono labels ---- */
+	--font-serif: 'EB Garamond', Georgia, serif;
+	--font-display: 'Cormorant Garamond', Georgia, serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+	/* ---- Paper & ink palette, Klein-blue accent ---- */
+	--color-paper: #f5f3ec;
+	--color-ink: #16161a;
+	--color-ink-2: #44454c;
+	--color-ink-3: #8b8c93;
+	--color-accent: #002fa7;
+	--color-line: rgb(22 22 26 / 0.14);
+	--color-line-2: rgb(22 22 26 / 0.07);
+
 	/* Micro label type scale (smaller than the default text-xs / 12px) */
-	--text-2xs: 0.6875rem; /* 11px — eyebrow labels & CTA links */
-	--text-3xs: 0.625rem; /* 10px — definition-list term labels */
+	--text-2xs: 0.71875rem; /* 11.5px — mono eyebrow labels & CTA links */
+	--text-3xs: 0.65625rem; /* 10.5px — definition-list term labels */
 
-	/* Exposition heading size between text-3xl and text-4xl */
-	--text-display: 2rem; /* 32px */
+	/* Display heading size between text-3xl and text-5xl */
+	--text-display: 2.625rem; /* 42px */
 
-	/* Wide letter-spacing for uppercase labels */
-	--tracking-label: 0.3em;
-	--tracking-label-wide: 0.4em;
-
-	--font-mono: 'IBM Plex Mono', monospace;
-
-	--color-gray-nurse: #fafbfa;
-	--color-woodsmoke: #16161a;
-	--color-int-blue: #002fa7;
+	/* Letter-spacing for uppercase mono labels */
+	--tracking-label: 0.13em;
+	--tracking-label-wide: 0.22em;
 }
 
 /*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
+  Default border color: hairline ink instead of Tailwind v4's currentColor,
+  so every plain `border` utility renders the design's hairlines.
 */
 @layer base {
 	*,
@@ -33,7 +37,7 @@
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
+		border-color: var(--color-line, currentColor);
 	}
 
 	.container-narrow {
@@ -41,23 +45,37 @@
 	}
 }
 
-:root {
-	--accent: 136, 58, 234;
-	--accent-light: 224, 204, 250;
-	--accent-dark: 49, 10, 101;
-}
 html {
-	font-family: 'Cormorant Garamond', serif;
+	font-family: var(--font-serif);
 	@apply h-full;
+	text-rendering: optimizeLegibility;
 }
 
 body {
-	@apply bg-gray-nurse text-woodsmoke h-full overflow-x-hidden text-lg leading-loose tracking-wide;
+	font-size: 19px;
+	line-height: 1.6;
+	@apply bg-paper text-ink h-full overflow-x-hidden;
 	-webkit-font-smoothing: antialiased;
+}
+
+/* Paper grain overlay */
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 90;
+	opacity: 0.055;
+	mix-blend-mode: multiply;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .container {
 	@apply mx-auto max-w-full px-6 sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px];
+}
+
+::selection {
+	@apply bg-accent text-paper;
 }
 
 h1,
@@ -65,27 +83,27 @@ h2,
 h3,
 h4,
 h5 {
-	@apply mb-[1em] font-light! uppercase;
+	font-family: var(--font-display);
+	letter-spacing: -0.01em;
+	@apply text-ink mb-[0.6em] font-medium;
+	line-height: 1.05;
+	text-wrap: balance;
 }
 
 h1 {
-	@apply text-3xl font-bold text-black;
+	@apply text-5xl sm:text-6xl;
 }
 
 h2 {
-	@apply text-xl font-bold text-black;
+	@apply text-3xl;
 }
 
 h3 {
-	@apply text-lg font-bold text-black;
+	@apply text-2xl;
 }
 
 h4 {
-	@apply text-sm font-bold text-black;
-}
-
-h5 {
-	@apply font-bold text-black;
+	@apply text-xl;
 }
 
 strong,
@@ -94,10 +112,11 @@ b {
 }
 
 .btn {
-	@apply inline-flex items-center justify-center rounded-sm border px-5 py-3 font-medium transition-colors;
+	font-family: var(--font-mono);
+	@apply text-2xs tracking-label bg-ink text-paper border-ink inline-flex items-center justify-center border px-6 py-3.5 uppercase no-underline transition-colors;
 
 	&:hover {
-		@apply bg-slate-100;
+		@apply bg-accent border-accent text-paper;
 	}
 }
 
@@ -106,15 +125,54 @@ nav a {
 }
 
 a {
-	@apply underline;
+	@apply decoration-ink-3 underline decoration-1 underline-offset-4 transition-colors;
 
 	&:hover {
-		@apply text-int-blue;
+		@apply text-accent decoration-accent;
 	}
 }
 
+/* Uppercase mono micro-label */
+.mono-label {
+	font-family: var(--font-mono);
+	@apply text-2xs tracking-label text-ink-3 uppercase;
+}
+
+/* Eyebrow: mono label with a short accent dash */
+.eyebrow {
+	font-family: var(--font-mono);
+	@apply text-2xs tracking-label text-ink-2 inline-flex items-center gap-2.5 uppercase;
+}
+.eyebrow::before {
+	content: '';
+	width: 18px;
+	height: 1.5px;
+	background: var(--color-accent);
+	flex: none;
+}
+
 .body-font {
-	font-family: 'IBM Plex Mono', monospace;
+	font-family: var(--font-serif);
+}
+
+/* ---- Scroll reveal (elements with data-reveal, activated in Layout.astro) ---- */
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+[data-reveal].is-rev {
+	opacity: 1;
+	transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+	[data-reveal] {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
 }
 
 ::view-transition-old(root),

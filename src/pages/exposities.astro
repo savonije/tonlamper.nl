@@ -16,24 +16,20 @@ const items = exposities.map(({ data: { imageSrc, ...rest } }) => ({
 ---
 
 <Layout title="Ton Lamper - Exposities">
-	<section class="container-narrow pt-10 pb-6 text-center lg:pt-16">
-		<p class="text-2xs tracking-label-wide mb-6 text-neutral-500 uppercase">
-			Aankomend &amp; doorlopend
-		</p>
-		<h1 class="mb-8!">Exposities</h1>
-		<div class="mx-auto mb-10 h-px w-12 bg-neutral-300" aria-hidden="true">
-		</div>
-		<p class="mx-auto max-w-md leading-relaxed text-neutral-600">
+	<section class="pt-10 pb-12 lg:pt-16">
+		<p class="eyebrow mb-6">Aankomend &amp; doorlopend</p>
+		<h1 class="mb-8 text-6xl sm:text-7xl">Exposities</h1>
+		<p class="text-ink-2 max-w-md text-xl leading-relaxed text-pretty">
 			Een selectie van tentoonstellingen waar werk van Ton Lamper te zien is.
 		</p>
 	</section>
 
-	<div class="mx-auto max-w-5xl">
+	<div class="border-t-ink mx-auto max-w-5xl border-t">
 		{
 			items.length > 0 ? (
 				items.map((expo, i) => <ExpositionCard {...expo} index={i} />)
 			) : (
-				<p class="px-6 py-16 text-center leading-relaxed text-neutral-600 lg:py-24">
+				<p class="text-ink-2 px-6 py-16 text-center leading-relaxed lg:py-24">
 					Op dit moment zijn er geen exposities...
 				</p>
 			)

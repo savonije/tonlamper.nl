@@ -11,36 +11,41 @@ const media = (await getCollection('media')).sort(
 ---
 
 <Layout title="Ton Lamper - In de media">
-	<div>
-		<h1>In de media</h1>
-	</div>
+	<section class="pt-10 pb-12 lg:pt-16">
+		<p class="eyebrow mb-6">Pers &amp; publicaties</p>
+		<h1 class="mb-8 text-6xl sm:text-7xl">In de media</h1>
+		<p class="text-ink-2 max-w-md text-xl leading-relaxed text-pretty">
+			Een greep uit krantenartikelen en publicaties over het werk van Ton
+			Lamper.
+		</p>
+	</section>
 
-	<div class="grid gap-3 sm:grid-cols-2">
+	<div class="border-t-ink grid gap-x-10 gap-y-12 border-t pt-12 sm:grid-cols-2">
 		{
-			media.map(({ data: item }) => (
-				<article class="article">
-					<a href={item.url} target="_blank" class="no-underline!">
-						<span class="text-sm text-gray-500 uppercase">{item.date}</span> -
-						<span class="text-sm text-gray-500 uppercase">{item.outlet}</span>
-						<div class="mb-3 text-xl font-bold">{item.title}</div>
-						<Image
-							src={getAssetImage(`/images/in-de-media/${item.image.src}`)}
-							alt={item.image.alt}
-							sizes="(min-width: 640px) 50vw, 100vw"
-							quality={72}
-							class="rounded-sm"
-						/>
-						<div class="text-gray-500">&copy; {item.image.credit}</div>
+			media.map(({ data: item }, i) => (
+				<article class="group" data-reveal style={`transition-delay: ${(i % 2) * 80}ms`}>
+					<a href={item.url} target="_blank" class="block no-underline!">
+						<div class="border-line-2 mb-5 overflow-hidden border">
+							<Image
+								src={getAssetImage(`/images/in-de-media/${item.image.src}`)}
+								alt={item.image.alt}
+								sizes="(min-width: 640px) 50vw, 100vw"
+								quality={72}
+								class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+							/>
+						</div>
+						<div class="mono-label mb-2 flex items-center gap-2">
+							<span>{item.date}</span>
+							<span aria-hidden="true">&middot;</span>
+							<span>{item.outlet}</span>
+						</div>
+						<h2 class="group-hover:text-accent mb-2 text-2xl transition-colors">
+							{item.title}
+						</h2>
+						<div class="text-ink-3 text-sm">&copy; {item.image.credit}</div>
 					</a>
 				</article>
 			))
 		}
 	</div>
 </Layout>
-
-<style>
-	@reference "@styles/base.css";
-	.article {
-		@apply rounded border p-3 shadow-md;
-	}
-</style>
