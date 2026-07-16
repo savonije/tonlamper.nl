@@ -61,13 +61,13 @@ const works = await Promise.all(
 					<span class="mono-label">{featured.length} werken</span>
 				</div>
 
-				<div class="grid grid-cols-1 gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(48px,6vw,84px)] md:grid-cols-2">
+				<div class="grid grid-cols-1 gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(48px,6vw,84px)] sm:grid-cols-2 lg:grid-cols-3">
 					{featured.map((w, i) => (
 						<a
 							href={`/portfolio/${w.slug}`}
 							class="work group block no-underline"
 							data-reveal
-							style={`transition-delay: ${(i % 2) * 80}ms`}
+							style={`transition-delay: ${(i % 3) * 80}ms`}
 						>
 							<div class="work__plate border-line bg-paper overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5">
 								<img
@@ -75,7 +75,7 @@ const works = await Promise.all(
 									alt={w.name}
 									width={w.thumb.width}
 									height={w.thumb.height}
-									loading={i < 2 ? 'eager' : 'lazy'}
+									loading={i < 3 ? 'eager' : 'lazy'}
 									class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.055]"
 								/>
 							</div>
