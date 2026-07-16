@@ -2,8 +2,6 @@
 import Layout from '@layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 
-// Sort by numeric id to preserve the original biografie.json array order
-// (the grouping below depends on chronological order).
 const entries = (await getCollection('biografie')).sort(
 	(a, b) => Number(a.id) - Number(b.id)
 )

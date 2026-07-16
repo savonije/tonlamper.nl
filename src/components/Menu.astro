@@ -1,12 +1,8 @@
 ---
-// Plain-Astro navigation menu. Previously a Vue island (Vue + @vueuse/core) that
-// loaded on every page just to toggle the mobile drawer — now a few lines of
-// vanilla JS so non-portfolio pages ship no framework runtime.
 const links = [
 	{ href: '/', label: 'Home' },
 	{ href: '/de-kunstenaar', label: 'Kunstenaar' },
 	{ href: '/biografie', label: 'Biografie' },
-	{ href: '/portfolio', label: 'Portfolio' },
 	{ href: '/cursussen', label: 'Cursussen' },
 	{ href: '/exposities', label: 'Exposities' },
 	{ href: '/in-de-media', label: 'In de media' },
@@ -66,11 +62,10 @@ const isActive = (href: string) =>
 		openBtn?.setAttribute('aria-expanded', 'false')
 	}
 
-	// Document-level listeners persist across client-side navigations, so they
-	// are registered once and look up the current menu each time they fire.
 	document.addEventListener('keydown', (e) => {
 		if (e.key === 'Escape') closeMenu()
 	})
+
 	document.addEventListener('click', (e) => {
 		const nav = document.querySelector('[data-menu]')
 		const openBtn = document.querySelector('[data-menu-open]')
@@ -80,9 +75,6 @@ const isActive = (href: string) =>
 		}
 	})
 
-	// Element-level listeners must be re-bound after every page transition,
-	// since ClientRouter swaps in fresh DOM. astro:page-load also fires on the
-	// initial load.
 	const bindMenu = () => {
 		const nav = document.querySelector('[data-menu]')
 		const openBtn = document.querySelector<HTMLElement>('[data-menu-open]')
@@ -141,7 +133,6 @@ const isActive = (href: string) =>
 
 		.menu-label {
 			font-family: var(--font-display);
-			letter-spacing: -0.01em;
 			@apply text-ink text-3xl font-medium;
 		}
 
