@@ -10,6 +10,7 @@ const artworks = defineCollection({
 		name: z.string(),
 		images: z.array(z.string()),
 		category: z.array(z.string()).nullable(),
+		featured: z.boolean().default(false),
 		slug: z.string(),
 		text: z.string()
 	})

@@ -1,24 +1,34 @@
 ---
 import { getImage } from 'astro:assets'
-import { getCollection } from 'astro:content'
+import { getCollection, type CollectionEntry } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import { getPortfolioImage } from '@utils/portfolioImages'
+import { categories } from '@utils/constants'
 
 // Newest-first, matching the portfolio grid ordering.
 const artworks = (await getCollection('artworks')).sort(
 	(a, b) => Number(b.id) - Number(a.id)
 )
 
+// Build a display card (responsive webp thumbnail) from an artwork entry.
+// Featured cards render larger, so they get a wider source.
+const toCard = async (entry: CollectionEntry<'artworks'>, maxWidth: number) => {
+	const { slug, name, category, images } = entry.data
+	const src = getPortfolioImage(images[0])
+	const width = Math.min(src.width, maxWidth)
+	const height = Math.round((src.height / src.width) * width)
+	const thumb = await getImage({ src, width, quality: 72, format: 'webp' })
+	return { slug, name, category, thumb: { src: thumb.src, width, height } }
+}
+
+const featured = await Promise.all(
+	artworks.filter(({ data }) => data.featured).map((a) => toCard(a, 900))
+)
+
 const works = await Promise.all(
 	artworks
 		.filter(({ data }) => data.category !== null)
-		.map(async ({ data: { slug, name, category, images } }) => {
-			const src = getPortfolioImage(images[0])
-			const width = Math.min(src.width, 600)
-			const height = Math.round((src.height / src.width) * width)
-			const thumb = await getImage({ src, width, quality: 72, format: 'webp' })
-			return { slug, name, category, thumb: { src: thumb.src, width, height } }
-		})
+		.map((a) => toCard(a, 600))
 )
 ---
 
@@ -42,13 +52,85 @@ const works = await Promise.all(
 		<div class="mono-label mt-14" aria-hidden="true">werk &darr;</div>
 	</section>
 
+	<!-- ── Featured ─────────────────────────────────── -->
+	{
+		featured.length > 0 && (
+			<section class="pt-[clamp(40px,6vw,80px)]">
+				<div class="border-b-ink mb-[clamp(28px,4vw,44px)] flex items-baseline justify-between border-b pb-3.5">
+					<p class="eyebrow">Uitgelicht</p>
+					<span class="mono-label">{featured.length} werken</span>
+				</div>
+
+				<div class="grid grid-cols-1 gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(48px,6vw,84px)] md:grid-cols-2">
+					{featured.map((w, i) => (
+						<a
+							href={`/portfolio/${w.slug}`}
+							class="work group block no-underline"
+							data-reveal
+							style={`transition-delay: ${(i % 2) * 80}ms`}
+						>
+							<div class="work__plate border-line bg-paper overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5">
+								<img
+									src={w.thumb.src}
+									alt={w.name}
+									width={w.thumb.width}
+									height={w.thumb.height}
+									loading={i < 2 ? 'eager' : 'lazy'}
+									class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.055]"
+								/>
+							</div>
+							<div class="mt-4">
+								<h3 class="font-display group-hover:text-accent text-[clamp(28px,3vw,38px)] leading-[1.05] font-medium transition-colors">
+									{w.name}
+								</h3>
+								{w.category && (
+									<div class="mono-label mt-1.5">{w.category.join(' · ')}</div>
+								)}
+							</div>
+						</a>
+					))}
+				</div>
+			</section>
+		)
+	}
+
 	<!-- ── Gallery grid ─────────────────────────────── -->
 	<section class="pt-[clamp(40px,6vw,80px)] pb-4">
 		<div
-			class="border-b-ink mb-[clamp(40px,5vw,64px)] flex items-baseline justify-between border-b pb-3.5"
+			class="border-b-ink mb-[clamp(28px,4vw,44px)] flex items-baseline justify-between border-b pb-3.5"
 		>
 			<p class="eyebrow">Werk</p>
-			<span class="mono-label">{works.length} prenten</span>
+			<span class="mono-label"
+				><span data-count>{works.length}</span> werken</span
+			>
+		</div>
+
+		<div
+			class="mb-[clamp(32px,4vw,56px)] flex flex-wrap items-center gap-x-6 gap-y-3"
+			data-filter
+			role="group"
+			aria-label="Filter op techniek"
+		>
+			<button
+				type="button"
+				class="filter-btn is-active"
+				data-filter-btn
+				data-cat=""
+				aria-pressed="true">Alles</button
+			>
+			{
+				categories.map((cat) => (
+					<button
+						type="button"
+						class="filter-btn"
+						data-filter-btn
+						data-cat={cat}
+						aria-pressed="false"
+					>
+						{cat}
+					</button>
+				))
+			}
 		</div>
 
 		<div
@@ -60,6 +142,7 @@ const works = await Promise.all(
 						href={`/portfolio/${w.slug}`}
 						class="work group block no-underline"
 						data-reveal
+						data-cats={(w.category ?? []).join(' ')}
 						style={`transition-delay: ${(i % 3) * 80}ms`}
 					>
 						<div class="work__plate border-line bg-paper overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5">
@@ -86,6 +169,49 @@ const works = await Promise.all(
 		</div>
 	</section>
 </Layout>
+
+<script>
+	// Client-side filtering of the (already server-rendered) gallery by
+	// technique. Pure show/hide — no data fetching — so it stays a small
+	// vanilla script, matching the navigation menu. Re-binds after every
+	// ClientRouter page swap.
+	const initFilter = () => {
+		const bar = document.querySelector('[data-filter]')
+		if (!bar) return
+
+		const buttons = [
+			...bar.querySelectorAll<HTMLButtonElement>('[data-filter-btn]')
+		]
+		const works = [...document.querySelectorAll<HTMLElement>('[data-cats]')]
+		const countEl = document.querySelector('[data-count]')
+
+		const apply = (cat: string) => {
+			let visible = 0
+			for (const work of works) {
+				const cats = (work.dataset.cats ?? '').split(' ')
+				const show = !cat || cats.includes(cat)
+				work.classList.toggle('hidden', !show)
+				if (show) {
+					// Guarantee filtered-in works aren't stuck at the reveal
+					// animation's initial opacity:0 if they were never scrolled to.
+					work.classList.add('is-rev')
+					visible++
+				}
+			}
+			if (countEl) countEl.textContent = String(visible)
+			for (const btn of buttons) {
+				const active = (btn.dataset.cat ?? '') === cat
+				btn.classList.toggle('is-active', active)
+				btn.setAttribute('aria-pressed', active ? 'true' : 'false')
+			}
+		}
+
+		for (const btn of buttons) {
+			btn.addEventListener('click', () => apply(btn.dataset.cat ?? ''))
+		}
+	}
+	document.addEventListener('astro:page-load', initFilter)
+</script>
 
 <style>
 	@reference '@styles/base.css';

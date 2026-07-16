@@ -147,6 +147,21 @@ a {
 	@apply font-serif;
 }
 
+/* Filter toggle: mono label with an accent underline that grows when active */
+.filter-btn {
+	@apply text-2xs tracking-label text-ink-3 relative cursor-pointer pb-1 font-mono uppercase transition-colors;
+}
+.filter-btn::after {
+	@apply bg-accent absolute right-0 bottom-0 left-0 h-[1.5px] origin-left scale-x-0 transition-transform duration-300 content-[''];
+}
+.filter-btn:hover,
+.filter-btn.is-active {
+	@apply text-ink;
+}
+.filter-btn.is-active::after {
+	@apply scale-x-100;
+}
+
 /* ---- Scroll reveal (elements with data-reveal, activated in Layout.astro) ---- */
 [data-reveal] {
 	@apply opacity-0;
