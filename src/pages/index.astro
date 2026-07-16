@@ -2,6 +2,7 @@
 import { getImage } from 'astro:assets'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
+import WorkCard from '@components/WorkCard.astro'
 import { getPortfolioImage } from '@utils/portfolioImages'
 import { categories } from '@utils/constants'
 
@@ -66,33 +67,13 @@ const works = await Promise.all(
 				</div>
 
 				<div class="grid grid-cols-1 gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(48px,6vw,84px)] sm:grid-cols-2 lg:grid-cols-3">
-					{featured.map((w, i) => (
-						<a
-							href={`/portfolio/${w.slug}`}
-							class="work group block no-underline!"
-							data-reveal
-							style={`transition-delay: ${(i % 3) * 80}ms`}
-						>
-							<div
-								class={`work__plate border-line bg-paper ${w.aspect} overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5`}
-							>
-								<img
-									src={w.thumb.src}
-									alt={w.name}
-									width={w.thumb.width}
-									loading={i < 3 ? 'eager' : 'lazy'}
-									class="block size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-								/>
-							</div>
-							<div class="mt-4">
-								<h3 class="font-display group-hover:text-accent text-[clamp(28px,3vw,38px)] font-medium transition-colors">
-									{w.name}
-								</h3>
-								{w.category && (
-									<div class="mono-label mt-1.5">{w.category.join(' · ')}</div>
-								)}
-							</div>
-						</a>
+					{featured.map((work, index) => (
+						<WorkCard
+							work={work}
+							index={index}
+							eager={index < 3}
+							headingClass="text-[clamp(28px,3vw,38px)]"
+						/>
 					))}
 				</div>
 			</section>
@@ -144,35 +125,7 @@ const works = await Promise.all(
 		>
 			{
 				works.map((work, index) => (
-					<a
-						href={`/portfolio/${work.slug}`}
-						class="work group block no-underline!"
-						data-reveal
-						data-cats={(work.category ?? []).join(' ')}
-						style={`transition-delay: ${(index % 3) * 80}ms`}
-					>
-						<div
-							class={`work__plate border-line bg-paper ${work.aspect} overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5`}
-						>
-							<img
-								src={work.thumb.src}
-								alt={work.name}
-								width={work.thumb.width}
-								loading={index < 6 ? 'eager' : 'lazy'}
-								class="block size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-							/>
-						</div>
-
-						<div class="mt-4">
-							<h3 class="font-display group-hover:text-accent text-[26px] leading-[1.05] font-medium transition-colors">
-								{work.name}
-							</h3>
-
-							{work.category && (
-								<div class="mono-label mt-1.5">{work.category.join(' · ')}</div>
-							)}
-						</div>
-					</a>
+					<WorkCard work={work} index={index} eager={index < 6} withCats />
 				))
 			}
 		</div>

@@ -1,0 +1,59 @@
+---
+interface Card {
+	slug: string
+	name: string
+	category: string[] | null
+	aspect: string
+	thumb: { src: string; width: number }
+}
+
+interface Props {
+	work: Card
+	index?: number
+	eager?: boolean
+	headingClass?: string
+	withCats?: boolean
+}
+
+const {
+	work,
+	index = 0,
+	eager = false,
+	headingClass = 'text-[26px] leading-[1.05]',
+	withCats = false
+} = Astro.props
+---
+
+<a
+	href={`/portfolio/${work.slug}`}
+	class="work group block no-underline!"
+	data-reveal
+	data-cats={withCats ? (work.category ?? []).join(' ') : undefined}
+	style={`transition-delay: ${(index % 3) * 80}ms`}
+>
+	<div
+		class={`work__plate border-line bg-paper ${work.aspect} overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5`}
+	>
+		<img
+			src={work.thumb.src}
+			alt={work.name}
+			width={work.thumb.width}
+			loading={eager ? 'eager' : 'lazy'}
+			class="block size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+		/>
+	</div>
+
+	<div class="mt-4">
+		<h3
+			class={`font-display group-hover:text-accent font-medium transition-colors ${headingClass}`}
+		>
+			{work.name}
+		</h3>
+
+		{
+			work.category && (
+				<div class="mono-label mt-1.5">{work.category.join(' · ')}</div>
+			)
+		}
+	</div>
+</a>
