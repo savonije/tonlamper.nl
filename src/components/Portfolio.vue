@@ -111,8 +111,7 @@ const clearFilter = async () => {
 @reference '@styles/base.css';
 
 .filter-btn {
-	font-family: var(--font-mono);
-	@apply text-2xs tracking-label text-ink-3 relative cursor-pointer pb-1 uppercase transition-colors;
+	@apply text-2xs tracking-label text-ink-3 relative cursor-pointer pb-1 font-mono uppercase transition-colors;
 }
 .filter-btn::after {
 	content: '';
@@ -153,8 +152,7 @@ const clearFilter = async () => {
 	@apply opacity-100;
 }
 .figcaption__name {
-	font-family: var(--font-display);
-	@apply text-paper translate-y-1 text-2xl font-medium transition-transform duration-300;
+	@apply font-display text-paper translate-y-1 text-2xl font-medium transition-transform duration-300;
 }
 .art-link:hover .figcaption__name {
 	@apply translate-y-0;

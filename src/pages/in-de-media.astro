@@ -20,10 +20,16 @@ const media = (await getCollection('media')).sort(
 		</p>
 	</section>
 
-	<div class="border-t-ink grid gap-x-10 gap-y-12 border-t pt-12 sm:grid-cols-2">
+	<div
+		class="border-t-ink grid gap-x-10 gap-y-12 border-t pt-12 sm:grid-cols-2"
+	>
 		{
 			media.map(({ data: item }, i) => (
-				<article class="group" data-reveal style={`transition-delay: ${(i % 2) * 80}ms`}>
+				<article
+					class="group"
+					data-reveal
+					style={`transition-delay: ${(i % 2) * 80}ms`}
+				>
 					<a href={item.url} target="_blank" class="block no-underline!">
 						<div class="border-line-2 mb-5 overflow-hidden border">
 							<Image

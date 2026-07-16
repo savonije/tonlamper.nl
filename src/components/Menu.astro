@@ -105,8 +105,7 @@ const isActive = (href: string) =>
 		}
 
 		a {
-			font-family: var(--font-mono);
-			@apply text-ink-2 relative flex items-baseline gap-4 border-b py-3.5 no-underline transition-colors lg:border-0 lg:py-0 lg:pb-1;
+			@apply text-ink-2 relative flex items-baseline gap-4 border-b py-3.5 font-mono no-underline transition-colors lg:border-0 lg:py-0 lg:pb-1;
 
 			&:hover {
 				@apply text-ink;
@@ -132,8 +131,7 @@ const isActive = (href: string) =>
 		}
 
 		.menu-label {
-			font-family: var(--font-display);
-			@apply text-ink text-3xl font-medium;
+			@apply font-display text-ink text-3xl font-medium;
 		}
 
 		a.is-active .menu-label {
@@ -142,8 +140,7 @@ const isActive = (href: string) =>
 
 		@media (min-width: 1024px) {
 			.menu-label {
-				font-family: var(--font-mono);
-				@apply text-ink-2 text-xs font-normal tracking-[0.1em];
+				@apply text-ink-2 font-mono text-xs font-normal tracking-[0.1em];
 			}
 
 			a:hover .menu-label,

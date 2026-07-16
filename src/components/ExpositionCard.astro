@@ -54,9 +54,7 @@ const isReversed = index % 2 === 1
 
 				<div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : ''}`}>
 					<p class="eyebrow mb-5">Tentoonstelling</p>
-					<h2 class="mb-9 text-3xl leading-tight lg:text-[2.625rem]">
-						{title}
-					</h2>
+					<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
 
 					<dl class="mb-10 space-y-5">
 						<div class="border-t pt-4">
@@ -77,7 +75,7 @@ const isReversed = index % 2 === 1
 					<a
 						href={linkUrl}
 						target="_blank"
-						class="text-2xs tracking-label hover:text-accent hover:border-accent inline-flex items-center gap-3 border-b border-black pb-1 font-mono uppercase no-underline! transition-all duration-300 hover:gap-5"
+						class="text-2xs tracking-label hover:text-accent hover:border-accent border-ink inline-flex items-center gap-3 border-b pb-1 font-mono uppercase no-underline! transition-all duration-300 hover:gap-5"
 					>
 						<span>{linkText}</span>
 						<span aria-hidden="true">&rarr;</span>
@@ -87,7 +85,7 @@ const isReversed = index % 2 === 1
 		) : (
 			<div class="mx-auto max-w-xl text-center">
 				<p class="eyebrow mb-5 justify-center">Tentoonstelling</p>
-				<h2 class="mb-9 text-3xl leading-tight lg:text-[2.625rem]">{title}</h2>
+				<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
 
 				<div class="mx-auto mb-10 max-w-md space-y-5 text-left">
 					<div class="border-t pt-4">
@@ -108,7 +106,7 @@ const isReversed = index % 2 === 1
 				<a
 					href={linkUrl}
 					target="_blank"
-					class="text-2xs tracking-label hover:text-accent hover:border-accent inline-flex items-center gap-3 border-b border-black pb-1 font-mono uppercase no-underline! transition-all duration-300 hover:gap-5"
+					class="text-2xs tracking-label hover:text-accent hover:border-accent border-ink inline-flex items-center gap-3 border-b pb-1 font-mono uppercase no-underline! transition-all duration-300 hover:gap-5"
 				>
 					<span>{linkText}</span>
 					<span aria-hidden="true">&rarr;</span>

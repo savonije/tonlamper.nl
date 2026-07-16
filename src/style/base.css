@@ -37,7 +37,7 @@
 	::before,
 	::backdrop,
 	::file-selector-button {
-		border-color: var(--color-line, currentColor);
+		@apply border-line;
 	}
 
 	.container-narrow {
@@ -46,27 +46,18 @@
 }
 
 html {
-	font-family: var(--font-serif);
-	@apply h-full;
+	@apply h-full font-serif;
 	text-rendering: optimizeLegibility;
 }
 
 body {
-	font-size: 19px;
-	line-height: 1.6;
-	@apply bg-paper text-ink h-full overflow-x-hidden;
-	-webkit-font-smoothing: antialiased;
+	@apply bg-paper text-ink h-full overflow-x-hidden text-[19px] leading-[1.6] antialiased;
 }
 
 /* Paper grain overlay */
 body::after {
-	content: '';
-	position: fixed;
-	inset: 0;
-	pointer-events: none;
-	z-index: 90;
-	opacity: 0.055;
-	mix-blend-mode: multiply;
+	@apply pointer-events-none fixed inset-0 z-[90] opacity-[0.055] mix-blend-multiply content-[''];
+	/* SVG fractal-noise data URI — not expressible as a utility */
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -83,11 +74,7 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: var(--font-display);
-	letter-spacing: -0.01em;
-	@apply text-ink mb-[0.6em] font-medium;
-	line-height: 1.05;
-	text-wrap: balance;
+	@apply font-display text-ink mb-[0.6em] leading-[1.05] font-medium tracking-[-0.01em] text-balance;
 }
 
 h1 {
@@ -112,18 +99,13 @@ b {
 }
 
 .btn {
-	font-family: var(--font-mono);
-	@apply text-2xs tracking-label bg-ink text-paper border-ink relative isolate inline-flex items-center justify-center overflow-hidden border px-6 py-3.5 uppercase no-underline transition-colors duration-300;
+	@apply text-2xs tracking-label bg-ink text-paper border-ink relative isolate inline-flex items-center justify-center overflow-hidden border px-6 py-3.5 font-mono uppercase no-underline transition-colors duration-300;
 
 	/* Accent circle that grows from the bottom-left corner on hover */
 	&::before {
-		@apply bg-accent absolute -z-10 aspect-square rounded-full;
-		content: '';
-		width: 250%;
-		bottom: 0;
-		left: 0;
+		@apply bg-accent absolute bottom-0 left-0 -z-10 aspect-square w-[250%] origin-center rounded-full content-[''];
+		/* Animated via the transform shorthand so transition-transform can drive it */
 		transform: translate(-50%, 50%) scale(0);
-		transform-origin: center;
 		transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
@@ -150,44 +132,37 @@ a {
 
 /* Uppercase mono micro-label */
 .mono-label {
-	font-family: var(--font-mono);
-	@apply text-2xs tracking-label text-ink-3 uppercase;
+	@apply text-2xs tracking-label text-ink-3 font-mono uppercase;
 }
 
 /* Eyebrow: mono label with a short accent dash */
 .eyebrow {
-	font-family: var(--font-mono);
-	@apply text-2xs tracking-label text-ink-2 inline-flex items-center gap-2.5 uppercase;
+	@apply text-2xs tracking-label text-ink-2 inline-flex items-center gap-2.5 font-mono uppercase;
 }
 .eyebrow::before {
-	content: '';
-	width: 18px;
-	height: 1.5px;
-	background: var(--color-accent);
-	flex: none;
+	@apply bg-accent h-[1.5px] w-[18px] flex-none content-[''];
 }
 
 .body-font {
-	font-family: var(--font-serif);
+	@apply font-serif;
 }
 
 /* ---- Scroll reveal (elements with data-reveal, activated in Layout.astro) ---- */
 [data-reveal] {
-	opacity: 0;
+	@apply opacity-0;
+	/* transform is animated by the transition below, so keep both raw */
 	transform: translateY(24px);
 	transition:
 		opacity 0.8s ease,
 		transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 [data-reveal].is-rev {
-	opacity: 1;
+	@apply opacity-100;
 	transform: translateY(0);
 }
 @media (prefers-reduced-motion: reduce) {
 	[data-reveal] {
-		opacity: 1;
-		transform: none;
-		transition: none;
+		@apply transform-none opacity-100 transition-none;
 	}
 }
 
