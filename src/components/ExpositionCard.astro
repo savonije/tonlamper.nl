@@ -11,7 +11,7 @@ export interface Props {
 	dateLabel?: string
 	date: string
 	description?: string
-	linkUrl: string
+	linkUrl?: string
 	linkText?: string
 	index?: number
 }
@@ -31,47 +31,65 @@ const {
 } = Astro.props
 
 const isReversed = index % 2 === 1
+
+const wrapperClass = image
+	? 'grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-20'
+	: 'mx-auto max-w-xl text-center'
+const contentClass = image
+	? `lg:col-span-5 ${isReversed ? 'lg:order-1' : ''}`
+	: ''
+const metaClass = image
+	? 'mb-10 space-y-5'
+	: 'mx-auto mb-10 max-w-md space-y-5 text-left'
 ---
 
 <article
 	class="border-line py-16 first:pt-12 lg:py-24 lg:first:pt-12 [&:not(:first-child)]:border-t"
 	data-reveal
 >
-	{
-		image ? (
-			<div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-20">
+	<div class={wrapperClass}>
+		{
+			image && (
 				<div class={`group lg:col-span-7 ${isReversed ? 'lg:order-2' : ''}`}>
 					<div class="border-line-2 overflow-hidden border">
 						<Image
 							src={image}
 							sizes="(min-width: 1024px) 58vw, 100vw"
-							quality={72}
+							quality={80}
 							alt={imageAlt || title}
 							class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
 						/>
 					</div>
 				</div>
+			)
+		}
 
-				<div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : ''}`}>
-					<p class="eyebrow mb-5">Tentoonstelling</p>
-					<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
+		<div class={contentClass}>
+			<p class={`eyebrow mb-5 ${image ? '' : 'justify-center'}`}>
+				Tentoonstelling
+			</p>
+			<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
 
-					<dl class="mb-10 space-y-5">
+			<dl class={metaClass}>
+				<div class="border-t pt-4">
+					<dt class="mono-label mb-2">{dateLabel}</dt>
+					<dd class="text-ink leading-relaxed">{date}</dd>
+				</div>
+				<div class="border-t pt-4">
+					<dt class="mono-label mb-2">{locationLabel}</dt>
+					<dd class="text-ink leading-relaxed">{location}</dd>
+				</div>
+				{
+					description && (
 						<div class="border-t pt-4">
-							<dt class="mono-label mb-2">{dateLabel}</dt>
-							<dd class="text-ink leading-relaxed">{date}</dd>
+							<dd class="text-ink-2 leading-relaxed">{description}</dd>
 						</div>
-						<div class="border-t pt-4">
-							<dt class="mono-label mb-2">{locationLabel}</dt>
-							<dd class="text-ink leading-relaxed">{location}</dd>
-						</div>
-						{description && (
-							<div class="border-t pt-4">
-								<dd class="text-ink-2 leading-relaxed">{description}</dd>
-							</div>
-						)}
-					</dl>
+					)
+				}
+			</dl>
 
+			{
+				linkUrl && (
 					<a
 						href={linkUrl}
 						target="_blank"
@@ -80,38 +98,8 @@ const isReversed = index % 2 === 1
 						<span>{linkText}</span>
 						<span aria-hidden="true">&rarr;</span>
 					</a>
-				</div>
-			</div>
-		) : (
-			<div class="mx-auto max-w-xl text-center">
-				<p class="eyebrow mb-5 justify-center">Tentoonstelling</p>
-				<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
-
-				<div class="mx-auto mb-10 max-w-md space-y-5 text-left">
-					<div class="border-t pt-4">
-						<dt class="mono-label mb-2">{dateLabel}</dt>
-						<dd class="text-ink leading-relaxed">{date}</dd>
-					</div>
-					<div class="border-t pt-4">
-						<dt class="mono-label mb-2">{locationLabel}</dt>
-						<dd class="text-ink leading-relaxed">{location}</dd>
-					</div>
-					{description && (
-						<div class="border-t pt-4">
-							<dd class="text-ink-2 leading-relaxed">{description}</dd>
-						</div>
-					)}
-				</div>
-
-				<a
-					href={linkUrl}
-					target="_blank"
-					class="text-2xs tracking-label hover:text-accent hover:border-accent border-ink inline-flex items-center gap-3 border-b pb-1 font-mono uppercase no-underline! transition-all duration-300 hover:gap-5"
-				>
-					<span>{linkText}</span>
-					<span aria-hidden="true">&rarr;</span>
-				</a>
-			</div>
-		)
-	}
+				)
+			}
+		</div>
+	</div>
 </article>

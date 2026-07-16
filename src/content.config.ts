@@ -31,7 +31,7 @@ const expositions = defineCollection({
 		title: z.string(),
 		location: z.string(),
 		date: z.string(),
-		linkUrl: z.string(),
+		linkUrl: z.string().optional(),
 		linkText: z.string().optional(),
 		imageSrc: z.string().optional(),
 		imageAlt: z.string().optional(),

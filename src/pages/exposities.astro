@@ -4,7 +4,6 @@ import ExpositionCard from '@components/ExpositionCard.astro'
 import { getCollection } from 'astro:content'
 import { getAssetImage } from '@utils/assetImages'
 
-// Sort by numeric id to preserve the original expositions.json array order.
 const exposities = (await getCollection('expositions')).sort(
 	(a, b) => Number(a.id) - Number(b.id)
 )
