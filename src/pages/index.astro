@@ -5,20 +5,28 @@ import Layout from '@layouts/Layout.astro'
 import { getPortfolioImage } from '@utils/portfolioImages'
 import { categories } from '@utils/constants'
 
-// Newest-first, matching the portfolio grid ordering.
 const artworks = (await getCollection('artworks')).sort(
 	(a, b) => Number(b.id) - Number(a.id)
 )
 
-// Build a display card (responsive webp thumbnail) from an artwork entry.
-// Featured cards render larger, so they get a wider source.
+const aspectClass = ({ width, height }: { width: number; height: number }) => {
+	const ratio = width / height
+	if (Math.abs(ratio - 1) < 0.05) return 'aspect-square'
+	return ratio > 1 ? 'aspect-[5/4]' : 'aspect-[4/5]'
+}
+
 const toCard = async (entry: CollectionEntry<'artworks'>, maxWidth: number) => {
 	const { slug, name, category, images } = entry.data
 	const src = getPortfolioImage(images[0])
 	const width = Math.min(src.width, maxWidth)
-	const height = Math.round((src.height / src.width) * width)
 	const thumb = await getImage({ src, width, quality: 72, format: 'webp' })
-	return { slug, name, category, thumb: { src: thumb.src, width, height } }
+	return {
+		slug,
+		name,
+		category,
+		aspect: aspectClass(src),
+		thumb: { src: thumb.src, width }
+	}
 }
 
 const featured = await Promise.all(
@@ -33,14 +41,11 @@ const works = await Promise.all(
 ---
 
 <Layout title="Ton Lamper">
-	<!-- ── Statement hero ───────────────────────────── -->
 	<section
 		class="flex min-h-[64vh] flex-col items-center justify-center py-[clamp(48px,9vw,120px)] text-center"
 	>
 		<p class="eyebrow mb-8">Grafisch kunstenaar — Nederland</p>
-		<h1
-			class="font-display mb-10 text-[clamp(52px,13vw,132px)] leading-[0.94] font-medium tracking-[-0.02em]"
-		>
+		<h1 class="font-display mb-10 text-[clamp(52px,13vw,132px)] font-medium">
 			Ton Lamper
 		</h1>
 		<p
@@ -52,7 +57,6 @@ const works = await Promise.all(
 		<div class="mono-label mt-14" aria-hidden="true">werk &darr;</div>
 	</section>
 
-	<!-- ── Featured ─────────────────────────────────── -->
 	{
 		featured.length > 0 && (
 			<section class="pt-[clamp(40px,6vw,80px)]">
@@ -65,22 +69,23 @@ const works = await Promise.all(
 					{featured.map((w, i) => (
 						<a
 							href={`/portfolio/${w.slug}`}
-							class="work group block no-underline"
+							class="work group block no-underline!"
 							data-reveal
 							style={`transition-delay: ${(i % 3) * 80}ms`}
 						>
-							<div class="work__plate border-line bg-paper overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5">
+							<div
+								class={`work__plate border-line bg-paper ${w.aspect} overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5`}
+							>
 								<img
 									src={w.thumb.src}
 									alt={w.name}
 									width={w.thumb.width}
-									height={w.thumb.height}
 									loading={i < 3 ? 'eager' : 'lazy'}
-									class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.055]"
+									class="block size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.05]"
 								/>
 							</div>
 							<div class="mt-4">
-								<h3 class="font-display group-hover:text-accent text-[clamp(28px,3vw,38px)] leading-[1.05] font-medium transition-colors">
+								<h3 class="font-display group-hover:text-accent text-[clamp(28px,3vw,38px)] font-medium transition-colors">
 									{w.name}
 								</h3>
 								{w.category && (
@@ -94,15 +99,14 @@ const works = await Promise.all(
 		)
 	}
 
-	<!-- ── Gallery grid ─────────────────────────────── -->
 	<section class="pt-[clamp(40px,6vw,80px)] pb-4">
 		<div
 			class="border-b-ink mb-[clamp(28px,4vw,44px)] flex items-baseline justify-between border-b pb-3.5"
 		>
 			<p class="eyebrow">Werk</p>
-			<span class="mono-label"
-				><span data-count>{works.length}</span> werken</span
-			>
+			<span class="mono-label">
+				<span data-count>{works.length}</span> werken
+			</span>
 		</div>
 
 		<div
@@ -116,8 +120,10 @@ const works = await Promise.all(
 				class="filter-btn is-active"
 				data-filter-btn
 				data-cat=""
-				aria-pressed="true">Alles</button
+				aria-pressed="true"
 			>
+				Alles
+			</button>
 			{
 				categories.map((cat) => (
 					<button
@@ -137,30 +143,33 @@ const works = await Promise.all(
 			class="grid grid-cols-1 gap-x-[clamp(28px,4vw,56px)] gap-y-[clamp(48px,6vw,84px)] sm:grid-cols-2 lg:grid-cols-3"
 		>
 			{
-				works.map((w, i) => (
+				works.map((work, index) => (
 					<a
-						href={`/portfolio/${w.slug}`}
-						class="work group block no-underline"
+						href={`/portfolio/${work.slug}`}
+						class="work group block no-underline!"
 						data-reveal
-						data-cats={(w.category ?? []).join(' ')}
-						style={`transition-delay: ${(i % 3) * 80}ms`}
+						data-cats={(work.category ?? []).join(' ')}
+						style={`transition-delay: ${(index % 3) * 80}ms`}
 					>
-						<div class="work__plate border-line bg-paper overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5">
+						<div
+							class={`work__plate border-line bg-paper ${work.aspect} overflow-hidden border transition-all duration-500 ease-out group-hover:-translate-y-1.5`}
+						>
 							<img
-								src={w.thumb.src}
-								alt={w.name}
-								width={w.thumb.width}
-								height={w.thumb.height}
-								loading={i < 6 ? 'eager' : 'lazy'}
-								class="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.055]"
+								src={work.thumb.src}
+								alt={work.name}
+								width={work.thumb.width}
+								loading={index < 6 ? 'eager' : 'lazy'}
+								class="block size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.05]"
 							/>
 						</div>
+
 						<div class="mt-4">
 							<h3 class="font-display group-hover:text-accent text-[26px] leading-[1.05] font-medium transition-colors">
-								{w.name}
+								{work.name}
 							</h3>
-							{w.category && (
-								<div class="mono-label mt-1.5">{w.category.join(' · ')}</div>
+
+							{work.category && (
+								<div class="mono-label mt-1.5">{work.category.join(' · ')}</div>
 							)}
 						</div>
 					</a>
@@ -171,10 +180,6 @@ const works = await Promise.all(
 </Layout>
 
 <script>
-	// Client-side filtering of the (already server-rendered) gallery by
-	// technique. Pure show/hide — no data fetching — so it stays a small
-	// vanilla script, matching the navigation menu. Re-binds after every
-	// ClientRouter page swap.
 	const initFilter = () => {
 		const bar = document.querySelector('[data-filter]')
 		if (!bar) return
@@ -192,8 +197,6 @@ const works = await Promise.all(
 				const show = !cat || cats.includes(cat)
 				work.classList.toggle('hidden', !show)
 				if (show) {
-					// Guarantee filtered-in works aren't stuck at the reveal
-					// animation's initial opacity:0 if they were never scrolled to.
 					work.classList.add('is-rev')
 					visible++
 				}
