@@ -65,9 +65,7 @@ const metaClass = image
 		}
 
 		<div class={contentClass}>
-			<p class={`eyebrow mb-5 ${image ? '' : 'justify-center'}`}>
-				Tentoonstelling
-			</p>
+			<p class={`eyebrow mb-5 ${image ? '' : 'justify-center'}`}>Expositie</p>
 			<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
 
 			<dl class={metaClass}>
@@ -93,10 +91,15 @@ const metaClass = image
 					<a
 						href={linkUrl}
 						target="_blank"
-						class="text-2xs tracking-label hover:text-accent hover:border-accent border-ink inline-flex items-center gap-3 border-b pb-1 font-mono uppercase no-underline! transition-all duration-300 hover:gap-5"
+						class="text-2xs tracking-label hover:text-accent hover:border-accent border-ink group inline-flex items-center gap-3 border-b pb-1 font-mono uppercase no-underline! transition-colors duration-300"
 					>
 						<span>{linkText}</span>
-						<span aria-hidden="true">&rarr;</span>
+						<span
+							aria-hidden="true"
+							class="transition-transform duration-300 group-hover:translate-x-1.5"
+						>
+							&rarr;
+						</span>
 					</a>
 				)
 			}
