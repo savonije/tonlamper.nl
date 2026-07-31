@@ -56,7 +56,7 @@
 		"text": ""
 	},
 	"9": {
-		"name": "Chine De Commande",
+		"name": "Chine de commande",
 		"images": ["/images/portfolio/chine-de-commande.jpg"],
 		"category": ["ruimtelijk"],
 		"slug": "chine-de-commande",
@@ -91,7 +91,7 @@
 		"text": ""
 	},
 	"14": {
-		"name": "Dood Van Adonis",
+		"name": "Dood van Adonis",
 		"images": ["/images/portfolio/dood-van-adonis.jpg"],
 		"category": ["lino"],
 		"slug": "dood-van-adonis",
@@ -133,7 +133,7 @@
 		"text": ""
 	},
 	"20": {
-		"name": "Figures Du Corps",
+		"name": "Figures du Corps",
 		"images": ["/images/portfolio/figures-du-corps.jpg"],
 		"category": ["ets"],
 		"slug": "figures-du-corps",
@@ -147,21 +147,21 @@
 		"text": ""
 	},
 	"22": {
-		"name": "Ganymedes Ets",
+		"name": "Ganymedes ets",
 		"images": ["/images/portfolio/ganymedes-ets.jpg"],
 		"category": ["ets"],
 		"slug": "ganymedes-ets",
 		"text": ""
 	},
 	"23": {
-		"name": "Ganymedes Lino",
+		"name": "Ganymedes lino",
 		"images": ["/images/portfolio/ganymedes-lino.jpg"],
 		"category": ["lino"],
 		"slug": "ganymedes-lino",
 		"text": ""
 	},
 	"24": {
-		"name": "Geboorte Van Adonis",
+		"name": "Geboorte van Adonis",
 		"images": ["/images/portfolio/geboorte-van-adonis.jpg"],
 		"category": ["lino"],
 		"slug": "geboorte-van-adonis",
@@ -175,7 +175,7 @@
 		"text": ""
 	},
 	"26": {
-		"name": "Groot Hoefblad",
+		"name": "Groot hoefblad",
 		"images": ["/images/portfolio/Groot-hoefblad.jpg"],
 		"category": ["lino"],
 		"slug": "groot-hoefblad",
@@ -203,14 +203,14 @@
 		"text": ""
 	},
 	"30": {
-		"name": "Kinderen Van Apollo",
+		"name": "Kinderen van Apollo",
 		"images": ["/images/portfolio/kinderen-van-apollo.jpg"],
 		"category": ["lino"],
 		"slug": "kinderen-van-apollo",
 		"text": ""
 	},
 	"31": {
-		"name": "Kleine Ridder",
+		"name": "Kleine ridder",
 		"images": ["/images/portfolio/Kleine-Ridder-2019-IMG_1943.jpg"],
 		"category": ["ets"],
 		"slug": "kleine-ridder",
@@ -280,14 +280,14 @@
 		"text": ""
 	},
 	"39": {
-		"name": "Man En Paard",
+		"name": "Man en paard",
 		"images": ["/images/portfolio/man-en-paard.jpg"],
 		"category": ["ets"],
 		"slug": "man-en-paard",
 		"text": ""
 	},
 	"40": {
-		"name": "Mantel Der Liefde Boetekleed",
+		"name": "Mantel der liefde / boetekleed",
 		"images": [
 			"/images/portfolio/Mantel-der-liefde-boetekleed-2018-IMG_1945.jpg"
 		],
@@ -387,7 +387,7 @@
 		"text": ""
 	},
 	"54": {
-		"name": "Piramus En Thisbe",
+		"name": "Piramus en Thisbe",
 		"images": ["/images/portfolio/piramus-en-thisbe.jpg"],
 		"category": ["lino"],
 		"slug": "piramus-en-thisbe",
@@ -409,7 +409,7 @@
 		"text": ""
 	},
 	"58": {
-		"name": "Rie Maer Op De Torens",
+		"name": "Rie maer op de torens",
 		"images": ["/images/portfolio/rie-maer-op-de-torens.jpg"],
 		"category": ["ruimtelijk"],
 		"featured": true,
@@ -417,7 +417,7 @@
 		"text": ""
 	},
 	"59": {
-		"name": "Ritthemse Kreek",
+		"name": "Ritthemse kreek",
 		"images": ["/images/portfolio/Ritthemse-kreek.jpg"],
 		"category": ["lino"],
 		"slug": "ritthemse-kreek",
@@ -445,21 +445,21 @@
 		"text": ""
 	},
 	"64": {
-		"name": "Schetsboek Man",
+		"name": "Schetsboek man",
 		"images": ["/images/portfolio/schetsboek-man.jpg"],
 		"category": ["ets"],
 		"slug": "schetsboek-man",
 		"text": ""
 	},
 	"65": {
-		"name": "Schetsboek Paard",
+		"name": "Schetsboek paard",
 		"images": ["/images/portfolio/schetsboek-paard.jpg"],
 		"category": ["ets"],
 		"slug": "schetsboek-paard",
 		"text": ""
 	},
 	"66": {
-		"name": "Schetsboek Vrouw",
+		"name": "Schetsboek vrouw",
 		"images": ["/images/portfolio/schetsboek-vrouw.jpg"],
 		"category": ["ets"],
 		"slug": "schetsboek-vrouw",
@@ -494,21 +494,21 @@
 		"text": ""
 	},
 	"71": {
-		"name": "Venus En Mars",
+		"name": "Venus en Mars",
 		"images": ["/images/portfolio/venus-en-mars.jpg"],
 		"category": ["lino"],
 		"slug": "venus-en-mars",
 		"text": ""
 	},
 	"72": {
-		"name": "Ritthemse Vijver",
+		"name": "Ritthemse vijver",
 		"images": ["/images/portfolio/Work-no-3-Ritthemse-vijver-2048x1536.jpg"],
 		"category": ["lino"],
 		"slug": "ritthemse-vijver",
 		"text": ""
 	},
 	"73": {
-		"name": "Woud Van Cybele",
+		"name": "Woud van Cybele",
 		"images": ["/images/portfolio/woud-van-cybele.jpg"],
 		"category": ["lino"],
 		"slug": "woud-van-cybele",
@@ -522,7 +522,7 @@
 		"text": ""
 	},
 	"75": {
-		"name": "De Vloed",
+		"name": "De vloed",
 		"images": [
 			"/images/portfolio/de-vloed/De-Vloed-5-linosneden-80-x-100cm-2023-IMG_3874-2048x1213.jpg",
 			"/images/portfolio/de-vloed/De-Vloed-plaat-1-IMG_3702-1530x2048.jpg",
@@ -563,7 +563,7 @@
 		"text": ""
 	},
 	"78": {
-		"name": "Macht en Pracht",
+		"name": "Macht en pracht",
 		"images": [
 			"/images/portfolio/macht-en-pracht/macht-en-pracht-2-600x450.jpg",
 			"/images/portfolio/macht-en-pracht/macht-en-pracht-3-600x450.jpg",
