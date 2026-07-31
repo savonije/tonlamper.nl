@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro'
 import { ClientRouter } from 'astro:transitions'
-import '../../style/base.css'
+import '@styles/base.css'
 interface Props {
 	title: string
 }
@@ -22,7 +22,7 @@ const { title } = Astro.props
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
 			rel="stylesheet"
 		/>
 		<link rel="sitemap" href="/sitemap-index.xml" />
@@ -35,23 +35,56 @@ const { title } = Astro.props
 		<main class="container grow">
 			<slot />
 		</main>
-		<footer class="mt-12 border-t border-t-gray-300 py-6">
-			<div class="container mx-auto text-xs text-black">
-				<div class="flex justify-between gap-3">
+		<footer class="border-t-ink mt-20 border-t">
+			<div class="container py-10">
+				<div class="flex flex-wrap items-start justify-between gap-7">
 					<div>
+						<div class="font-display text-3xl font-medium">Ton Lamper</div>
+						<div class="mono-label mt-1.5">Grafisch kunstenaar</div>
+					</div>
+					<a
+						href="https://www.instagram.com/tonlamper"
+						target="_blank"
+						class="mono-label hover:text-accent pt-2 no-underline"
+					>
+						Instagram &rarr;
+					</a>
+				</div>
+				<div
+					class="mono-label mt-10 flex flex-wrap justify-between gap-3 border-t pt-5"
+				>
+					<span>
 						&copy; {new Date().getFullYear()} Ton Lamper. All rights reserved.
-					</div>
-					<div class="flex gap-3">
-						<a href="https://www.instagram.com/tonlamper" target="_blank">
-							<img
-								src="/images/social/instagram.svg"
-								alt="Instagram"
-								class="inline-block size-6"
-							/>
-						</a>
-					</div>
+					</span>
+					<span>Ets / kartondruk / houtsnede</span>
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			// Scroll-reveal: elements with [data-reveal] rise in when they enter
+			// the viewport. Re-runs after every ClientRouter page swap.
+			const initReveals = () => {
+				const els = document.querySelectorAll('[data-reveal]:not(.is-rev)')
+				if (!els.length) return
+				if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+					els.forEach((el) => el.classList.add('is-rev'))
+					return
+				}
+				const io = new IntersectionObserver(
+					(entries) => {
+						for (const entry of entries) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('is-rev')
+								io.unobserve(entry.target)
+							}
+						}
+					},
+					{ threshold: 0.1, rootMargin: '0px 0px -6% 0px' }
+				)
+				els.forEach((el) => io.observe(el))
+			}
+			document.addEventListener('astro:page-load', initReveals)
+		</script>
 	</body>
 </html>

@@ -2,8 +2,6 @@
 import Layout from '@layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 
-// Sort by numeric id to preserve the original biografie.json array order
-// (the grouping below depends on chronological order).
 const entries = (await getCollection('biografie')).sort(
 	(a, b) => Number(a.id) - Number(b.id)
 )
@@ -25,14 +23,10 @@ groups.reverse()
 ---
 
 <Layout title="Ton Lamper - Biografie">
-	<section class="container-narrow pt-10 pb-6 text-center lg:pt-16">
-		<p class="text-2xs tracking-label-wide mb-6 text-neutral-500 uppercase">
-			Een leven in beelden
-		</p>
-		<h1 class="mb-8!">Biografie</h1>
-		<div class="mx-auto mb-10 h-px w-12 bg-neutral-300" aria-hidden="true">
-		</div>
-		<p class="mx-auto max-w-md leading-relaxed text-neutral-600">
+	<section class="pt-10 pb-12 lg:pt-16">
+		<p class="eyebrow mb-6">Een leven in beelden</p>
+		<h1 class="mb-8 text-6xl sm:text-7xl">Biografie</h1>
+		<p class="text-ink-2 max-w-md text-xl leading-relaxed text-pretty">
 			Een chronologisch overzicht van tentoonstellingen, projecten en mijlpalen.
 		</p>
 	</section>
@@ -41,16 +35,17 @@ groups.reverse()
 		{
 			groups.map((g, i) => (
 				<article
-					class={`grid grid-cols-1 gap-3 py-8 sm:grid-cols-12 sm:gap-10 lg:py-10 ${i > 0 ? 'border-t border-neutral-200' : 'pt-4'}`}
+					class={`grid grid-cols-1 gap-3 py-8 sm:grid-cols-12 sm:gap-10 lg:py-10 ${i > 0 ? 'border-t' : 'border-t-ink border-t pt-10'}`}
+					data-reveal
 				>
 					<div class="sm:col-span-3">
-						<p class="text-2xl font-light tracking-wide text-neutral-400 tabular-nums sm:text-3xl">
+						<p class="font-display text-ink-3 text-4xl font-medium tabular-nums sm:text-5xl">
 							{g.year}
 						</p>
 					</div>
-					<div class="space-y-3 leading-relaxed text-neutral-800 sm:col-span-9">
+					<div class="text-ink space-y-3 leading-relaxed sm:col-span-9">
 						{g.items.map((text) => (
-							<p>{text}</p>
+							<p class="text-pretty">{text}</p>
 						))}
 					</div>
 				</article>

@@ -5,11 +5,16 @@ import profiel from '@assets/profiel.png'
 ---
 
 <Layout title="Ton Lamper - De Kunstenaar">
+	<section class="pt-10 pb-12 lg:pt-16">
+		<p class="eyebrow mb-6">Over de kunstenaar</p>
+		<h1 class="mb-0 text-6xl sm:text-7xl">Ton Lamper</h1>
+	</section>
+
 	<div
-		class="mb-6 flex flex-col justify-between gap-12 border-b pb-3 sm:flex-row sm:gap-6"
+		class="border-t-ink mb-12 grid grid-cols-1 gap-10 border-t pt-10 sm:grid-cols-12 sm:gap-12"
 	>
-		<div class="flex grow-0 items-center justify-center">
-			<div class="px-12">
+		<div class="sm:col-span-4" data-reveal>
+			<div class="flex h-full items-center justify-center">
 				<Image
 					src={profiel}
 					alt="Ton Lamper profielfoto"
@@ -17,27 +22,38 @@ import profiel from '@assets/profiel.png'
 					height={200}
 					format="webp"
 					layout="fixed"
+					class="block"
 				/>
 			</div>
 		</div>
-		<div class="grow">
-			<h2 class="mb-6 text-3xl font-bold text-black">Ton Lamper</h2>
-			<div class="mb-1">Woonplaats: ‘s-Heer Arendskerke</div>
-			<div class="mb-1">Geboortejaar: 1956</div>
-			<div class="mb-1">
-				Opleiding: 1977 — 1981 Nieuwe Lerarenopleiding Zuidwest-Nederland,
-				Delft.
+		<dl class="sm:col-span-8" data-reveal style="transition-delay: 80ms">
+			<div class="flex gap-6 border-b py-3.5">
+				<dt class="mono-label w-32 flex-none pt-1">Woonplaats</dt>
+				<dd>&lsquo;s-Heer Arendskerke</dd>
 			</div>
-			<div class="mb-1">Tekenen en handvaardigheid.</div>
-			<div class="mb-1">
-				1981-1983 Academie voor beeldende vorming, Tilburg.
+			<div class="flex gap-6 border-b py-3.5">
+				<dt class="mono-label w-32 flex-none pt-1">Geboortejaar</dt>
+				<dd>1956</dd>
 			</div>
-			<div class="mb-1">Schilderen en grafiek.</div>
-		</div>
+			<div class="flex gap-6 border-b py-3.5">
+				<dt class="mono-label w-32 flex-none pt-1">Opleiding</dt>
+				<dd>
+					1977 — 1981 Nieuwe Lerarenopleiding Zuidwest-Nederland, Delft. Tekenen
+					en handvaardigheid.
+				</dd>
+			</div>
+			<div class="flex gap-6 border-b py-3.5">
+				<dt class="mono-label w-32 flex-none pt-1" aria-hidden="true"></dt>
+				<dd>
+					1981 — 1983 Academie voor beeldende vorming, Tilburg. Schilderen en
+					grafiek.
+				</dd>
+			</div>
+		</dl>
 	</div>
 
-	<div class="container-narrow">
-		<p>
+	<div class="container-narrow" data-reveal>
+		<p class="lead">
 			Tot 2022 werkzaam in het voortgezet onderwijs als docent beeldende vorming
 			aan het Ostrea Lyceum (vwo) te Goes.
 		</p>
@@ -94,12 +110,23 @@ import profiel from '@assets/profiel.png'
 			zijn ontstaan uit een combinatie van etsplaten met verzamelde voorwerpen
 			en materialen.
 		</p>
+
+		<div class="mt-10 flex flex-wrap gap-x-7 gap-y-2 border-t pt-6">
+			<span class="mono-label">Lijnets</span>
+			<span class="mono-label">Kleurenets</span>
+			<span class="mono-label">Kartondruk</span>
+			<span class="mono-label">Linoleumsnede</span>
+			<span class="mono-label">Houtsnede</span>
+		</div>
 	</div>
 </Layout>
 
 <style>
-	@reference "tailwindcss";
+	@reference '@styles/base.css';
 	p {
-		@apply mb-1 sm:mb-3;
+		@apply mb-4 leading-relaxed;
+	}
+	.lead {
+		@apply font-display text-ink text-2xl leading-snug;
 	}
 </style>

@@ -1,25 +1,22 @@
 ---
-// ExpositionCard.astro
 import { Image } from 'astro:assets'
 import type { ImageMetadata } from 'astro'
 
 export interface Props {
-	image?: ImageMetadata
-	imageAlt?: string
+	images?: { src: ImageMetadata; alt?: string }[]
 	title: string
 	locationLabel?: string
 	location: string
 	dateLabel?: string
 	date: string
 	description?: string
-	linkUrl: string
+	linkUrl?: string
 	linkText?: string
 	index?: number
 }
 
 const {
-	image,
-	imageAlt,
+	images = [],
 	title,
 	locationLabel = 'Locatie',
 	location,
@@ -31,101 +28,190 @@ const {
 	index = 0
 } = Astro.props
 
+const hasImage = images.length > 0
+const hasCarousel = images.length > 1
 const isReversed = index % 2 === 1
+
+const wrapperClass = hasImage
+	? 'grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-20'
+	: 'mx-auto max-w-xl text-center'
+const contentClass = hasImage
+	? `lg:col-span-5 ${isReversed ? 'lg:order-1' : ''}`
+	: ''
+const metaClass = hasImage
+	? 'mb-10 space-y-5'
+	: 'mx-auto mb-10 max-w-md space-y-5 text-left'
+
+const navClass =
+	'absolute top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border-line border bg-paper text-ink text-lg leading-none opacity-90 transition hover:bg-ink hover:text-paper hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
 ---
 
 <article
-	class="border-t border-neutral-200 py-16 first:border-t-0 first:pt-4 lg:py-24 lg:first:pt-8"
+	class="border-line py-16 first:pt-12 lg:py-24 lg:first:pt-12 [&:not(:first-child)]:border-t"
+	data-reveal
 >
-	{
-		image ? (
-			<div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-20">
+	<div class={wrapperClass}>
+		{
+			hasImage && (
 				<div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : ''}`}>
-					<Image
-						src={image}
-						sizes="(min-width: 1024px) 58vw, 100vw"
-						quality={72}
-						alt={imageAlt || title}
-						class="h-auto w-full"
-					/>
-				</div>
-
-				<div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : ''}`}>
-					<p class="text-2xs tracking-label-wide mb-5 text-neutral-500 uppercase">
-						Tentoonstelling
-					</p>
-					<h2 class="lg:text-display! mb-10! text-2xl! leading-tight!">
-						{title}
-					</h2>
-
-					<dl class="mb-10 space-y-6">
-						<div class="border-t border-neutral-200 pt-4">
-							<dt class="text-3xs tracking-label mb-2 text-neutral-500 uppercase">
-								{dateLabel}
-							</dt>
-							<dd class="leading-relaxed text-neutral-800">{date}</dd>
+					<div class="border-line-2 relative overflow-hidden border" data-carousel>
+						<div
+							class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent motion-reduce:scroll-auto [&::-webkit-scrollbar]:hidden"
+							data-track
+							tabindex={hasCarousel ? 0 : undefined}
+							role={hasCarousel ? 'group' : undefined}
+							aria-label={hasCarousel ? `${title} — afbeeldingen` : undefined}
+						>
+							{images.map((img, i) => (
+								<div class="w-full flex-none snap-start">
+									<Image
+										src={img.src}
+										sizes="(min-width: 1024px) 58vw, 100vw"
+										quality={80}
+										loading={i === 0 ? 'eager' : 'lazy'}
+										alt={img.alt || title}
+										class="block h-auto w-full"
+									/>
+								</div>
+							))}
 						</div>
-						<div class="border-t border-neutral-200 pt-4">
-							<dt class="text-3xs tracking-label mb-2 text-neutral-500 uppercase">
-								{locationLabel}
-							</dt>
-							<dd class="leading-relaxed text-neutral-800">{location}</dd>
-						</div>
-						{description && (
-							<div class="border-t border-neutral-200 pt-4">
-								<dd class="leading-relaxed text-neutral-700">{description}</dd>
-							</div>
+
+						{hasCarousel && (
+							<>
+								<button
+									type="button"
+									class={`${navClass} left-3`}
+									data-prev
+									aria-label="Vorige afbeelding"
+								>
+									&larr;
+								</button>
+								<button
+									type="button"
+									class={`${navClass} right-3`}
+									data-next
+									aria-label="Volgende afbeelding"
+								>
+									&rarr;
+								</button>
+
+								<div class="absolute inset-x-0 bottom-3.5 flex justify-center gap-2">
+									{images.map((_, i) => (
+										<button
+											type="button"
+											class="h-2.5 w-2.5 cursor-pointer rounded-full border-paper border bg-transparent p-0 shadow-[0_0_0_1px_var(--color-line)] transition-transform aria-[current=true]:scale-110 aria-[current=true]:bg-paper focus-visible:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+											data-dot
+											aria-current={i === 0 ? 'true' : 'false'}
+											aria-label={`Ga naar afbeelding ${i + 1}`}
+										/>
+									))}
+								</div>
+							</>
 						)}
-					</dl>
+					</div>
+				</div>
+			)
+		}
 
+		<div class={contentClass}>
+			<p class={`eyebrow mb-5 ${hasImage ? '' : 'justify-center'}`}>Expositie</p>
+			<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
+
+			<dl class={metaClass}>
+				<div class="border-t pt-4">
+					<dt class="mono-label mb-2">{dateLabel}</dt>
+					<dd class="text-ink leading-relaxed">{date}</dd>
+				</div>
+				<div class="border-t pt-4">
+					<dt class="mono-label mb-2">{locationLabel}</dt>
+					<dd class="text-ink leading-relaxed">{location}</dd>
+				</div>
+				{
+					description && (
+						<div class="border-t pt-4">
+							<dd class="text-ink-2 leading-relaxed">{description}</dd>
+						</div>
+					)
+				}
+			</dl>
+
+			{
+				linkUrl && (
 					<a
 						href={linkUrl}
 						target="_blank"
-						class="text-2xs tracking-label inline-flex items-center gap-3 border-b border-black pb-1 uppercase no-underline! transition-all duration-300 hover:gap-5"
+						class="text-2xs tracking-label hover:text-accent hover:border-accent border-ink group inline-flex items-center gap-3 border-b pb-1 font-mono uppercase no-underline! transition-colors duration-300"
 					>
 						<span>{linkText}</span>
-						<span aria-hidden="true">&rarr;</span>
+						<span
+							aria-hidden="true"
+							class="transition-transform duration-300 group-hover:translate-x-1.5"
+						>
+							&rarr;
+						</span>
 					</a>
-				</div>
-			</div>
-		) : (
-			<div class="mx-auto max-w-xl text-center">
-				<p class="text-2xs tracking-label-wide mb-5 text-neutral-500 uppercase">
-					Tentoonstelling
-				</p>
-				<h2 class="lg:text-display! mb-10! text-2xl! leading-tight!">
-					{title}
-				</h2>
-
-				<div class="mx-auto mb-10 max-w-md space-y-6">
-					<div class="border-t border-neutral-200 pt-4">
-						<dt class="text-3xs tracking-label mb-2 text-neutral-500 uppercase">
-							{dateLabel}
-						</dt>
-						<dd class="leading-relaxed text-neutral-800">{date}</dd>
-					</div>
-					<div class="border-t border-neutral-200 pt-4">
-						<dt class="text-3xs tracking-label mb-2 text-neutral-500 uppercase">
-							{locationLabel}
-						</dt>
-						<dd class="leading-relaxed text-neutral-800">{location}</dd>
-					</div>
-					{description && (
-						<div class="border-t border-neutral-200 pt-4">
-							<dd class="leading-relaxed text-neutral-700">{description}</dd>
-						</div>
-					)}
-				</div>
-
-				<a
-					href={linkUrl}
-					target="_blank"
-					class="text-2xs tracking-label inline-flex items-center gap-3 border-b border-black pb-1 uppercase no-underline! transition-all duration-300 hover:gap-5"
-				>
-					<span>{linkText}</span>
-					<span aria-hidden="true">&rarr;</span>
-				</a>
-			</div>
-		)
-	}
+				)
+			}
+		</div>
+	</div>
 </article>
+
+<script>
+	const initCarousel = (carousel: HTMLElement) => {
+		if (carousel.dataset.init) return
+		carousel.dataset.init = 'true'
+
+		const track = carousel.querySelector<HTMLElement>('[data-track]')
+		if (!track) return
+
+		const slides = Array.from(track.children)
+		const dots = Array.from(carousel.querySelectorAll<HTMLElement>('[data-dot]'))
+		if (slides.length < 2) return
+
+		let active = 0
+		const setActive = (i: number) => {
+			active = i
+			dots.forEach((dot, di) =>
+				dot.setAttribute('aria-current', di === i ? 'true' : 'false')
+			)
+		}
+
+		const goTo = (i: number) => {
+			const idx = Math.max(0, Math.min(i, slides.length - 1))
+			track.scrollTo({ left: track.clientWidth * idx, behavior: 'smooth' })
+		}
+
+		track.addEventListener('scroll', () => {
+			const i = Math.round(track.scrollLeft / track.clientWidth)
+			if (i !== active) setActive(i)
+		})
+
+		carousel
+			.querySelector('[data-prev]')
+			?.addEventListener('click', () => goTo(active - 1))
+		carousel
+			.querySelector('[data-next]')
+			?.addEventListener('click', () => goTo(active + 1))
+		dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)))
+
+		// Keyboard navigation: arrow keys page through slides, Home/End jump to ends.
+		carousel.addEventListener('keydown', (e: KeyboardEvent) => {
+			const keys: Record<string, number> = {
+				ArrowLeft: active - 1,
+				ArrowRight: active + 1,
+				Home: 0,
+				End: slides.length - 1
+			}
+			if (!(e.key in keys)) return
+			e.preventDefault()
+			goTo(keys[e.key])
+		})
+	}
+
+	const initCarousels = () =>
+		document
+			.querySelectorAll<HTMLElement>('[data-carousel]')
+			.forEach(initCarousel)
+
+	document.addEventListener('astro:page-load', initCarousels)
+</script>

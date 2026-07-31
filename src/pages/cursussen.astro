@@ -4,38 +4,29 @@ import CourseCard from '@components/CourseCard.astro'
 ---
 
 <Layout title="Ton Lamper - Cursussen">
-	<h1>Cursussen</h1>
+	<section class="pt-10 pb-12 lg:pt-16">
+		<p class="eyebrow mb-6">Leren etsen &amp; drukken</p>
+		<h1 class="mb-8 text-6xl sm:text-7xl">Cursussen</h1>
+		<p class="text-ink-2 max-w-2xl text-xl leading-relaxed text-pretty">
+			Zin om je creativiteit op een nieuwe manier te ontdekken? Tijdens de
+			cursus etsen maak je kennis met het ambacht van drukken en geef je je
+			eigen kunstwerken vorm.
+		</p>
+	</section>
 
-	<p>
-		Zin om je creativiteit op een nieuwe manier te ontdekken?<br /> Tijdens de cursus
-		etsen maak je kennis met het ambacht van drukken en geef je je eigen kunstwerken
-		vorm.
-	</p>
-
-	<hr class="my-9" />
-
-	<div class="grid gap-3 sm:grid-cols-2">
-		<CourseCard
-			title="Cursus Etsen (Middelburg)"
-			datum="Wekelijks van september tot april"
-			lessen="25 lessen van elk 3 uur"
-			tijd="Maandag van 14:00 tot 17:00"
-			periode="16 september 2025 tot april 2026. Uitgezonderd schoolvakanties."
-			locatie="Cultuurhuis Kuiperspoort 18 te Middelburg"
-			href="https://www.cultuurhuis-kuiperspoort.nl/"
-			hrefText="Aanmelden"
-		/>
-
-		<CourseCard
-			title="Workshop hoogdruk of diepdruk"
-			extraInfo="Voor kleine groepen van jong tot oud."
-			datum=""
-			lessen="Maximaal 15 personen"
-			tijd="2 uur"
-			periode="In overleg"
-			locatie="In overleg"
-			href="mailto:tonlamper@zeelandnet.nl?subject=Interesse cursus&body=Graag zou ik meer informatie willen ontvangen over een cursus hoog of diepdruk."
-			hrefText="Neem contact op"
-		/>
+	<div class="border-t-ink grid gap-10 border-t pt-10 sm:grid-cols-2 sm:gap-16">
+		<div class="h-full" data-reveal style="transition-delay: 100ms">
+			<CourseCard
+				title="Workshop hoogdruk of diepdruk"
+				extraInfo="Voor kleine groepen van jong tot oud."
+				datum=""
+				lessen="Maximaal 4 personen"
+				tijd="2 uur"
+				periode="In overleg"
+				locatie="In overleg"
+				href="mailto:tonlamper@zeelandnet.nl?subject=Interesse cursus&body=Graag zou ik meer informatie willen ontvangen over een cursus hoog of diepdruk."
+				hrefText="Neem contact op"
+			/>
+		</div>
 	</div>
 </Layout>

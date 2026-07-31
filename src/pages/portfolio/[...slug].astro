@@ -21,39 +21,77 @@ const title = `Ton Lamper - ${name}`
 ---
 
 <Layout title={title}>
-	<div class="mb-6 text-sm">
-		/
-		<a href="/portfolio" class="inline-flex items-center no-underline!"
-			>Portfolio</a
-		>
-		// {name}
-	</div>
+	<nav
+		class="mono-label flex items-center gap-2 pt-8 pb-10"
+		aria-label="Kruimelpad"
+	>
+		<a href="/portfolio" class="hover:text-accent no-underline!">Portfolio</a>
+		<span aria-hidden="true">/</span>
+		<span class="text-ink">{name}</span>
+	</nav>
 
-	<div class="mb-9 text-center">
-		<h1 class="mb-0">{name}</h1>
-	</div>
+	<header class="border-t-ink mb-12 border-t pt-8 text-center" data-reveal>
+		<p class="eyebrow mb-5 justify-center">Werk</p>
+		<h1 class="mb-0 text-5xl sm:text-6xl">{name}</h1>
+	</header>
 
-	<div class="container-narrow">
-		{text && <div class="mb-9" set:html={text} />}
-	</div>
+	{
+		text && (
+			<div
+				class="container-narrow prose-body mb-14 text-lg leading-relaxed text-pretty"
+				data-reveal
+				set:html={text}
+			/>
+		)
+	}
 
-	<div class="flex flex-wrap justify-center gap-6">
+	<div class="flex flex-wrap items-start justify-center gap-8">
 		{
 			images.map((image, i) => {
 				const img = getPortfolioImage(image)
 				return (
-					<Image
-						src={img}
-						alt={name}
-						height={Math.min(img.height, 1200)}
-						quality={72}
-						format="webp"
-						layout="none"
-						class="h-auto max-h-[800px] w-auto"
-						transition:name={i === 0 ? `art-${slug}` : undefined}
-					/>
+					<figure
+						class="border-line-2 bg-paper/40 border p-2"
+						data-reveal
+						style={`transition-delay: ${i * 70}ms`}
+					>
+						<Image
+							src={img}
+							alt={name}
+							height={Math.min(img.height, 1200)}
+							quality={72}
+							format="webp"
+							layout="none"
+							class="block h-auto max-h-[800px] w-auto"
+							transition:name={i === 0 ? `art-${slug}` : undefined}
+						/>
+					</figure>
 				)
 			})
 		}
 	</div>
+
+	<p class="container-narrow text-ink/60 mt-16 text-center text-sm" data-reveal>
+		Al het werk is te koop. Voor meer informatie {' '}
+		<a href="/contact" class="hover:text-accent text-ink"
+			>neem gerust contact op</a
+		>.
+	</p>
+
+	<div class="mt-10 text-center" data-reveal>
+		<a
+			href="/"
+			class="text-2xs tracking-label hover:text-accent hover:border-accent border-ink inline-flex items-center gap-3 border-b pb-1 font-mono uppercase no-underline! transition-all duration-300 hover:gap-5"
+		>
+			<span aria-hidden="true">&larr;</span>
+			<span>Terug naar alle werken</span>
+		</a>
+	</div>
 </Layout>
+
+<style>
+	@reference '@styles/base.css';
+	.prose-body :global(p) {
+		@apply mb-4;
+	}
+</style>

@@ -2,11 +2,17 @@
 import Menu from './Menu.astro'
 ---
 
-<header class="mb-9 border-b py-9">
-	<div class="container flex items-center justify-between gap-6">
-		<a href="/" class="shrink-0 text-3xl font-bold text-black no-underline!"
-			>Ton Lamper</a
-		>
+<header class="border-line sticky top-0 z-40 border-b">
+	<div
+		class="bg-paper/70 absolute inset-0 -z-10 backdrop-blur-sm"
+		aria-hidden="true"
+	>
+	</div>
+
+	<div class="container flex items-center justify-between gap-6 py-5">
+		<a href="/" class="flex shrink-0 items-baseline gap-3 no-underline!">
+			<span class="font-display text-ink text-2xl font-medium">Ton Lamper</span>
+		</a>
 
 		<Menu />
 	</div>

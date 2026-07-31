@@ -10,6 +10,7 @@ const artworks = defineCollection({
 		name: z.string(),
 		images: z.array(z.string()),
 		category: z.array(z.string()).nullable(),
+		featured: z.boolean().default(false),
 		slug: z.string(),
 		text: z.string()
 	})
@@ -30,10 +31,13 @@ const expositions = defineCollection({
 		title: z.string(),
 		location: z.string(),
 		date: z.string(),
-		linkUrl: z.string(),
+		linkUrl: z.string().optional(),
 		linkText: z.string().optional(),
 		imageSrc: z.string().optional(),
 		imageAlt: z.string().optional(),
+		images: z
+			.array(z.object({ src: z.string(), alt: z.string().optional() }))
+			.optional(),
 		description: z.string().optional(),
 		locationLabel: z.string().optional(),
 		dateLabel: z.string().optional()

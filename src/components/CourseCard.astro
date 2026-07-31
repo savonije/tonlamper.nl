@@ -22,27 +22,33 @@ const {
 	hrefText,
 	extraInfo
 } = Astro.props
+
+const rows = [
+	{ label: 'Datum', value: datum },
+	{ label: 'Aantal lessen', value: lessen },
+	{ label: 'Tijd', value: tijd },
+	{ label: 'Periode', value: periode },
+	{ label: 'Locatie', value: locatie }
+].filter((r) => r.value)
 ---
 
-<div class="course">
-	<h2>{title}</h2>
+<div class="border-line bg-paper flex h-full flex-col border p-7">
+	<h2 class="mb-4 text-3xl">{title}</h2>
 
-	{extraInfo && <p>{extraInfo}</p>}
+	{extraInfo && <p class="text-ink-2 mb-6 leading-relaxed">{extraInfo}</p>}
 
-	<p><strong>Datum:</strong> {datum}</p>
-	<p><strong>Aantal lessen:</strong> {lessen}</p>
-	<p><strong>Tijd:</strong> {tijd}</p>
-	<p><strong>Periode:</strong> {periode}</p>
-	<p><strong>Locatie:</strong> {locatie}</p>
+	<dl class="mb-8">
+		{
+			rows.map((row) => (
+				<div class="flex gap-5 border-t py-3">
+					<dt class="mono-label w-28 flex-none pt-1">{row.label}</dt>
+					<dd class="text-ink leading-relaxed">{row.value}</dd>
+				</div>
+			))
+		}
+	</dl>
 
-	<a class="btn mt-6 no-underline!" href={href} target="_blank">
+	<a class="btn mt-auto self-start no-underline!" href={href} target="_blank">
 		{hrefText}
 	</a>
 </div>
-
-<style>
-	@reference "tailwindcss";
-	.course {
-		@apply rounded border p-3 shadow-md;
-	}
-</style>

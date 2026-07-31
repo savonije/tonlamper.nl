@@ -6,6 +6,7 @@
 			"@components/*": ["./src/components/*"],
 			"@data/*": ["./src/data/*"],
 			"@layouts/*": ["./src/layouts/*"],
+			"@styles/*": ["./src/style/*"],
 			"@utils/*": ["./src/utils/*"]
 		},
 		"jsx": "preserve",

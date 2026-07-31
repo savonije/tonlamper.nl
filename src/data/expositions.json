@@ -1,10 +1,24 @@
 [
 	{
-		"title": "Grafiek in beeld – Ton Lamper en Burhan Saleh",
-		"location": "Kunstuitleen de Bevelanden, Westwal 45, 4461CM Goes",
-		"date": "za. 9 mei t/m vr. 10 juli — donderdag en vrijdag 14.00–17.00u. en zaterdag 10.00–13.00u.",
-		"linkUrl": "http://www.kunstingoes.nl/opening-tentoonstelling/",
-		"linkText": "Meer informatie",
-		"imageSrc": "/images/exposities/kunstuitleen-goes.webp"
+		"title": "Groepsexpositie Magdalena’s Kunstkerk",
+		"location": "Grote of Maria Magdalenakerk te Goes",
+		"date": "7 augustus – 12 september, 1100 – 17.00 uur",
+		"linkUrl": "https://www.grotekerkgoes.nl/",
+		"images": [
+			{
+				"src": "/images/exposities/expo-mm-kerk-voorkant.webp",
+				"alt": "Vooraanzicht van de Grote of Maria Magdalenakerk te Goes"
+			},
+			{
+				"src": "/images/exposities/expo-mm-kerk-achterkant.webp",
+				"alt": "Achteraanzicht van de Grote of Maria Magdalenakerk te Goes"
+			}
+		]
+	},
+	{
+		"title": "Grafiekbeurs in de Kloostergangen",
+		"description": "Toegang is gratis.",
+		"location": "Abdij Middelburg",
+		"date": "zaterdag 19 september, 11:00 - 17:00"
 	}
 ]

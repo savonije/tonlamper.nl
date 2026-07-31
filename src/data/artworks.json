@@ -56,7 +56,7 @@
 		"text": ""
 	},
 	"9": {
-		"name": "Chine De Commande",
+		"name": "Chine de commande",
 		"images": ["/images/portfolio/chine-de-commande.jpg"],
 		"category": ["ruimtelijk"],
 		"slug": "chine-de-commande",
@@ -91,7 +91,7 @@
 		"text": ""
 	},
 	"14": {
-		"name": "Dood Van Adonis",
+		"name": "Dood van Adonis",
 		"images": ["/images/portfolio/dood-van-adonis.jpg"],
 		"category": ["lino"],
 		"slug": "dood-van-adonis",
@@ -133,7 +133,7 @@
 		"text": ""
 	},
 	"20": {
-		"name": "Figures Du Corps",
+		"name": "Figures du Corps",
 		"images": ["/images/portfolio/figures-du-corps.jpg"],
 		"category": ["ets"],
 		"slug": "figures-du-corps",
@@ -147,21 +147,21 @@
 		"text": ""
 	},
 	"22": {
-		"name": "Ganymedes Ets",
+		"name": "Ganymedes ets",
 		"images": ["/images/portfolio/ganymedes-ets.jpg"],
 		"category": ["ets"],
 		"slug": "ganymedes-ets",
 		"text": ""
 	},
 	"23": {
-		"name": "Ganymedes Lino",
+		"name": "Ganymedes lino",
 		"images": ["/images/portfolio/ganymedes-lino.jpg"],
 		"category": ["lino"],
 		"slug": "ganymedes-lino",
 		"text": ""
 	},
 	"24": {
-		"name": "Geboorte Van Adonis",
+		"name": "Geboorte van Adonis",
 		"images": ["/images/portfolio/geboorte-van-adonis.jpg"],
 		"category": ["lino"],
 		"slug": "geboorte-van-adonis",
@@ -175,7 +175,7 @@
 		"text": ""
 	},
 	"26": {
-		"name": "Groot Hoefblad",
+		"name": "Groot hoefblad",
 		"images": ["/images/portfolio/Groot-hoefblad.jpg"],
 		"category": ["lino"],
 		"slug": "groot-hoefblad",
@@ -203,14 +203,14 @@
 		"text": ""
 	},
 	"30": {
-		"name": "Kinderen Van Apollo",
+		"name": "Kinderen van Apollo",
 		"images": ["/images/portfolio/kinderen-van-apollo.jpg"],
 		"category": ["lino"],
 		"slug": "kinderen-van-apollo",
 		"text": ""
 	},
 	"31": {
-		"name": "Kleine Ridder",
+		"name": "Kleine ridder",
 		"images": ["/images/portfolio/Kleine-Ridder-2019-IMG_1943.jpg"],
 		"category": ["ets"],
 		"slug": "kleine-ridder",
@@ -280,14 +280,14 @@
 		"text": ""
 	},
 	"39": {
-		"name": "Man En Paard",
+		"name": "Man en paard",
 		"images": ["/images/portfolio/man-en-paard.jpg"],
 		"category": ["ets"],
 		"slug": "man-en-paard",
 		"text": ""
 	},
 	"40": {
-		"name": "Mantel Der Liefde Boetekleed",
+		"name": "Mantel der liefde / boetekleed",
 		"images": [
 			"/images/portfolio/Mantel-der-liefde-boetekleed-2018-IMG_1945.jpg"
 		],
@@ -387,7 +387,7 @@
 		"text": ""
 	},
 	"54": {
-		"name": "Piramus En Thisbe",
+		"name": "Piramus en Thisbe",
 		"images": ["/images/portfolio/piramus-en-thisbe.jpg"],
 		"category": ["lino"],
 		"slug": "piramus-en-thisbe",
@@ -403,19 +403,21 @@
 	"57": {
 		"name": "Porta",
 		"images": ["/images/portfolio/porta-2.jpg"],
-		"category": ["uitgelicht", "ruimtelijk"],
+		"category": ["ruimtelijk"],
+		"featured": true,
 		"slug": "porta",
 		"text": ""
 	},
 	"58": {
-		"name": "Rie Maer Op De Torens",
+		"name": "Rie maer op de torens",
 		"images": ["/images/portfolio/rie-maer-op-de-torens.jpg"],
-		"category": ["uitgelicht", "ruimtelijk"],
+		"category": ["ruimtelijk"],
+		"featured": true,
 		"slug": "rie-maer-op-de-torens",
 		"text": ""
 	},
 	"59": {
-		"name": "Ritthemse Kreek",
+		"name": "Ritthemse kreek",
 		"images": ["/images/portfolio/Ritthemse-kreek.jpg"],
 		"category": ["lino"],
 		"slug": "ritthemse-kreek",
@@ -443,21 +445,21 @@
 		"text": ""
 	},
 	"64": {
-		"name": "Schetsboek Man",
+		"name": "Schetsboek man",
 		"images": ["/images/portfolio/schetsboek-man.jpg"],
 		"category": ["ets"],
 		"slug": "schetsboek-man",
 		"text": ""
 	},
 	"65": {
-		"name": "Schetsboek Paard",
+		"name": "Schetsboek paard",
 		"images": ["/images/portfolio/schetsboek-paard.jpg"],
 		"category": ["ets"],
 		"slug": "schetsboek-paard",
 		"text": ""
 	},
 	"66": {
-		"name": "Schetsboek Vrouw",
+		"name": "Schetsboek vrouw",
 		"images": ["/images/portfolio/schetsboek-vrouw.jpg"],
 		"category": ["ets"],
 		"slug": "schetsboek-vrouw",
@@ -492,21 +494,21 @@
 		"text": ""
 	},
 	"71": {
-		"name": "Venus En Mars",
+		"name": "Venus en Mars",
 		"images": ["/images/portfolio/venus-en-mars.jpg"],
 		"category": ["lino"],
 		"slug": "venus-en-mars",
 		"text": ""
 	},
 	"72": {
-		"name": "Ritthemse Vijver",
+		"name": "Ritthemse vijver",
 		"images": ["/images/portfolio/Work-no-3-Ritthemse-vijver-2048x1536.jpg"],
 		"category": ["lino"],
 		"slug": "ritthemse-vijver",
 		"text": ""
 	},
 	"73": {
-		"name": "Woud Van Cybele",
+		"name": "Woud van Cybele",
 		"images": ["/images/portfolio/woud-van-cybele.jpg"],
 		"category": ["lino"],
 		"slug": "woud-van-cybele",
@@ -520,7 +522,7 @@
 		"text": ""
 	},
 	"75": {
-		"name": "De Vloed",
+		"name": "De vloed",
 		"images": [
 			"/images/portfolio/de-vloed/De-Vloed-5-linosneden-80-x-100cm-2023-IMG_3874-2048x1213.jpg",
 			"/images/portfolio/de-vloed/De-Vloed-plaat-1-IMG_3702-1530x2048.jpg",
@@ -529,7 +531,8 @@
 			"/images/portfolio/de-vloed/De-Vloed-plaat-4-IMG_3656-1576x2048.jpg",
 			"/images/portfolio/de-vloed/De-Vloed-plaat-5-IMG_3645-scaled.jpg"
 		],
-		"category": ["uitgelicht", "lino"],
+		"category": ["lino"],
+		"featured": true,
 		"slug": "de-vloed",
 		"text": "<strong>Nooit meer een ramp als ‘53</strong><br/> De Vloed - een werk waarin de impact van de ramp, de strijd tegen het water, menselijk ingrijpen in de natuur en de zorg voor de toekomst ligt besloten èn het moet mensen bewust maken dat grote inzet nodig is. Reden om voor een arbeidsintensief en ambitieus ontwerp te kiezen.<br/><br/> De Vloed bestaat uit vijf grote linoleumsneden, dicht naast elkaar gepresenteerd en wand vullend. Een woeste golf, een muur van water, in zwart gedrukt over een grijsblauw raster. Het raster telt 1836 vierkanten, het aantal slachtoffers van de ramp in 1953. De grijsblauwe kleur en vierkante vorm verwijzen naar de sobere gedenkstenen die je vindt op kerkhoven waar slachtoffers begraven liggen. Een vierkante abstracte vorm die het onbeschrijfelijke leed van de slachtoffers afdekt, alle leed laat zich niet in een realistische voorstelling vatten. De vele vierkanten tekenen de overweldigende omvang van de vernietigende vloed. Door slachtoffers zo te verbeelden, zonder verwijzing naar plaats of individu, ontstaat een universeel beeld voor alle slachtoffers van het water, vroeger en in deze tijd. De vierkanten verwijzen ook naar beton en basalt dat gebruikt wordt om het stijgende water te bedwingen. Maar het zijn ook bouwstenen voor de toekomst die, gebaseerd op het menselijk leed van 1953, ingrijpen op korte termijn noodzakelijk maakt. Men kan niet lijdzaam afwachten, men moet nu bouwen aan het nieuwe, meest omvangrijke deltaplan ooit: ons klimaat, onze planeet, ons bestaan in het universum.<br/><br/> Een tour de force!"
 	},
@@ -560,7 +563,7 @@
 		"text": ""
 	},
 	"78": {
-		"name": "Macht en Pracht",
+		"name": "Macht en pracht",
 		"images": [
 			"/images/portfolio/macht-en-pracht/macht-en-pracht-2-600x450.jpg",
 			"/images/portfolio/macht-en-pracht/macht-en-pracht-3-600x450.jpg",
@@ -621,7 +624,8 @@
 			"/images/portfolio/martyres/ets-martyres_30_tronies.jpeg",
 			"/images/portfolio/martyres/ets-martyres_geboeid.jpeg"
 		],
-		"category": ["uitgelicht", "ets", "lino"],
+		"category": ["ets", "lino"],
+		"featured": true,
 		"slug": "martyres",
 		"text": "<strong>Martyres 2024</strong><br/> Ton Lamper en de Iraaks, Turkmeense graficus Burhan Saleh werken samen. Deze samenwerking is onderdeel van het project Cultuurcompagnon, een initiatief van Stichting Cultuurkwadraat Middelburg, waarbij een Zeeuwse kunstenaar is gekoppeld aan een kunstenaar met een migratieachtergrond. Ze maken een serie grafische werken, bestaande uit etsen, linosneden en houtsneden met hetzelfde formaat. De samenwerking inspireert beide kunstenaars en zorgt voor extra energie om elkaars werk te ontdekken en nieuwe beelden te creëren waarin de mens, in het bijzonder het portret centraal staat. Er ontstaat gaandeweg een serie expressieve beelden, vooral uitgevoerd in sterke zwart/wit contrasten met beperkte kleuraccenten. Beelden waarbij het accent vooral ligt op de gekwelde en angstige mens, een thema dat verwijst naar de actualiteit waarin mensen slachtoffer zijn van polarisatie, bedreiging en geweld. Een onderwerp dat helaas zo oud is als de mensheid zelf. Dit onderwerp is mede ontstaan door de turbulente voorgeschiedenis van Burhan. Bij Ton op het atelier lagen een aantal werken met als thema martelaar, alleen die waren ter zijde gelegd. De tijd was kennelijk nog niet rijp voor dit thema. Maar door het project Cultuurcompagnon en daarnaast de huidige politieke spanningen en conflicten in de wereld en het lastige kunst- en cultuurklimaat in Nederland diende het thema zich opnieuw en als vanzelf aan. De mens, de kunstenaar en de kunst als martelaar."
 	},
@@ -633,7 +637,8 @@
 			"/images/portfolio/tuin/Tuin_2_2025_60_x_80cm.jpg",
 			"/images/portfolio/tuin/Tuin_1_2025_60_x_80cm.jpg"
 		],
-		"category": ["lino", "uitgelicht"],
+		"category": ["lino"],
+		"featured": true,
 		"slug": "tuin",
 		"text": "De met de hand gedrukte linosnede  ‘Tuin’ bestaat uit 4 losse prenten (60x80cm) die samen één geheel vormen. De titel slaat op de bladeren van het groot hoefblad met de suggestie van bomen en struiken in de achtergrond, maar ook op de vierkanten van de afrastering in de achtergrond. De grijze stippen vormen het spel van licht- en schaduwvlekken dat door het gebladerte valt. De geometrie van het rasterwerk en de stippen staat in contrast met de natuurlijke vormen van de bladeren en de wilde halen en spatten in de achtergrond."
 	}
