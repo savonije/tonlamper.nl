@@ -4,11 +4,21 @@
 		"location": "Grote of Maria Magdalenakerk te Goes",
 		"date": "7 augustus – 12 september, 1100 – 17.00 uur",
 		"linkUrl": "https://www.grotekerkgoes.nl/",
-		"imageSrc": "/images/exposities/expo-mm-kerk.jpg"
+		"images": [
+			{
+				"src": "/images/exposities/expo-mm-kerk-voorkant.webp",
+				"alt": "Vooraanzicht van de Grote of Maria Magdalenakerk te Goes"
+			},
+			{
+				"src": "/images/exposities/expo-mm-kerk-achterkant.webp",
+				"alt": "Achteraanzicht van de Grote of Maria Magdalenakerk te Goes"
+			}
+		]
 	},
 	{
 		"title": "Grafiekbeurs in de Kloostergangen",
+		"description": "Toegang is gratis.",
 		"location": "Abdij Middelburg",
-		"date": "zaterdag 19 september"
+		"date": "zaterdag 19 september, 11:00 - 17:00"
 	}
 ]

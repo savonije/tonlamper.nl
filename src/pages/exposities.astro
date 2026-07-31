@@ -8,10 +8,17 @@ const exposities = (await getCollection('expositions')).sort(
 	(a, b) => Number(a.id) - Number(b.id)
 )
 
-const items = exposities.map(({ data: { imageSrc, ...rest } }) => ({
-	...rest,
-	image: imageSrc ? getAssetImage(imageSrc) : undefined
-}))
+const items = exposities.map(
+	({ data: { imageSrc, imageAlt, images, ...rest } }) => {
+		const sources =
+			images ?? (imageSrc ? [{ src: imageSrc, alt: imageAlt }] : [])
+
+		return {
+			...rest,
+			images: sources.map(({ src, alt }) => ({ src: getAssetImage(src), alt }))
+		}
+	}
+)
 ---
 
 <Layout title="Ton Lamper - Exposities">

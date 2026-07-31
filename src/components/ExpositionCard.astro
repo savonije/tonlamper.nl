@@ -3,8 +3,7 @@ import { Image } from 'astro:assets'
 import type { ImageMetadata } from 'astro'
 
 export interface Props {
-	image?: ImageMetadata
-	imageAlt?: string
+	images?: { src: ImageMetadata; alt?: string }[]
 	title: string
 	locationLabel?: string
 	location: string
@@ -17,8 +16,7 @@ export interface Props {
 }
 
 const {
-	image,
-	imageAlt,
+	images = [],
 	title,
 	locationLabel = 'Locatie',
 	location,
@@ -30,17 +28,22 @@ const {
 	index = 0
 } = Astro.props
 
+const hasImage = images.length > 0
+const hasCarousel = images.length > 1
 const isReversed = index % 2 === 1
 
-const wrapperClass = image
+const wrapperClass = hasImage
 	? 'grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-20'
 	: 'mx-auto max-w-xl text-center'
-const contentClass = image
+const contentClass = hasImage
 	? `lg:col-span-5 ${isReversed ? 'lg:order-1' : ''}`
 	: ''
-const metaClass = image
+const metaClass = hasImage
 	? 'mb-10 space-y-5'
 	: 'mx-auto mb-10 max-w-md space-y-5 text-left'
+
+const navClass =
+	'absolute top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border-line border bg-paper text-ink text-lg leading-none opacity-90 transition hover:bg-ink hover:text-paper hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
 ---
 
 <article
@@ -49,23 +52,69 @@ const metaClass = image
 >
 	<div class={wrapperClass}>
 		{
-			image && (
+			hasImage && (
 				<div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : ''}`}>
-					<div class="border-line-2 overflow-hidden border">
-						<Image
-							src={image}
-							sizes="(min-width: 1024px) 58vw, 100vw"
-							quality={80}
-							alt={imageAlt || title}
-							class="block h-auto w-full"
-						/>
+					<div class="border-line-2 relative overflow-hidden border" data-carousel>
+						<div
+							class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent motion-reduce:scroll-auto [&::-webkit-scrollbar]:hidden"
+							data-track
+							tabindex={hasCarousel ? 0 : undefined}
+							role={hasCarousel ? 'group' : undefined}
+							aria-label={hasCarousel ? `${title} — afbeeldingen` : undefined}
+						>
+							{images.map((img, i) => (
+								<div class="w-full flex-none snap-start">
+									<Image
+										src={img.src}
+										sizes="(min-width: 1024px) 58vw, 100vw"
+										quality={80}
+										loading={i === 0 ? 'eager' : 'lazy'}
+										alt={img.alt || title}
+										class="block h-auto w-full"
+									/>
+								</div>
+							))}
+						</div>
+
+						{hasCarousel && (
+							<>
+								<button
+									type="button"
+									class={`${navClass} left-3`}
+									data-prev
+									aria-label="Vorige afbeelding"
+								>
+									&larr;
+								</button>
+								<button
+									type="button"
+									class={`${navClass} right-3`}
+									data-next
+									aria-label="Volgende afbeelding"
+								>
+									&rarr;
+								</button>
+
+								<div class="absolute inset-x-0 bottom-3.5 flex justify-center gap-2">
+									{images.map((_, i) => (
+										<button
+											type="button"
+											class="h-2.5 w-2.5 cursor-pointer rounded-full border-paper border bg-transparent p-0 shadow-[0_0_0_1px_var(--color-line)] transition-transform aria-[current=true]:scale-110 aria-[current=true]:bg-paper focus-visible:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+											data-dot
+											aria-current={i === 0 ? 'true' : 'false'}
+											aria-label={`Ga naar afbeelding ${i + 1}`}
+										/>
+									))}
+								</div>
+							</>
+						)}
 					</div>
 				</div>
 			)
 		}
 
 		<div class={contentClass}>
-			<p class={`eyebrow mb-5 ${image ? '' : 'justify-center'}`}>Expositie</p>
+			<p class={`eyebrow mb-5 ${hasImage ? '' : 'justify-center'}`}>Expositie</p>
 			<h2 class="lg:text-display mb-9 text-3xl leading-tight">{title}</h2>
 
 			<dl class={metaClass}>
@@ -106,3 +155,63 @@ const metaClass = image
 		</div>
 	</div>
 </article>
+
+<script>
+	const initCarousel = (carousel: HTMLElement) => {
+		if (carousel.dataset.init) return
+		carousel.dataset.init = 'true'
+
+		const track = carousel.querySelector<HTMLElement>('[data-track]')
+		if (!track) return
+
+		const slides = Array.from(track.children)
+		const dots = Array.from(carousel.querySelectorAll<HTMLElement>('[data-dot]'))
+		if (slides.length < 2) return
+
+		let active = 0
+		const setActive = (i: number) => {
+			active = i
+			dots.forEach((dot, di) =>
+				dot.setAttribute('aria-current', di === i ? 'true' : 'false')
+			)
+		}
+
+		const goTo = (i: number) => {
+			const idx = Math.max(0, Math.min(i, slides.length - 1))
+			track.scrollTo({ left: track.clientWidth * idx, behavior: 'smooth' })
+		}
+
+		track.addEventListener('scroll', () => {
+			const i = Math.round(track.scrollLeft / track.clientWidth)
+			if (i !== active) setActive(i)
+		})
+
+		carousel
+			.querySelector('[data-prev]')
+			?.addEventListener('click', () => goTo(active - 1))
+		carousel
+			.querySelector('[data-next]')
+			?.addEventListener('click', () => goTo(active + 1))
+		dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)))
+
+		// Keyboard navigation: arrow keys page through slides, Home/End jump to ends.
+		carousel.addEventListener('keydown', (e: KeyboardEvent) => {
+			const keys: Record<string, number> = {
+				ArrowLeft: active - 1,
+				ArrowRight: active + 1,
+				Home: 0,
+				End: slides.length - 1
+			}
+			if (!(e.key in keys)) return
+			e.preventDefault()
+			goTo(keys[e.key])
+		})
+	}
+
+	const initCarousels = () =>
+		document
+			.querySelectorAll<HTMLElement>('[data-carousel]')
+			.forEach(initCarousel)
+
+	document.addEventListener('astro:page-load', initCarousels)
+</script>
