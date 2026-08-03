@@ -6,6 +6,11 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
 	site: 'https://www.tonlamper.nl',
 	integrations: [sitemap()],
+	// The portfolio grid lives on the homepage; /portfolio no longer exists as
+	// a page but is still linked from artwork breadcrumbs and old inbound links.
+	redirects: {
+		'/portfolio': '/'
+	},
 	// Prefetch links as they enter the viewport for snappier navigation
 	// (ClientRouter otherwise only prefetches on hover).
 	prefetch: {
