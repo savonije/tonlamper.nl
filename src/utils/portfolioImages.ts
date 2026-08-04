@@ -4,7 +4,7 @@ import type { ImageMetadata } from 'astro'
 // time by Astro's image pipeline. Keys look like
 // "/src/assets/portfolio/atlas.jpg".
 const images = import.meta.glob<{ default: ImageMetadata }>(
-	'/src/assets/portfolio/**/*.{jpg,jpeg}',
+	'/src/assets/portfolio/**/*.{jpg,jpeg,png,webp,avif}',
 	{ eager: true }
 )
 
