@@ -643,50 +643,20 @@
 		"text": "De met de hand gedrukte linosnede  ‘Tuin’ bestaat uit 4 losse prenten (60x80cm) die samen één geheel vormen. De titel slaat op de bladeren van het groot hoefblad met de suggestie van bomen en struiken in de achtergrond, maar ook op de vierkanten van de afrastering in de achtergrond. De grijze stippen vormen het spel van licht- en schaduwvlekken dat door het gebladerte valt. De geometrie van het rasterwerk en de stippen staat in contrast met de natuurlijke vormen van de bladeren en de wilde halen en spatten in de achtergrond."
 	},
 	"86": {
-		"name": "Sta Cunera",
-		"images": ["/images/portfolio/PM Sta Cunera 30 x 30cm 2026.webp"],
+		"name": "Petits Martyrs",
+		"images": [
+			"/images/portfolio/PM Sta Cunera 30 x 30cm 2026.webp",
+			"/images/portfolio/ets PM St Laurentius 30 x 30cm 2026.webp",
+			"/images/portfolio/ets PM St Petrus & ST Filippus 30 x 30cm 2026.webp",
+			"/images/portfolio/ets PM St Sebastiaan 20 x 30cm 2026.webp",
+			"/images/portfolio/ets PM St Stefanus 30 x 30cm 2026.webp",
+			"/images/portfolio/ets PM St Vitus 20 x 30cm 2026.webp"
+		],
 		"category": ["ets"],
-		"slug": "sta-cunera",
+		"slug": "petits-martyrs",
 		"text": ""
 	},
 	"87": {
-		"name": "St Laurentius",
-		"images": ["/images/portfolio/ets PM St Laurentius 30 x 30cm 2026.webp"],
-		"category": ["ets"],
-		"slug": "st-laurentius",
-		"text": ""
-	},
-	"88": {
-		"name": "St Petrus & St Filippus",
-		"images": [
-			"/images/portfolio/ets PM St Petrus & ST Filippus 30 x 30cm 2026.webp"
-		],
-		"category": ["ets"],
-		"slug": "st-petrus-st-filippus",
-		"text": ""
-	},
-	"89": {
-		"name": "St Sebastiaan",
-		"images": ["/images/portfolio/ets PM St Sebastiaan 20 x 30cm 2026.webp"],
-		"category": ["ets"],
-		"slug": "st-sebastiaan",
-		"text": ""
-	},
-	"90": {
-		"name": "St Stefanus",
-		"images": ["/images/portfolio/ets PM St Stefanus 30 x 30cm 2026.webp"],
-		"category": ["ets"],
-		"slug": "st-stefanus",
-		"text": ""
-	},
-	"91": {
-		"name": "St Vitus",
-		"images": ["/images/portfolio/ets PM St Vitus 20 x 30cm 2026.webp"],
-		"category": ["ets"],
-		"slug": "st-vitus",
-		"text": ""
-	},
-	"92": {
 		"name": "Linosnede Poelbos V",
 		"images": [
 			"/images/portfolio/linosnede Poelbos V 40x40cm 2026 IMG_9121.webp"
@@ -695,7 +665,7 @@
 		"slug": "linosnede-poelbos-v",
 		"text": ""
 	},
-	"93": {
+	"88": {
 		"name": "Linosnede Poelbos VI",
 		"images": [
 			"/images/portfolio/linosnede Poelbos VI 40x40cm 2026 IMG_9130.webp"
